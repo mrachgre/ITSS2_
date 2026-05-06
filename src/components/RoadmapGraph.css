@@ -1,0 +1,262 @@
+/* ═══════════════════════════════════════════════════════
+   RoadmapGraph — vertical flow visual roadmap
+   ═══════════════════════════════════════════════════════ */
+
+.rg-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+}
+
+/* Central spine */
+.rg-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg,
+    rgba(0,240,255,0) 0%,
+    rgba(0,240,255,0.25) 8%,
+    rgba(0,240,255,0.25) 92%,
+    rgba(0,240,255,0) 100%
+  );
+  z-index: 0;
+}
+
+/* Level row */
+.rg-level {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+/* Connector between levels */
+.rg-connector {
+  width: 3px;
+  height: 28px;
+  margin: 0 auto;
+  background: rgba(0,240,255,0.18);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Node wrapper */
+.rg-node-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Base node button */
+.rg-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+/* Skill node (yellow) */
+.rg-skill {
+  background: #faff00;
+  color: #1a1a1a;
+  border-color: #e6eb00;
+  box-shadow: 0 2px 12px rgba(250,255,0,0.15);
+}
+
+.rg-skill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(250,255,0,0.25);
+}
+
+.rg-skill.rg-done {
+  background: rgba(57,255,20,0.18);
+  color: rgba(57,255,20,0.95);
+  border-color: rgba(57,255,20,0.5);
+  box-shadow: 0 0 18px rgba(57,255,20,0.15);
+}
+
+.rg-skill.rg-done .rg-label { text-decoration: line-through; }
+
+/* Checkpoint node (dark dashed) */
+.rg-checkpoint {
+  background: #333;
+  color: #f5f5f5;
+  border-color: #555;
+  border-style: dashed;
+  padding: 10px 22px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.rg-checkpoint:hover {
+  transform: translateY(-2px);
+  border-color: #888;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.rg-checkpoint.rg-done {
+  background: rgba(57,255,20,0.12);
+  color: rgba(57,255,20,0.95);
+  border-color: rgba(57,255,20,0.4);
+}
+
+/* Node dot */
+.rg-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.rg-skill .rg-dot { background: #1a1a1a; opacity: 0.3; }
+.rg-skill.rg-done .rg-dot {
+  background: rgba(57,255,20,0.9);
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(57,255,20,0.5);
+}
+
+.rg-checkpoint .rg-dot { background: #f5f5f5; opacity: 0.4; }
+.rg-checkpoint.rg-done .rg-dot {
+  background: rgba(57,255,20,0.9);
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(57,255,20,0.5);
+}
+
+/* Pin button */
+.rg-pin {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.65rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rg-node-wrap:hover .rg-pin {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.rg-pin.active {
+  opacity: 1;
+  pointer-events: auto;
+  border-color: rgba(250,255,0,0.5);
+  background: rgba(250,255,0,0.15);
+  color: rgba(250,255,0,0.95);
+}
+
+.rg-pin:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* Tip annotation */
+.rg-tip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 18px);
+  transform: translateY(-50%);
+  max-width: 260px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  font-style: italic;
+  white-space: normal;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.rg-tip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.05);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Section divider */
+.rg-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 28px 0;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.rg-section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.rg-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.rg-section-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.rg-section-sublabel {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rg-tip { display: none; }
+  .rg-level { gap: 8px; }
+  .rg-node { padding: 8px 14px; font-size: 0.8rem; }
+}

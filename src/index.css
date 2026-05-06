@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Core palette */
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #0f0f2a;
+  --bg-card: rgba(15, 15, 42, 0.85);
+  --bg-card-hover: rgba(25, 25, 60, 0.95);
+
+  /* Neon accents */
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #ff00e5;
+  --neon-green: #39ff14;
+  --neon-purple: #b026ff;
+  --neon-orange: #ff6e27;
+  --neon-yellow: #faff00;
+  --neon-blue: #4d7cff;
+
+  /* Text */
+  --text-primary: #e8e8f0;
+  --text-secondary: rgba(232, 232, 240, 0.6);
+  --text-muted: rgba(232, 232, 240, 0.35);
+
+  /* Borders */
+  --border-glow: rgba(0, 240, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Sizes */
+  --header-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: rgba(0, 240, 255, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 240, 255, 0.4); }
+
+/* Global button reset */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  background: none;
+  color: var(--text-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px currentColor, 0 0 15px currentColor; }
+  50%      { box-shadow: 0 0 10px currentColor, 0 0 30px currentColor; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
