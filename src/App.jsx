@@ -2,11 +2,14 @@ import { useState } from 'react'
 import Dashboard from './pages/Dashboard'
 import PathDetail from './pages/PathDetail'
 import Journey from './pages/Journey'
+import ProjectsPage from './pages/ProjectsPage'
+import ProjectDetail from './pages/ProjectDetail'
 import './App.css'
 
 export default function App() {
   const [currentView, setCurrentView] = useState('dashboard')
   const [selectedPathId, setSelectedPathId] = useState(null)
+  const [selectedProjectId, setSelectedProjectId] = useState(null)
 
   const handleViewPath = (pathId) => {
     setSelectedPathId(pathId)
@@ -17,6 +20,23 @@ export default function App() {
   const handleBackToDashboard = () => {
     setCurrentView('dashboard')
     setSelectedPathId(null)
+    setSelectedProjectId(null)
+  }
+
+  const handleViewProjects = () => {
+    setCurrentView('projects')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleViewProject = (projectId) => {
+    setSelectedProjectId(projectId)
+    setCurrentView('project-detail')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleBackToProjects = () => {
+    setCurrentView('projects')
+    setSelectedProjectId(null)
   }
 
   return (
@@ -29,16 +49,22 @@ export default function App() {
           </div>
           <nav className="header-nav">
             <button
-              className={`nav-btn ${currentView === 'dashboard' ? 'active' : ''}`}
+              className={`nav-btn ${currentView === 'dashboard' || currentView === 'detail' ? 'active' : ''}`}
               onClick={handleBackToDashboard}
             >
-              Roadmaps
+              Lộ trình
+            </button>
+            <button
+              className={`nav-btn ${currentView === 'projects' || currentView === 'project-detail' ? 'active' : ''}`}
+              onClick={handleViewProjects}
+            >
+              Dự án
             </button>
             <button
               className={`nav-btn ${currentView === 'journey' ? 'active' : ''}`}
               onClick={() => setCurrentView('journey')}
             >
-              Journey
+              Hành trình
             </button>
           </nav>
         </div>
@@ -46,7 +72,7 @@ export default function App() {
 
       <main className="app-main">
         {currentView === 'dashboard' && (
-          <Dashboard onViewPath={handleViewPath} />
+          <Dashboard onViewPath={handleViewPath} onViewProjects={handleViewProjects} />
         )}
         {currentView === 'detail' && (
           <PathDetail pathId={selectedPathId} onBack={handleBackToDashboard} />
@@ -54,10 +80,16 @@ export default function App() {
         {currentView === 'journey' && (
           <Journey onOpenPath={handleViewPath} />
         )}
+        {currentView === 'projects' && (
+          <ProjectsPage onViewProject={handleViewProject} onBack={handleBackToDashboard} />
+        )}
+        {currentView === 'project-detail' && (
+          <ProjectDetail projectId={selectedProjectId} onBack={handleBackToProjects} />
+        )}
       </main>
 
       <footer className="app-footer">
-        <p>CarrierPath © 2026 — Track Your Learning Journey</p>
+        <p>CarrierPath © 2026 — Theo Dõi Hành Trình Học Tập Của Bạn</p>
       </footer>
     </div>
   )

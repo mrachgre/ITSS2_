@@ -64,7 +64,7 @@ export default function Journey({ onOpenPath }) {
   }
 
   const handleDeleteCheckin = () => {
-    if (!window.confirm("Delete today's check-in?")) return
+    if (!window.confirm('Xóa check-in hôm nay?')) return
     deleteDailyCheckin(today)
     setCheckins(getDailyCheckins())
     setMinutes(30)
@@ -72,7 +72,7 @@ export default function Journey({ onOpenPath }) {
   }
 
   const handleResetAll = () => {
-    if (!window.confirm('Reset progress for ALL roadmaps?')) return
+    if (!window.confirm('Đặt lại tiến độ cho TẤT CẢ lộ trình?')) return
     resetAllProgress()
     setProgress(getUserProgress())
   }
@@ -81,13 +81,13 @@ export default function Journey({ onOpenPath }) {
     <div className="journey">
       <section className="journey-hero">
         <div className="journey-hero-left">
-          <h2 className="journey-title">Your Journey</h2>
-          <p className="journey-subtitle">Log today's effort, pin what matters, and jump into any roadmap.</p>
+          <h2 className="journey-title">Hành Trình Của Bạn</h2>
+          <p className="journey-subtitle">Ghi lại nỗ lực hôm nay, ghim những gì quan trọng, và bắt đầu bất kỳ lộ trình nào.</p>
         </div>
         <div className="journey-kpis">
-          <div className="journey-kpi"><div className="kpi-label">Overall</div><div className="kpi-value">{overall}%</div></div>
-          <div className="journey-kpi"><div className="kpi-label">Completed</div><div className="kpi-value">{totalCompleted}</div></div>
-          <div className="journey-kpi"><div className="kpi-label">Total nodes</div><div className="kpi-value">{totalNodes}</div></div>
+          <div className="journey-kpi"><div className="kpi-label">Tổng quan</div><div className="kpi-value">{overall}%</div></div>
+          <div className="journey-kpi"><div className="kpi-label">Hoàn thành</div><div className="kpi-value">{totalCompleted}</div></div>
+          <div className="journey-kpi"><div className="kpi-label">Tổng node</div><div className="kpi-value">{totalNodes}</div></div>
         </div>
       </section>
 
@@ -95,20 +95,20 @@ export default function Journey({ onOpenPath }) {
         {/* Daily Check-in */}
         <section className="journey-card">
           <div className="journey-card-header">
-            <h3>Daily check-in</h3>
+            <h3>Check-in hàng ngày</h3>
             <span className="journey-muted">{today}</span>
           </div>
           <div className="checkin-form">
-            <label className="checkin-label" htmlFor="minutes">Minutes today</label>
+            <label className="checkin-label" htmlFor="minutes">Số phút hôm nay</label>
             <input id="minutes" type="number" min="0" step="5" value={minutes}
               onChange={(e) => setMinutes(Number(e.target.value))} className="checkin-input" />
-            <label className="checkin-label" htmlFor="note">Note (optional)</label>
+            <label className="checkin-label" htmlFor="note">Ghi chú (tùy chọn)</label>
             <textarea id="note" rows="4" value={note}
               onChange={(e) => setNote(e.target.value)} className="checkin-textarea"
-              placeholder="What did you learn? What will you do next?" />
+              placeholder="Bạn đã học gì? Bạn sẽ làm gì tiếp theo?" />
             <div className="checkin-actions">
-              <button type="button" className="btn btn-primary" onClick={handleSaveCheckin}>Save check-in</button>
-              <button type="button" className="btn btn-ghost" onClick={handleDeleteCheckin}>Delete</button>
+              <button type="button" className="btn btn-primary" onClick={handleSaveCheckin}>Lưu check-in</button>
+              <button type="button" className="btn btn-ghost" onClick={handleDeleteCheckin}>Xóa</button>
             </div>
           </div>
         </section>
@@ -116,13 +116,13 @@ export default function Journey({ onOpenPath }) {
         {/* Pinned Nodes */}
         <section className="journey-card">
           <div className="journey-card-header">
-            <h3>Pinned nodes</h3>
-            <span className="journey-muted">Pin/unpin from a roadmap</span>
+            <h3>Node đã ghim</h3>
+            <span className="journey-muted">Ghim/bỏ ghim từ lộ trình</span>
           </div>
           {pinned.length === 0 ? (
             <div className="journey-empty">
-              <div className="journey-empty-title">Nothing pinned yet</div>
-              <div className="journey-empty-text">Open a roadmap and pin nodes you want to focus on.</div>
+              <div className="journey-empty-title">Chưa ghim gì</div>
+              <div className="journey-empty-text">Mở một lộ trình và ghim các node bạn muốn tập trung.</div>
             </div>
           ) : (
             <div className="pinned-list">
@@ -132,12 +132,12 @@ export default function Journey({ onOpenPath }) {
                     <span className="pinned-icon">{p.pathIcon}</span>
                     <span className="pinned-text">
                       <span className="pinned-node">{p.nodeLabel}</span>
-                      <span className="pinned-meta">in {p.pathName} • Stage {p.level + 1}</span>
+                      <span className="pinned-meta">trong {p.pathName} • Giai đoạn {p.level + 1}</span>
                     </span>
                   </button>
                   <button type="button" className="pin-toggle"
                     onClick={() => { togglePinnedNode(p.pathId, p.nodeId); setPinnedNodes(getPinnedNodes()) }}
-                    title="Unpin" style={{ borderColor: p.pathColor }}>✦</button>
+                    title="Bỏ ghim" style={{ borderColor: p.pathColor }}>✦</button>
                 </div>
               ))}
             </div>
@@ -147,8 +147,8 @@ export default function Journey({ onOpenPath }) {
         {/* Quick Launch */}
         <section className="journey-card journey-card-wide">
           <div className="journey-card-header">
-            <h3>Quick launch</h3>
-            <button type="button" className="btn btn-danger" onClick={handleResetAll}>Reset all progress</button>
+            <h3>Truy cập nhanh</h3>
+            <button type="button" className="btn btn-danger" onClick={handleResetAll}>Đặt lại tất cả tiến độ</button>
           </div>
           <div className="quick-grid">
             {paths.map((p) => (
@@ -162,7 +162,7 @@ export default function Journey({ onOpenPath }) {
                   <span className="quick-pill" style={{ borderColor: p.color }}>
                     {progress.find(x => x.id === p.id)?.progress ?? 0}%
                   </span>
-                  <span className="quick-open">Open →</span>
+                  <span className="quick-open">Mở →</span>
                 </span>
               </button>
             ))}

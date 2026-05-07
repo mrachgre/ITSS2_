@@ -4,7 +4,7 @@ import PathCard from '../components/PathCard'
 import ProgressStats from '../components/ProgressStats'
 import './Dashboard.css'
 
-export default function Dashboard({ onViewPath }) {
+export default function Dashboard({ onViewPath, onViewProjects }) {
   const [careerPaths, setCareerPaths] = useState([])
   const [userProgress, setUserProgress] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
@@ -29,15 +29,15 @@ export default function Dashboard({ onViewPath }) {
       {/* Hero */}
       <section className="hero-section">
         <div className="hero-content">
-          <h2 className="hero-title">Developer Roadmaps</h2>
+          <h2 className="hero-title">Lộ Trình Lập Trình Viên</h2>
           <p className="hero-subtitle">
-            Community-driven learning paths to help you pick your career and become proficient.
+            Các lộ trình học tập do cộng đồng đóng góp giúp bạn chọn nghề nghiệp và phát triển chuyên môn.
           </p>
           <div className="hero-search">
             <span className="search-icon">🔍</span>
             <input
               type="text"
-              placeholder="Search roadmaps..."
+              placeholder="Tìm kiếm lộ trình..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="search-input"
@@ -55,7 +55,7 @@ export default function Dashboard({ onViewPath }) {
       {/* Role Based */}
       <section className="paths-section">
         <div className="section-label">
-          <span className="section-label-text">Role Based Roadmaps</span>
+          <span className="section-label-text">Lộ Trình Theo Vai Trò</span>
         </div>
         <div className="paths-grid">
           {filter(rolePaths).map(path => (
@@ -72,7 +72,7 @@ export default function Dashboard({ onViewPath }) {
       {/* Skill Based */}
       <section className="paths-section">
         <div className="section-label">
-          <span className="section-label-text">Skill Based Roadmaps</span>
+          <span className="section-label-text">Lộ Trình Theo Kỹ Năng</span>
         </div>
         <div className="paths-grid">
           {filter(skillPaths).map(path => (
@@ -82,6 +82,25 @@ export default function Dashboard({ onViewPath }) {
               progress={userProgress.find(p => p.id === path.id)?.progress || 0}
               onView={() => onViewPath(path.id)}
             />
+          ))}
+        </div>
+      </section>
+
+      {/* Project Ideas */}
+      <section className="paths-section">
+        <div className="section-label">
+          <span className="section-label-text">Ý Tưởng Dự Án</span>
+        </div>
+        <div className="project-ideas-row">
+          {['Frontend', 'Backend', 'DevOps'].map(cat => (
+            <button
+              key={cat}
+              className="project-idea-btn"
+              onClick={onViewProjects}
+              id={`project-idea-${cat.toLowerCase()}`}
+            >
+              {cat}
+            </button>
           ))}
         </div>
       </section>

@@ -1,0 +1,328 @@
+.project-detail {
+  animation: fadeInUp 0.5s ease;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.project-detail.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-muted);
+}
+
+.pd-back-btn {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.pd-back-btn:hover {
+  color: var(--neon-cyan);
+}
+
+.pd-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.pd-tags {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.pd-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.pd-difficulty {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+.pd-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.pd-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.pd-blockquote {
+  border-left: 3px solid var(--neon-cyan);
+  padding: 18px 24px;
+  margin: 0 0 28px 0;
+  background: rgba(0, 240, 255, 0.03);
+  border-radius: 0 10px 10px 0;
+}
+
+.pd-blockquote p {
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.pd-intro {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.pd-section {
+  margin-bottom: 32px;
+}
+
+.pd-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.pd-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pd-list li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pd-list li:last-child {
+  border-bottom: none;
+}
+
+.pd-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+}
+
+.pd-list li strong {
+  color: var(--text-primary);
+}
+
+.pd-checklist li::before {
+  content: '☐';
+  color: var(--neon-purple);
+}
+
+.pd-submit-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto 0;
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--neon-purple), #8a2be2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  letter-spacing: 0.5px;
+}
+
+.pd-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(176, 38, 255, 0.35);
+}
+
+/* ─── Modal ─── */
+.pd-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.pd-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: #13132d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 36px 32px 28px;
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pd-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color var(--transition-fast);
+}
+
+.pd-modal-close:hover {
+  color: var(--text-primary);
+}
+
+.pd-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.pd-modal-icon {
+  font-size: 1.4rem;
+}
+
+.pd-modal-header h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pd-modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.pd-modal-requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.pd-modal-req-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.pd-modal-req-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.pd-modal-req-indicator::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.3);
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.pd-modal-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  margin-bottom: 18px;
+}
+
+.pd-modal-input::placeholder {
+  color: var(--text-muted);
+}
+
+.pd-modal-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.08);
+}
+
+.pd-modal-verify-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.pd-modal-verify-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 640px) {
+  .pd-title { font-size: 1.4rem; }
+  .pd-modal { padding: 28px 20px 22px; }
+}

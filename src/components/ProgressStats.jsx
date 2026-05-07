@@ -7,10 +7,10 @@ export default function ProgressStats({ userProgress }) {
   const inProgress = userProgress.filter(p => p.progress > 0 && p.progress < 100).length
 
   const stats = [
-    { label: 'Overall Progress', value: `${overallProgress}%`, icon: '📈', color: '#FF6B6B' },
-    { label: 'Skills Completed', value: completedSkills,       icon: '✓',  color: '#4ECDC4' },
-    { label: 'Paths in Progress', value: inProgress,           icon: '🚀', color: '#95E1D3' },
-    { label: 'Total Skills',     value: totalSkills,           icon: '📚', color: '#FFD93D' }
+    { label: 'Tiến Độ Chung',       value: `${overallProgress}%`, icon: '📈', color: '#FF6B6B' },
+    { label: 'Kỹ Năng Hoàn Thành',  value: completedSkills,       icon: '✓',  color: '#4ECDC4' },
+    { label: 'Đang Học',            value: inProgress,            icon: '🚀', color: '#95E1D3' },
+    { label: 'Tổng Kỹ Năng',       value: totalSkills,           icon: '📚', color: '#FFD93D' }
   ]
 
   return (

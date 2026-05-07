@@ -42,20 +42,20 @@ export default function PathDetail({ pathId, onBack }) {
   }
 
   const handleReset = () => {
-    if (window.confirm('Reset all progress for this path?')) {
+    if (window.confirm('Đặt lại toàn bộ tiến độ cho lộ trình này?')) {
       resetPathProgress(pathId)
       setCompletedSkills([])
       setProgress(0)
     }
   }
 
-  if (!path) return <div className="path-detail loading">Loading...</div>
+  if (!path) return <div className="path-detail loading">Đang tải...</div>
 
   return (
     <div className="path-detail">
       {/* Header */}
       <div className="detail-header">
-        <button className="back-btn" onClick={onBack}>← Back to Dashboard</button>
+        <button className="back-btn" onClick={onBack}>← Quay về Trang Chủ</button>
         <div className="path-title">
           <span className="path-icon">{path.icon}</span>
           <div>
@@ -68,26 +68,26 @@ export default function PathDetail({ pathId, onBack }) {
       {/* Progress Card */}
       <div className="progress-card">
         <div className="progress-info">
-          <h3>Your Progress</h3>
+          <h3>Tiến Độ Của Bạn</h3>
           <div className="progress-bar-container">
             <div className="progress-bar" style={{ width: `${progress}%`, backgroundColor: path.color }} />
           </div>
           <div className="progress-text">
             <span className="progress-percentage">{progress}%</span>
-            <span className="progress-count">{completedSkills.length} of {nodes.length} nodes</span>
+            <span className="progress-count">{completedSkills.length} / {nodes.length} node</span>
           </div>
           {progress === 100 && (
-            <div className="completion-badge">🎉 Congratulations! You've completed this path!</div>
+            <div className="completion-badge">🎉 Chúc mừng! Bạn đã hoàn thành lộ trình này!</div>
           )}
         </div>
-        <button className="reset-btn" onClick={handleReset}>Reset Progress</button>
+        <button className="reset-btn" onClick={handleReset}>Đặt Lại Tiến Độ</button>
       </div>
 
       {/* Visual Roadmap Graph */}
       <div className="roadmap-section">
         <div className="roadmap-header">
-          <h2>Roadmap</h2>
-          <p>Click a node to view resources and mark it done.</p>
+          <h2>Lộ Trình</h2>
+          <p>Nhấp vào một node để xem tài liệu và đánh dấu hoàn thành.</p>
         </div>
         <RoadmapGraph
           nodes={nodes}
@@ -102,7 +102,7 @@ export default function PathDetail({ pathId, onBack }) {
 
       {/* Checklist */}
       <div className="skills-section">
-        <h2>Checklist</h2>
+        <h2>Danh Sách Kiểm Tra</h2>
         <div className="skills-list">
           {nodes
             .slice()
@@ -110,7 +110,7 @@ export default function PathDetail({ pathId, onBack }) {
             .map((node, i) => (
               <SkillItem
                 key={node.id}
-                skill={{ id: node.id, name: node.label, level: `Stage ${node.level + 1}` }}
+                skill={{ id: node.id, name: node.label, level: `Giai đoạn ${node.level + 1}` }}
                 isCompleted={completedSkills.includes(node.id)}
                 onToggle={() => handleToggleSkill(node.id)}
                 index={i}
@@ -121,27 +121,27 @@ export default function PathDetail({ pathId, onBack }) {
 
       {/* Tips */}
       <div className="tips-section">
-        <h2>Learning Tips</h2>
+        <h2>Mẹo Học Tập</h2>
         <div className="tips-grid">
           <div className="tip-card">
             <span className="tip-icon">📚</span>
-            <h4>Study Consistently</h4>
-            <p>Dedicate 30-60 minutes daily to learning and practicing new skills.</p>
+            <h4>Học Đều Đặn</h4>
+            <p>Dành 30-60 phút mỗi ngày để học và thực hành các kỹ năng mới.</p>
           </div>
           <div className="tip-card">
             <span className="tip-icon">🛠️</span>
-            <h4>Build Projects</h4>
-            <p>Apply what you learn by building real projects and contributing to open source.</p>
+            <h4>Xây Dựng Dự Án</h4>
+            <p>Áp dụng kiến thức bằng cách xây dựng dự án thực tế và đóng góp mã nguồn mở.</p>
           </div>
           <div className="tip-card">
             <span className="tip-icon">👥</span>
-            <h4>Join Communities</h4>
-            <p>Connect with other learners and professionals in online communities.</p>
+            <h4>Tham Gia Cộng Đồng</h4>
+            <p>Kết nối với những người học khác và các chuyên gia trong cộng đồng trực tuyến.</p>
           </div>
           <div className="tip-card">
             <span className="tip-icon">🔄</span>
-            <h4>Review & Practice</h4>
-            <p>Regularly review what you've learned and practice challenging concepts.</p>
+            <h4>Ôn Tập & Thực Hành</h4>
+            <p>Thường xuyên ôn lại kiến thức đã học và luyện tập các khái niệm khó.</p>
           </div>
         </div>
       </div>
