@@ -231,6 +231,175 @@ const RESOURCES = {
     { title: 'MLOps Guide — neptune.ai', url: 'https://neptune.ai/blog/mlops', type: 'article' },
   ],
 
+// ─── AI Engineer ───
+
+'python-ai': [
+  { title: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/', type: 'docs' },
+  { title: 'Python for Everybody', url: 'https://www.coursera.org/specializations/python', type: 'course' },
+  { title: 'Automate the Boring Stuff with Python', url: 'https://automatetheboringstuff.com/', type: 'book' },
+  { title: 'Real Python Tutorials', url: 'https://realpython.com/', type: 'article' },
+  { title: 'CS50 Python', url: 'https://cs50.harvard.edu/python/', type: 'course' },
+],
+
+'git-ai': [
+  { title: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/', type: 'docs' },
+  { title: 'Learn Git Branching', url: 'https://learngitbranching.js.org/', type: 'interactive' },
+  { title: 'Git Official Docs', url: 'https://git-scm.com/doc', type: 'docs' },
+  { title: 'Atlassian Git Tutorials', url: 'https://www.atlassian.com/git/tutorials', type: 'article' },
+],
+
+'numpy-ai': [
+  { title: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html', type: 'docs' },
+  { title: 'NumPy Beginner Guide', url: 'https://numpy.org/doc/stable/user/absolute_beginners.html', type: 'docs' },
+  { title: 'Kaggle NumPy Course', url: 'https://www.kaggle.com/learn/python', type: 'course' },
+  { title: 'FreeCodeCamp NumPy Tutorial', url: 'https://www.youtube.com/watch?v=QUT1VHiLmmI', type: 'video' },
+],
+
+'pandas-ai': [
+  { title: '10 Minutes to Pandas', url: 'https://pandas.pydata.org/docs/user_guide/10min.html', type: 'docs' },
+  { title: 'Pandas User Guide', url: 'https://pandas.pydata.org/docs/user_guide/index.html', type: 'docs' },
+  { title: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas', type: 'course' },
+  { title: 'Data Analysis with Python', url: 'https://www.freecodecamp.org/learn/data-analysis-with-python/', type: 'course' },
+],
+
+'data-vis-ai': [
+  { title: 'Matplotlib Tutorials', url: 'https://matplotlib.org/stable/tutorials/index.html', type: 'docs' },
+  { title: 'Seaborn Tutorial', url: 'https://seaborn.pydata.org/tutorial.html', type: 'docs' },
+  { title: 'Plotly Python Docs', url: 'https://plotly.com/python/', type: 'docs' },
+  { title: 'Data Visualization with Python', url: 'https://www.coursera.org/learn/python-for-data-visualization', type: 'course' },
+],
+
+'cp-data': [
+  { title: 'Build a Data Analysis Project — freeCodeCamp', url: 'https://www.freecodecamp.org/learn/data-analysis-with-python/', type: 'project' },
+  { title: 'Kaggle Titanic Competition', url: 'https://www.kaggle.com/competitions/titanic', type: 'practice' },
+  { title: 'Data Analysis Portfolio Projects', url: 'https://www.kaggle.com/datasets', type: 'practice' },
+  { title: 'Python Data Science Handbook', url: 'https://jakevdp.github.io/PythonDataScienceHandbook/', type: 'book' },
+],
+
+'ml-basics': [
+  { title: 'Google ML Crash Course', url: 'https://developers.google.com/machine-learning/crash-course', type: 'course' },
+  { title: 'Machine Learning by Andrew Ng', url: 'https://www.coursera.org/learn/machine-learning', type: 'course' },
+  { title: 'Machine Learning Explained', url: 'https://www.ibm.com/topics/machine-learning', type: 'article' },
+  { title: 'Hands-On ML with Scikit-Learn', url: 'https://github.com/ageron/handson-ml3', type: 'book' },
+],
+
+'sklearn-ai': [
+  { title: 'Scikit-learn Tutorials', url: 'https://scikit-learn.org/stable/tutorial/', type: 'docs' },
+  { title: 'Scikit-learn User Guide', url: 'https://scikit-learn.org/stable/user_guide.html', type: 'docs' },
+  { title: 'Machine Learning with Scikit-learn', url: 'https://www.kaggle.com/learn/intro-to-machine-learning', type: 'course' },
+  { title: 'Scikit-learn Crash Course', url: 'https://www.youtube.com/watch?v=0B5eIE_1vpU', type: 'video' },
+],
+
+'model-eval-ai': [
+  { title: 'Scikit-learn Model Evaluation', url: 'https://scikit-learn.org/stable/model_evaluation.html', type: 'docs' },
+  { title: 'Confusion Matrix Explained', url: 'https://www.youtube.com/watch?v=Kdsp6soqA7o', type: 'video' },
+  { title: 'Precision Recall F1 Guide', url: 'https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall', type: 'article' },
+],
+
+'dl-basics': [
+  { title: 'Deep Learning Specialization', url: 'https://www.coursera.org/specializations/deep-learning', type: 'course' },
+  { title: 'Neural Networks and Deep Learning', url: 'http://neuralnetworksanddeeplearning.com/', type: 'book' },
+  { title: 'Deep Learning Book', url: 'https://www.deeplearningbook.org/', type: 'book' },
+  { title: '3Blue1Brown Neural Networks', url: 'https://www.youtube.com/watch?v=aircAruvnKk', type: 'video' },
+],
+
+'tensorflow-ai': [
+  { title: 'TensorFlow Tutorials', url: 'https://www.tensorflow.org/tutorials', type: 'docs' },
+  { title: 'TensorFlow Guide', url: 'https://www.tensorflow.org/guide', type: 'docs' },
+  { title: 'DeepLearning.AI TensorFlow', url: 'https://www.coursera.org/professional-certificates/tensorflow-in-practice', type: 'course' },
+],
+
+'pytorch-ai': [
+  { title: 'PyTorch Tutorials', url: 'https://pytorch.org/tutorials/', type: 'docs' },
+  { title: 'PyTorch Fundamentals', url: 'https://www.learnpytorch.io/', type: 'course' },
+  { title: 'Official PyTorch Examples', url: 'https://github.com/pytorch/examples', type: 'github' },
+  { title: 'PyTorch Zero to Mastery', url: 'https://www.udemy.com/course/pytorch-for-deep-learning/', type: 'course' },
+],
+
+'deployment-ai': [
+  { title: 'FastAPI Documentation', url: 'https://fastapi.tiangolo.com/', type: 'docs' },
+  { title: 'Docker Getting Started', url: 'https://docs.docker.com/get-started/', type: 'docs' },
+  { title: 'MLflow Documentation', url: 'https://mlflow.org/docs/latest/index.html', type: 'docs' },
+  { title: 'Deploy ML Models with FastAPI', url: 'https://www.youtube.com/watch?v=7t2alSnE2-I', type: 'video' },
+],
+
+
+// ─── Machine Learning Engineer ───
+
+'python-ml': [
+  { title: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/', type: 'docs' },
+  { title: 'Automate the Boring Stuff', url: 'https://automatetheboringstuff.com/', type: 'book' },
+  { title: 'Real Python', url: 'https://realpython.com/', type: 'article' },
+],
+
+'math-ml': [
+  { title: 'Linear Algebra — Khan Academy', url: 'https://www.khanacademy.org/math/linear-algebra', type: 'course' },
+  { title: 'Essence of Linear Algebra', url: 'https://www.youtube.com/watch?v=fNk_zzaMoSs', type: 'video' },
+  { title: 'MIT Linear Algebra', url: 'https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/', type: 'course' },
+],
+
+'statistics-ml': [
+  { title: 'Statistics & Probability', url: 'https://www.khanacademy.org/math/statistics-probability', type: 'course' },
+  { title: 'Think Stats', url: 'https://greenteapress.com/wp/think-stats-2e/', type: 'book' },
+  { title: 'StatQuest YouTube Channel', url: 'https://www.youtube.com/c/joshstarmer', type: 'video' },
+],
+
+'numpy-ml': [
+  { title: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html', type: 'docs' },
+  { title: 'Pandas User Guide', url: 'https://pandas.pydata.org/docs/user_guide/index.html', type: 'docs' },
+  { title: 'Kaggle Pandas', url: 'https://www.kaggle.com/learn/pandas', type: 'course' },
+],
+
+'cp-ml': [
+  { title: 'End-to-End Machine Learning Project', url: 'https://github.com/ageron/handson-ml3', type: 'project' },
+  { title: 'Kaggle Intro to ML Projects', url: 'https://www.kaggle.com/learn/intro-to-machine-learning', type: 'practice' },
+  { title: 'Machine Learning Engineering for Production', url: 'https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops', type: 'course' },
+  { title: 'Awesome ML Projects', url: 'https://github.com/topics/machine-learning-project', type: 'github' },
+],
+
+'ml-algorithms': [
+  { title: 'Machine Learning — Andrew Ng', url: 'https://www.coursera.org/learn/machine-learning', type: 'course' },
+  { title: 'Google ML Crash Course', url: 'https://developers.google.com/machine-learning/crash-course', type: 'course' },
+  { title: 'Hands-On Machine Learning', url: 'https://github.com/ageron/handson-ml3', type: 'book' },
+  { title: 'Machine Learning Mastery', url: 'https://machinelearningmastery.com/', type: 'article' },
+],
+
+'supervised-ml': [
+  { title: 'Supervised Learning — IBM', url: 'https://www.ibm.com/topics/supervised-learning', type: 'article' },
+  { title: 'Kaggle Intro to ML', url: 'https://www.kaggle.com/learn/intro-to-machine-learning', type: 'course' },
+  { title: 'StatQuest Decision Trees', url: 'https://www.youtube.com/watch?v=7VeUPuFGJHk', type: 'video' },
+],
+
+'unsupervised-ml': [
+  { title: 'Unsupervised Learning — IBM', url: 'https://www.ibm.com/topics/unsupervised-learning', type: 'article' },
+  { title: 'Clustering in ML', url: 'https://scikit-learn.org/stable/modules/clustering.html', type: 'docs' },
+  { title: 'K-Means Clustering Explained', url: 'https://www.youtube.com/watch?v=4b5d3muPQmA', type: 'video' },
+],
+
+'feature-eng': [
+  { title: 'Feature Engineering — Kaggle', url: 'https://www.kaggle.com/learn/feature-engineering', type: 'course' },
+  { title: 'Feature Engineering Book', url: 'https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/', type: 'book' },
+  { title: 'Feature Engineering Guide', url: 'https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/', type: 'article' },
+],
+
+'model-tuning': [
+  { title: 'Hyperparameter Tuning — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/grid_search.html', type: 'docs' },
+  { title: 'Optuna Documentation', url: 'https://optuna.org/', type: 'docs' },
+  { title: 'Random Search vs Grid Search', url: 'https://www.youtube.com/watch?v=HdlDYng8g9s', type: 'video' },
+],
+
+'mlops': [
+  { title: 'MLOps Guide — neptune.ai', url: 'https://neptune.ai/blog/mlops', type: 'article' },
+  { title: 'Made With ML — MLOps', url: 'https://madewithml.com/', type: 'course' },
+  { title: 'Full Stack Deep Learning', url: 'https://fullstackdeeplearning.com/', type: 'course' },
+],
+
+'deploy-ml': [
+  { title: 'MLflow Docs', url: 'https://mlflow.org/docs/latest/index.html', type: 'docs' },
+  { title: 'FastAPI Documentation', url: 'https://fastapi.tiangolo.com/', type: 'docs' },
+  { title: 'Deploy ML Models to Production', url: 'https://www.coursera.org/learn/introduction-to-machine-learning-in-production', type: 'course' },
+],
+
   // ─── Skill paths shared ───
   jsx: [
     { title: 'React Docs — Writing Markup with JSX', url: 'https://react.dev/learn/writing-markup-with-jsx', type: 'docs' },

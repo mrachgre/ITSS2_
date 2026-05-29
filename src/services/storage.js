@@ -145,6 +145,76 @@ const DEFAULT_CAREER_PATHS = [
     ]
   },
 
+  {
+    id: 'aiengineer',
+    name: 'AI Engineer',
+    category: 'role',
+    description: 'Phát triển các hệ thống trí tuệ nhân tạo, tích hợp mô hình AI vào ứng dụng thực tế.',
+  icon: '🤖',
+  color: '#845ef7',
+  nodes: [
+    { id: 'python-ai', label: 'Python Basics', level: 0, type: 'skill', children: ['numpy-ai', 'git-ai'] },
+
+    { id: 'git-ai', label: 'Git & GitHub', level: 1, type: 'skill', children: ['ml-basics'] },
+
+    { id: 'numpy-ai', label: 'NumPy', level: 1, type: 'skill', children: ['pandas-ai'] },
+
+    { id: 'pandas-ai', label: 'Pandas', level: 2, type: 'skill', children: ['data-vis-ai'] },
+
+    { id: 'data-vis-ai', label: 'Data Visualization', level: 2, type: 'skill', children: ['ml-basics'] },
+
+    { id: 'cp-data', label: 'Checkpoint — Data Analysis', level: 3, type: 'checkpoint', children: ['ml-basics'] },
+
+    { id: 'ml-basics', label: 'Machine Learning Basics', level: 4, type: 'skill', children: ['sklearn-ai', 'dl-basics'] },
+
+    { id: 'sklearn-ai', label: 'Scikit-learn', level: 5, type: 'skill', children: ['model-eval-ai'] },
+
+    { id: 'model-eval-ai', label: 'Model Evaluation', level: 5, type: 'skill', children: ['deployment-ai'] },
+
+    { id: 'dl-basics', label: 'Deep Learning Basics', level: 6, type: 'skill', children: ['tensorflow-ai', 'pytorch-ai'] },
+
+    { id: 'tensorflow-ai', label: 'TensorFlow', level: 7, type: 'skill', children: ['deployment-ai'] },
+
+    { id: 'pytorch-ai', label: 'PyTorch', level: 7, type: 'skill', children: ['deployment-ai'] },
+
+    { id: 'deployment-ai', label: 'AI Model Deployment', level: 8, type: 'skill', children: [] }
+  ]
+},
+
+  {
+    id: 'machinelearning',
+    name: 'Machine Learning',
+    category: 'role',
+description: 'Xây dựng và tối ưu các mô hình machine learning phục vụ phân tích và dự đoán dữ liệu.',
+  icon: '🧠',
+  color: '#20c997',
+  nodes: [
+    { id: 'python-ml', label: 'Python', level: 0, type: 'skill', children: ['math-ml'] },
+
+    { id: 'math-ml', label: 'Math for ML', level: 1, type: 'skill', children: ['statistics-ml', 'numpy-ml'] },
+
+    { id: 'statistics-ml', label: 'Statistics & Probability', level: 2, type: 'skill', children: ['ml-algorithms'] },
+
+    { id: 'numpy-ml', label: 'NumPy & Pandas', level: 2, type: 'skill', children: ['ml-algorithms'] },
+
+    { id: 'cp-ml', label: 'Checkpoint — Data Processing', level: 3, type: 'checkpoint', children: ['ml-algorithms'] },
+
+    { id: 'ml-algorithms', label: 'ML Algorithms', level: 4, type: 'skill', children: ['supervised-ml', 'unsupervised-ml'] },
+
+    { id: 'supervised-ml', label: 'Supervised Learning', level: 5, type: 'skill', children: ['feature-eng'] },
+
+    { id: 'unsupervised-ml', label: 'Unsupervised Learning', level: 5, type: 'skill', children: ['feature-eng'] },
+
+    { id: 'feature-eng', label: 'Feature Engineering', level: 6, type: 'skill', children: ['model-tuning'] },
+
+    { id: 'model-tuning', label: 'Model Tuning', level: 7, type: 'skill', children: ['mlops'] },
+
+    { id: 'mlops', label: 'MLOps Basics', level: 8, type: 'skill', children: ['deploy-ml'] },
+
+    { id: 'deploy-ml', label: 'Deploy ML Models', level: 9, type: 'skill', children: [] }
+  ]
+},
+
   // ═══ SKILL-BASED ═══
   {
     id: 'react-skill',
