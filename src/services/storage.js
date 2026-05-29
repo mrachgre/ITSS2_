@@ -270,7 +270,7 @@ const DEFAULT_CAREER_PATHS = [
 const initializeStorage = () => {
   localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
 }
-
+ 
 // ─── Career Paths CRUD ─────────────────────────────────
 export const getAllCareerPaths = () => {
   initializeStorage()
