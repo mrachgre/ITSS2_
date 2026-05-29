@@ -288,6 +288,40 @@ const RESOURCES = {
   config: [
     { title: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig', type: 'docs' },
   ],
+  // update for frontend and backend path
+  typescript: [
+    { title: 'TypeScript Handbook (Official)', url: 'https://www.typescriptlang.org/docs/handbook/intro.html', type: 'docs' },
+    { title: 'TypeScript Crash Course', url: 'https://www.youtube.com/watch?v=BCg4U1FzODs', type: 'video' },
+  ],
+  nextjs: [
+    { title: 'Next.js Official Documentation', url: 'https://nextjs.org/docs', type: 'docs' },
+    { title: 'Next.js App Router Course', url: 'https://www.youtube.com/watch?v=vwSlYG7hFk0', type: 'video' },
+  ],
+  java: [
+    { title: 'Java Programming Tutorial', url: 'https://dev.java/learn/', type: 'docs' },
+    { title: 'Java Full Course for Beginners', url: 'https://www.youtube.com/watch?v=xk4_1vDrzzo', type: 'video' },
+  ],
+  'spring-boot': [
+    { title: 'Spring Boot Official Guides', url: 'https://spring.io/guides', type: 'docs' },
+    { title: 'Building REST services with Spring', url: 'https://spring.io/guides/tutorials/rest/', type: 'docs' },
+    { title: 'Spring Boot Tutorial', url: 'https://www.youtube.com/watch?v=9SGDpanrc8U', type: 'video' },
+  ],
+  mysql: [
+    { title: 'MySQL Tutorial for Developers', url: 'https://www.mysqltutorial.org/', type: 'docs' },
+    { title: 'MySQL Crash Course', url: 'https://www.youtube.com/watch?v=7S_tz1z_5bA', type: 'video' },
+  ],
+  'api-fetching': [
+    { title: 'MDN — Fetch API', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch', type: 'docs' },
+    { title: 'Axios Crash Course', url: 'https://www.youtube.com/watch?v=6LyagkoRWYA', type: 'video' },
+  ],
+  'testing-backend': [
+    { title: 'JUnit 5 User Guide', url: 'https://junit.org/junit5/docs/current/user-guide/', type: 'docs' },
+    { title: 'Mockito Crash Course', url: 'https://www.youtube.com/watch?v=HSGWcq_2AAM', type: 'video' },
+  ],
+  'mongodb': [
+    { title: 'MongoDB Official Basics', url: 'https://www.mongodb.com/basics', type: 'docs' },
+    { title: 'MongoDB Crash Course', url: 'https://www.youtube.com/watch?v=ofme2o29ngU', type: 'video' },
+  ]
 }
 
 /** Get resources for a node ID. Returns [] if none found. */
