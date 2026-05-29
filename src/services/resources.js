@@ -200,6 +200,10 @@ const RESOURCES = {
   cloud: [
     { title: 'AWS Free Tier', url: 'https://aws.amazon.com/free/', type: 'docs' },
   ],
+  ansible: [
+    { title: 'Ansible Documentation', url: 'https://docs.ansible.com/', type: 'docs' },
+    { title: 'Ansible Tutorial for Beginners', url: 'https://www.youtube.com/watch?v=G7n3i4r1_L4', type: 'video' },
+  ],
 
   // ─── Data Science ───
   python: [
