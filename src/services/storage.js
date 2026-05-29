@@ -145,73 +145,1029 @@ const DEFAULT_CAREER_PATHS = [
     ]
   },
 
-  {
-    id: 'aiengineer',
-    name: 'AI Engineer',
-    category: 'role',
-    description: 'Phát triển các hệ thống trí tuệ nhân tạo, tích hợp mô hình AI vào ứng dụng thực tế.',
+{
+  id: 'aiengineer',
+  name: 'AI Engineer',
+  category: 'role',
+  description: 'Build AI-powered applications using LLMs, RAG systems, AI agents and production-ready GenAI infrastructure.',
   icon: '🤖',
   color: '#845ef7',
+
+  sections: [
+    'Programming Foundations',
+    'Backend Engineering',
+    'LLM Fundamentals',
+    'Prompt Engineering',
+    'Embeddings & Vector Search',
+    'RAG Systems',
+    'AI Agents',
+    'Open Source LLMs',
+    'Inference Optimization',
+    'Deployment & MLOps',
+    'Evaluation & Safety',
+    'Projects & Portfolio'
+  ],
+
   nodes: [
-    { id: 'python-ai', label: 'Python Basics', level: 0, type: 'skill', children: ['numpy-ai', 'git-ai'] },
 
-    { id: 'git-ai', label: 'Git & GitHub', level: 1, type: 'skill', children: ['ml-basics'] },
+    // ─────────────────────────────
+    // Programming Foundations
+    // ─────────────────────────────
 
-    { id: 'numpy-ai', label: 'NumPy', level: 1, type: 'skill', children: ['pandas-ai'] },
+    {
+      id: 'python-ai',
+      label: 'Python Basics',
+      section: 'Programming Foundations',
+      level: 0,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['oop-ai', 'git-ai'],
+      projects: [
+        'CLI chatbot',
+        'File summarizer',
+        'Simple API client'
+      ]
+    },
 
-    { id: 'pandas-ai', label: 'Pandas', level: 2, type: 'skill', children: ['data-vis-ai'] },
+    {
+      id: 'oop-ai',
+      label: 'OOP in Python',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['async-ai']
+    },
 
-    { id: 'data-vis-ai', label: 'Data Visualization', level: 2, type: 'skill', children: ['ml-basics'] },
+    {
+      id: 'git-ai',
+      label: 'Git & GitHub',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linux-ai']
+    },
 
-    { id: 'cp-data', label: 'Checkpoint — Data Analysis', level: 3, type: 'checkpoint', children: ['ml-basics'] },
+    {
+      id: 'linux-ai',
+      label: 'Linux & CLI',
+      section: 'Programming Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['docker-ai']
+    },
 
-    { id: 'ml-basics', label: 'Machine Learning Basics', level: 4, type: 'skill', children: ['sklearn-ai', 'dl-basics'] },
+    // ─────────────────────────────
+    // Backend Engineering
+    // ─────────────────────────────
 
-    { id: 'sklearn-ai', label: 'Scikit-learn', level: 5, type: 'skill', children: ['model-eval-ai'] },
+    {
+      id: 'rest-ai',
+      label: 'REST APIs',
+      section: 'Backend Engineering',
+      level: 3,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['fastapi-ai']
+    },
 
-    { id: 'model-eval-ai', label: 'Model Evaluation', level: 5, type: 'skill', children: ['deployment-ai'] },
+    {
+      id: 'fastapi-ai',
+      label: 'FastAPI',
+      section: 'Backend Engineering',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['websocket-ai']
+    },
 
-    { id: 'dl-basics', label: 'Deep Learning Basics', level: 6, type: 'skill', children: ['tensorflow-ai', 'pytorch-ai'] },
+    {
+      id: 'async-ai',
+      label: 'Async Programming',
+      section: 'Backend Engineering',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['fastapi-ai']
+    },
 
-    { id: 'tensorflow-ai', label: 'TensorFlow', level: 7, type: 'skill', children: ['deployment-ai'] },
+    {
+      id: 'websocket-ai',
+      label: 'WebSockets',
+      section: 'Backend Engineering',
+      level: 5,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['checkpoint-api-ai']
+    },
 
-    { id: 'pytorch-ai', label: 'PyTorch', level: 7, type: 'skill', children: ['deployment-ai'] },
+    {
+      id: 'checkpoint-api-ai',
+      label: 'Checkpoint — AI Backend Service',
+      section: 'Backend Engineering',
+      level: 6,
+      difficulty: 'intermediate',
+      type: 'checkpoint',
+      children: ['llm-basics-ai'],
+      projects: [
+        'Streaming chatbot backend',
+        'AI API gateway',
+        'Document upload service'
+      ]
+    },
 
-    { id: 'deployment-ai', label: 'AI Model Deployment', level: 8, type: 'skill', children: [] }
+    // ─────────────────────────────
+    // LLM Fundamentals
+    // ─────────────────────────────
+
+    {
+      id: 'llm-basics-ai',
+      label: 'LLM Fundamentals',
+      section: 'LLM Fundamentals',
+      level: 7,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['transformers-ai', 'prompt-ai']
+    },
+
+    {
+      id: 'transformers-ai',
+      label: 'Transformers',
+      section: 'LLM Fundamentals',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['tokens-ai']
+    },
+
+    {
+      id: 'tokens-ai',
+      label: 'Tokenization',
+      section: 'LLM Fundamentals',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['embeddings-ai']
+    },
+
+    {
+      id: 'embeddings-ai',
+      label: 'Embeddings',
+      section: 'Embeddings & Vector Search',
+      level: 10,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['semantic-search-ai']
+    },
+
+    {
+      id: 'semantic-search-ai',
+      label: 'Semantic Search',
+      section: 'Embeddings & Vector Search',
+      level: 11,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['vector-db-ai']
+    },
+
+    {
+      id: 'vector-db-ai',
+      label: 'Vector Databases',
+      section: 'Embeddings & Vector Search',
+      level: 12,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['hybrid-search-ai']
+    },
+
+    {
+      id: 'hybrid-search-ai',
+      label: 'Hybrid Search',
+      section: 'Embeddings & Vector Search',
+      level: 13,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['rag-ai']
+    },
+
+    // ─────────────────────────────
+    // Prompt Engineering
+    // ─────────────────────────────
+
+    {
+      id: 'prompt-ai',
+      label: 'Prompt Engineering',
+      section: 'Prompt Engineering',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['structured-output-ai']
+    },
+
+    {
+      id: 'structured-output-ai',
+      label: 'Structured Outputs',
+      section: 'Prompt Engineering',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['function-calling-ai']
+    },
+
+    {
+      id: 'function-calling-ai',
+      label: 'Function Calling',
+      section: 'Prompt Engineering',
+      level: 10,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['tool-calling-ai']
+    },
+
+    {
+      id: 'tool-calling-ai',
+      label: 'Tool Calling',
+      section: 'Prompt Engineering',
+      level: 11,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mcp-ai']
+    },
+
+    {
+      id: 'mcp-ai',
+      label: 'Model Context Protocol (MCP)',
+      section: 'Prompt Engineering',
+      level: 12,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['agents-ai']
+    },
+
+    // ─────────────────────────────
+    // RAG Systems
+    // ─────────────────────────────
+
+    {
+      id: 'rag-ai',
+      label: 'RAG Systems',
+      section: 'RAG Systems',
+      level: 14,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['chunking-ai']
+    },
+
+    {
+      id: 'chunking-ai',
+      label: 'Chunking Strategies',
+      section: 'RAG Systems',
+      level: 15,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['retrieval-ai']
+    },
+
+    {
+      id: 'retrieval-ai',
+      label: 'Retrieval Optimization',
+      section: 'RAG Systems',
+      level: 16,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['reranking-ai']
+    },
+
+    {
+      id: 'reranking-ai',
+      label: 'Reranking',
+      section: 'RAG Systems',
+      level: 17,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['memory-ai']
+    },
+
+    {
+      id: 'memory-ai',
+      label: 'Conversation Memory',
+      section: 'RAG Systems',
+      level: 18,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['checkpoint-rag-ai']
+    },
+
+    {
+      id: 'checkpoint-rag-ai',
+      label: 'Checkpoint — Production RAG App',
+      section: 'RAG Systems',
+      level: 19,
+      difficulty: 'advanced',
+      type: 'checkpoint',
+      children: ['agents-ai'],
+      projects: [
+        'PDF chatbot',
+        'Company knowledge assistant',
+        'AI search engine'
+      ]
+    },
+
+    // ─────────────────────────────
+    // AI Agents
+    // ─────────────────────────────
+
+    {
+      id: 'agents-ai',
+      label: 'AI Agents',
+      section: 'AI Agents',
+      level: 20,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['multi-agent-ai']
+    },
+
+    {
+      id: 'multi-agent-ai',
+      label: 'Multi-Agent Systems',
+      section: 'AI Agents',
+      level: 21,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['workflow-ai']
+    },
+
+    {
+      id: 'workflow-ai',
+      label: 'AI Workflows',
+      section: 'AI Agents',
+      level: 22,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['evaluation-ai']
+    },
+
+    // ─────────────────────────────
+    // Open Source LLMs
+    // ─────────────────────────────
+
+    {
+      id: 'open-llm-ai',
+      label: 'Open-source LLMs',
+      section: 'Open Source LLMs',
+      level: 23,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['ollama-ai']
+    },
+
+    {
+      id: 'ollama-ai',
+      label: 'Ollama',
+      section: 'Open Source LLMs',
+      level: 24,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['vllm-ai']
+    },
+
+    {
+      id: 'vllm-ai',
+      label: 'vLLM',
+      section: 'Inference Optimization',
+      level: 25,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['quantization-ai']
+    },
+
+    {
+      id: 'quantization-ai',
+      label: 'Quantization',
+      section: 'Inference Optimization',
+      level: 26,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['lora-ai']
+    },
+
+    {
+      id: 'lora-ai',
+      label: 'LoRA / PEFT',
+      section: 'Inference Optimization',
+      level: 27,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['deployment-ai']
+    },
+
+    // ─────────────────────────────
+    // Deployment
+    // ─────────────────────────────
+
+    {
+      id: 'docker-ai',
+      label: 'Docker',
+      section: 'Deployment & MLOps',
+      level: 28,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['deployment-ai']
+    },
+
+    {
+      id: 'deployment-ai',
+      label: 'Deploy AI Applications',
+      section: 'Deployment & MLOps',
+      level: 29,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['monitoring-ai']
+    },
+
+    {
+      id: 'monitoring-ai',
+      label: 'Monitoring & Observability',
+      section: 'Deployment & MLOps',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['evaluation-ai']
+    },
+
+    // ─────────────────────────────
+    // Evaluation & Safety
+    // ─────────────────────────────
+
+    {
+      id: 'evaluation-ai',
+      label: 'LLM Evaluation',
+      section: 'Evaluation & Safety',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['safety-ai']
+    },
+
+    {
+      id: 'safety-ai',
+      label: 'AI Safety & Guardrails',
+      section: 'Evaluation & Safety',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: []
+    }
   ]
 },
 
-  {
-    id: 'machinelearning',
-    name: 'Machine Learning',
-    category: 'role',
-description: 'Xây dựng và tối ưu các mô hình machine learning phục vụ phân tích và dự đoán dữ liệu.',
+{
+  id: 'machinelearning',
+  name: 'Machine Learning Engineer',
+  category: 'role',
+  description: 'Build machine learning models, training pipelines, recommendation systems and production ML infrastructure.',
   icon: '🧠',
   color: '#20c997',
+
+  sections: [
+    'Programming Foundations',
+    'Math Foundations',
+    'Data Analysis',
+    'Machine Learning Fundamentals',
+    'Classical Machine Learning',
+    'Feature Engineering',
+    'Deep Learning',
+    'Specializations',
+    'MLOps & Deployment',
+    'Projects & Portfolio'
+  ],
+
   nodes: [
-    { id: 'python-ml', label: 'Python', level: 0, type: 'skill', children: ['math-ml'] },
 
-    { id: 'math-ml', label: 'Math for ML', level: 1, type: 'skill', children: ['statistics-ml', 'numpy-ml'] },
+    // ─────────────────────────────
+    // Programming Foundations
+    // ─────────────────────────────
 
-    { id: 'statistics-ml', label: 'Statistics & Probability', level: 2, type: 'skill', children: ['ml-algorithms'] },
+    {
+      id: 'python-ml',
+      label: 'Python Basics',
+      section: 'Programming Foundations',
+      level: 0,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['oop-ml', 'git-ml'],
+      projects: [
+        'CSV analyzer',
+        'Data cleaner',
+        'Simple ML scripts'
+      ]
+    },
 
-    { id: 'numpy-ml', label: 'NumPy & Pandas', level: 2, type: 'skill', children: ['ml-algorithms'] },
+    {
+      id: 'oop-ml',
+      label: 'OOP in Python',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['numpy-ml']
+    },
 
-    { id: 'cp-ml', label: 'Checkpoint — Data Processing', level: 3, type: 'checkpoint', children: ['ml-algorithms'] },
+    {
+      id: 'git-ml',
+      label: 'Git & GitHub',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linux-ml']
+    },
 
-    { id: 'ml-algorithms', label: 'ML Algorithms', level: 4, type: 'skill', children: ['supervised-ml', 'unsupervised-ml'] },
+    {
+      id: 'linux-ml',
+      label: 'Linux & CLI',
+      section: 'Programming Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['docker-ml']
+    },
 
-    { id: 'supervised-ml', label: 'Supervised Learning', level: 5, type: 'skill', children: ['feature-eng'] },
+    // ─────────────────────────────
+    // Math Foundations
+    // ─────────────────────────────
 
-    { id: 'unsupervised-ml', label: 'Unsupervised Learning', level: 5, type: 'skill', children: ['feature-eng'] },
+    {
+      id: 'math-ml',
+      label: 'Math for ML',
+      section: 'Math Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linear-algebra-ml', 'statistics-ml']
+    },
 
-    { id: 'feature-eng', label: 'Feature Engineering', level: 6, type: 'skill', children: ['model-tuning'] },
+    {
+      id: 'linear-algebra-ml',
+      label: 'Linear Algebra',
+      section: 'Math Foundations',
+      level: 3,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['calculus-ml']
+    },
 
-    { id: 'model-tuning', label: 'Model Tuning', level: 7, type: 'skill', children: ['mlops'] },
+    {
+      id: 'calculus-ml',
+      label: 'Calculus',
+      section: 'Math Foundations',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['probability-ml']
+    },
 
-    { id: 'mlops', label: 'MLOps Basics', level: 8, type: 'skill', children: ['deploy-ml'] },
+    {
+      id: 'statistics-ml',
+      label: 'Statistics',
+      section: 'Math Foundations',
+      level: 3,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['probability-ml']
+    },
 
-    { id: 'deploy-ml', label: 'Deploy ML Models', level: 9, type: 'skill', children: [] }
+    {
+      id: 'probability-ml',
+      label: 'Probability',
+      section: 'Math Foundations',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['optimization-ml']
+    },
+
+    {
+      id: 'optimization-ml',
+      label: 'Optimization',
+      section: 'Math Foundations',
+      level: 5,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['numpy-ml']
+    },
+
+    // ─────────────────────────────
+    // Data Analysis
+    // ─────────────────────────────
+
+    {
+      id: 'numpy-ml',
+      label: 'NumPy',
+      section: 'Data Analysis',
+      level: 6,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['pandas-ml']
+    },
+
+    {
+      id: 'pandas-ml',
+      label: 'Pandas',
+      section: 'Data Analysis',
+      level: 7,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['sql-ml']
+    },
+
+    {
+      id: 'sql-ml',
+      label: 'SQL',
+      section: 'Data Analysis',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['data-cleaning-ml']
+    },
+
+    {
+      id: 'data-cleaning-ml',
+      label: 'Data Cleaning',
+      section: 'Data Analysis',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['eda-ml']
+    },
+
+    {
+      id: 'eda-ml',
+      label: 'Exploratory Data Analysis',
+      section: 'Data Analysis',
+      level: 10,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['data-vis-ml']
+    },
+
+    {
+      id: 'data-vis-ml',
+      label: 'Data Visualization',
+      section: 'Data Analysis',
+      level: 11,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['checkpoint-data-ml']
+    },
+
+    {
+      id: 'checkpoint-data-ml',
+      label: 'Checkpoint — Data Analysis Project',
+      section: 'Data Analysis',
+      level: 12,
+      difficulty: 'intermediate',
+      type: 'checkpoint',
+      children: ['ml-fundamentals-ml'],
+      projects: [
+        'Sales analytics dashboard',
+        'Netflix dataset analysis',
+        'EDA portfolio project'
+      ]
+    },
+
+    // ─────────────────────────────
+    // ML Fundamentals
+    // ─────────────────────────────
+
+    {
+      id: 'ml-fundamentals-ml',
+      label: 'Machine Learning Fundamentals',
+      section: 'Machine Learning Fundamentals',
+      level: 13,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['supervised-ml', 'unsupervised-ml']
+    },
+
+    {
+      id: 'supervised-ml',
+      label: 'Supervised Learning',
+      section: 'Machine Learning Fundamentals',
+      level: 14,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['regression-ml', 'classification-ml']
+    },
+
+    {
+      id: 'regression-ml',
+      label: 'Regression Algorithms',
+      section: 'Classical Machine Learning',
+      level: 15,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['classification-ml']
+    },
+
+    {
+      id: 'classification-ml',
+      label: 'Classification Algorithms',
+      section: 'Classical Machine Learning',
+      level: 16,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['tree-models-ml']
+    },
+
+    {
+      id: 'tree-models-ml',
+      label: 'Decision Trees & Random Forest',
+      section: 'Classical Machine Learning',
+      level: 17,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['boosting-ml']
+    },
+
+    {
+      id: 'boosting-ml',
+      label: 'Boosting Algorithms',
+      section: 'Classical Machine Learning',
+      level: 18,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['xgboost-ml']
+    },
+
+    {
+      id: 'xgboost-ml',
+      label: 'XGBoost & LightGBM',
+      section: 'Classical Machine Learning',
+      level: 19,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['svm-ml']
+    },
+
+    {
+      id: 'svm-ml',
+      label: 'Support Vector Machines',
+      section: 'Classical Machine Learning',
+      level: 20,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['unsupervised-ml']
+    },
+
+    {
+      id: 'unsupervised-ml',
+      label: 'Unsupervised Learning',
+      section: 'Machine Learning Fundamentals',
+      level: 14,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['clustering-ml']
+    },
+
+    {
+      id: 'clustering-ml',
+      label: 'Clustering',
+      section: 'Classical Machine Learning',
+      level: 15,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['dim-reduction-ml']
+    },
+
+    {
+      id: 'dim-reduction-ml',
+      label: 'Dimensionality Reduction',
+      section: 'Classical Machine Learning',
+      level: 16,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['feature-eng-ml']
+    },
+
+    // ─────────────────────────────
+    // Feature Engineering
+    // ─────────────────────────────
+
+    {
+      id: 'feature-eng-ml',
+      label: 'Feature Engineering',
+      section: 'Feature Engineering',
+      level: 21,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['feature-selection-ml']
+    },
+
+    {
+      id: 'feature-selection-ml',
+      label: 'Feature Selection',
+      section: 'Feature Engineering',
+      level: 22,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['model-eval-ml']
+    },
+
+    {
+      id: 'model-eval-ml',
+      label: 'Model Evaluation',
+      section: 'Feature Engineering',
+      level: 23,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cross-validation-ml']
+    },
+
+    {
+      id: 'cross-validation-ml',
+      label: 'Cross Validation',
+      section: 'Feature Engineering',
+      level: 24,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['hyperparameter-ml']
+    },
+
+    {
+      id: 'hyperparameter-ml',
+      label: 'Hyperparameter Tuning',
+      section: 'Feature Engineering',
+      level: 25,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['sklearn-ml']
+    },
+
+    {
+      id: 'sklearn-ml',
+      label: 'Scikit-learn',
+      section: 'Feature Engineering',
+      level: 26,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['checkpoint-ml-system']
+    },
+
+    {
+      id: 'checkpoint-ml-system',
+      label: 'Checkpoint — End-to-End ML System',
+      section: 'Feature Engineering',
+      level: 27,
+      difficulty: 'advanced',
+      type: 'checkpoint',
+      children: ['deep-learning-ml'],
+      projects: [
+        'Fraud detection system',
+        'Recommendation system',
+        'Stock prediction pipeline'
+      ]
+    },
+
+    // ─────────────────────────────
+    // Deep Learning
+    // ─────────────────────────────
+
+    {
+      id: 'deep-learning-ml',
+      label: 'Deep Learning',
+      section: 'Deep Learning',
+      level: 28,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['neural-networks-ml']
+    },
+
+    {
+      id: 'neural-networks-ml',
+      label: 'Neural Networks',
+      section: 'Deep Learning',
+      level: 29,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cnn-ml', 'rnn-ml']
+    },
+
+    {
+      id: 'cnn-ml',
+      label: 'CNN',
+      section: 'Deep Learning',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['computer-vision-ml']
+    },
+
+    {
+      id: 'computer-vision-ml',
+      label: 'Computer Vision',
+      section: 'Specializations',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['tensorflow-ml']
+    },
+
+    {
+      id: 'rnn-ml',
+      label: 'RNN & LSTM',
+      section: 'Deep Learning',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['nlp-ml']
+    },
+
+    {
+      id: 'nlp-ml',
+      label: 'Natural Language Processing',
+      section: 'Specializations',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['pytorch-ml']
+    },
+
+    {
+      id: 'tensorflow-ml',
+      label: 'TensorFlow',
+      section: 'Deep Learning',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    {
+      id: 'pytorch-ml',
+      label: 'PyTorch',
+      section: 'Deep Learning',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    // ─────────────────────────────
+    // MLOps
+    // ─────────────────────────────
+
+    {
+      id: 'docker-ml',
+      label: 'Docker',
+      section: 'MLOps & Deployment',
+      level: 33,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['deployment-ml']
+    },
+
+    {
+      id: 'deployment-ml',
+      label: 'Deploy ML Models',
+      section: 'MLOps & Deployment',
+      level: 34,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cloud-ml']
+    },
+
+    {
+      id: 'cloud-ml',
+      label: 'AWS / Azure / GCP',
+      section: 'MLOps & Deployment',
+      level: 35,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    {
+      id: 'mlops-ml',
+      label: 'MLOps',
+      section: 'MLOps & Deployment',
+      level: 36,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['monitoring-ml']
+    },
+
+    {
+      id: 'monitoring-ml',
+      label: 'Monitoring & Drift Detection',
+      section: 'MLOps & Deployment',
+      level: 37,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: []
+    }
   ]
 },
 

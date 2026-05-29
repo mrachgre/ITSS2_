@@ -322,6 +322,230 @@ const RESOURCES = {
   { title: 'MLflow Documentation', url: 'https://mlflow.org/docs/latest/index.html', type: 'docs' },
   { title: 'Deploy ML Models with FastAPI', url: 'https://www.youtube.com/watch?v=7t2alSnE2-I', type: 'video' },
 ],
+'oop-ai': [
+  { title: 'Python OOP Tutorial — Real Python', url: 'https://realpython.com/python3-object-oriented-programming/', type: 'article' },
+  { title: 'Object-Oriented Programming in Python', url: 'https://www.geeksforgeeks.org/python-oops-concepts/', type: 'article' },
+  { title: 'CS50 OOP Lecture', url: 'https://cs50.harvard.edu/python/', type: 'course' },
+],
+
+'linux-ai': [
+  { title: 'Linux Journey', url: 'https://linuxjourney.com/', type: 'interactive' },
+  { title: 'The Linux Command Line', url: 'https://linuxcommand.org/tlcl.php', type: 'book' },
+  { title: 'Missing Semester — MIT', url: 'https://missing.csail.mit.edu/', type: 'course' },
+],
+
+'rest-ai': [
+  { title: 'REST API Tutorial', url: 'https://restfulapi.net/', type: 'docs' },
+  { title: 'What is REST?', url: 'https://aws.amazon.com/what-is/restful-api/', type: 'article' },
+  { title: 'Build APIs with Python', url: 'https://fastapi.tiangolo.com/tutorial/', type: 'docs' },
+],
+
+'fastapi-ai': [
+  { title: 'FastAPI Official Docs', url: 'https://fastapi.tiangolo.com/', type: 'docs' },
+  { title: 'FastAPI Full Course', url: 'https://www.youtube.com/watch?v=0sOvCWFmrtA', type: 'video' },
+  { title: 'FastAPI Best Practices', url: 'https://github.com/zhanymkanov/fastapi-best-practices', type: 'github' },
+],
+
+'async-ai': [
+  { title: 'Async IO in Python', url: 'https://docs.python.org/3/library/asyncio.html', type: 'docs' },
+  { title: 'Async Programming Tutorial', url: 'https://realpython.com/async-io-python/', type: 'article' },
+  { title: 'Python Asyncio Course', url: 'https://www.youtube.com/watch?v=t5Bo1Je9EmE', type: 'video' },
+],
+
+'websocket-ai': [
+  { title: 'FastAPI WebSockets', url: 'https://fastapi.tiangolo.com/advanced/websockets/', type: 'docs' },
+  { title: 'WebSockets Explained', url: 'https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API', type: 'docs' },
+  { title: 'Realtime Chat App Tutorial', url: 'https://www.youtube.com/watch?v=1BfCnjr_Vjg', type: 'video' },
+],
+
+'checkpoint-api-ai': [
+  { title: 'Build an AI Chat Backend', url: 'https://github.com/openai/openai-quickstart-python', type: 'github' },
+  { title: 'FastAPI Production Guide', url: 'https://testdriven.io/blog/fastapi-docker-traefik/', type: 'article' },
+  { title: 'Streaming Responses in FastAPI', url: 'https://fastapi.tiangolo.com/advanced/custom-response/', type: 'docs' },
+],
+
+'llm-basics-ai': [
+  { title: 'Introduction to LLMs — Google', url: 'https://www.cloudskillsboost.google/course_templates/539', type: 'course' },
+  { title: 'LLM University', url: 'https://github.com/mlabonne/llm-course', type: 'github' },
+  { title: 'Hugging Face LLM Course', url: 'https://huggingface.co/learn/llm-course/chapter1/1', type: 'course' },
+  { title: 'How GPT Works', url: 'https://www.youtube.com/watch?v=wjZofJX0v4M', type: 'video' },
+],
+
+'transformers-ai': [
+  { title: 'Hugging Face Transformers', url: 'https://huggingface.co/docs/transformers/index', type: 'docs' },
+  { title: 'Illustrated Transformer', url: 'https://jalammar.github.io/illustrated-transformer/', type: 'article' },
+  { title: 'Attention Is All You Need', url: 'https://arxiv.org/abs/1706.03762', type: 'paper' },
+],
+
+'tokens-ai': [
+  { title: 'OpenAI Tokenizer', url: 'https://platform.openai.com/tokenizer', type: 'tool' },
+  { title: 'TikToken Guide', url: 'https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken', type: 'docs' },
+  { title: 'Tokenization Explained', url: 'https://huggingface.co/docs/tokenizers/index', type: 'docs' },
+],
+
+'embeddings-ai': [
+  { title: 'OpenAI Embeddings Guide', url: 'https://platform.openai.com/docs/guides/embeddings', type: 'docs' },
+  { title: 'Embeddings Explained', url: 'https://www.deeplearning.ai/short-courses/vector-databases-embeddings-applications/', type: 'course' },
+  { title: 'Sentence Transformers', url: 'https://www.sbert.net/', type: 'docs' },
+],
+
+'semantic-search-ai': [
+  { title: 'Semantic Search Guide', url: 'https://www.pinecone.io/learn/semantic-search/', type: 'article' },
+  { title: 'Weaviate Semantic Search', url: 'https://weaviate.io/developers/weaviate/search/semantic-search', type: 'docs' },
+  { title: 'Vector Search Explained', url: 'https://www.youtube.com/watch?v=sNa_uiqSlJo', type: 'video' },
+],
+
+'vector-db-ai': [
+  { title: 'Pinecone Docs', url: 'https://docs.pinecone.io/', type: 'docs' },
+  { title: 'Weaviate Docs', url: 'https://weaviate.io/developers/weaviate', type: 'docs' },
+  { title: 'ChromaDB Documentation', url: 'https://docs.trychroma.com/', type: 'docs' },
+  { title: 'FAISS Library', url: 'https://github.com/facebookresearch/faiss', type: 'github' },
+],
+
+'hybrid-search-ai': [
+  { title: 'Hybrid Search Explained', url: 'https://www.pinecone.io/learn/hybrid-search/', type: 'article' },
+  { title: 'BM25 Explained', url: 'https://www.elastic.co/what-is/bm25', type: 'article' },
+  { title: 'Advanced Retrieval Techniques', url: 'https://docs.cohere.com/docs/retrieval', type: 'docs' },
+],
+
+'prompt-ai': [
+  { title: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering', type: 'docs' },
+  { title: 'DeepLearning.AI Prompt Engineering', url: 'https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/', type: 'course' },
+  { title: 'Prompting Guide', url: 'https://www.promptingguide.ai/', type: 'docs' },
+],
+
+'structured-output-ai': [
+  { title: 'Structured Outputs — OpenAI', url: 'https://platform.openai.com/docs/guides/structured-outputs', type: 'docs' },
+  { title: 'JSON Mode Explained', url: 'https://platform.openai.com/docs/guides/text-generation/json-mode', type: 'docs' },
+  { title: 'Pydantic AI', url: 'https://ai.pydantic.dev/', type: 'docs' },
+],
+
+'function-calling-ai': [
+  { title: 'Function Calling — OpenAI', url: 'https://platform.openai.com/docs/guides/function-calling', type: 'docs' },
+  { title: 'Tools and Function Calling', url: 'https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models', type: 'docs' },
+  { title: 'Function Calling Tutorial', url: 'https://www.youtube.com/watch?v=0lOSvOoF2to', type: 'video' },
+],
+
+'tool-calling-ai': [
+  { title: 'LangChain Tool Calling', url: 'https://python.langchain.com/docs/modules/agents/tools/', type: 'docs' },
+  { title: 'Building AI Agents with Tools', url: 'https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/', type: 'course' },
+  { title: 'OpenAI Agents SDK', url: 'https://openai.github.io/openai-agents-python/', type: 'docs' },
+],
+
+'mcp-ai': [
+  { title: 'Model Context Protocol Docs', url: 'https://modelcontextprotocol.io/', type: 'docs' },
+  { title: 'MCP Introduction', url: 'https://www.anthropic.com/news/model-context-protocol', type: 'article' },
+  { title: 'Build MCP Servers', url: 'https://github.com/modelcontextprotocol', type: 'github' },
+],
+
+'rag-ai': [
+  { title: 'RAG from Scratch', url: 'https://github.com/langchain-ai/rag-from-scratch', type: 'github' },
+  { title: 'Advanced RAG', url: 'https://www.deeplearning.ai/short-courses/advanced-retrieval-for-ai/', type: 'course' },
+  { title: 'RAG Explained', url: 'https://www.pinecone.io/learn/retrieval-augmented-generation/', type: 'article' },
+],
+
+'chunking-ai': [
+  { title: 'Chunking Strategies for RAG', url: 'https://www.pinecone.io/learn/chunking-strategies/', type: 'article' },
+  { title: 'Text Splitters — LangChain', url: 'https://python.langchain.com/docs/modules/data_connection/document_transformers/', type: 'docs' },
+  { title: 'RAG Chunking Guide', url: 'https://weaviate.io/blog/chunking-strategies-for-rag', type: 'article' },
+],
+
+'retrieval-ai': [
+  { title: 'Retrieval Optimization', url: 'https://docs.cohere.com/docs/retrieval', type: 'docs' },
+  { title: 'RAG Best Practices', url: 'https://platform.openai.com/docs/guides/rag', type: 'docs' },
+  { title: 'Advanced Retrieval', url: 'https://www.pinecone.io/learn/series/rag/', type: 'article' },
+],
+
+'reranking-ai': [
+  { title: 'Cohere Rerank API', url: 'https://docs.cohere.com/docs/rerank-overview', type: 'docs' },
+  { title: 'Reranking Explained', url: 'https://www.pinecone.io/learn/series/rag/rerankers/', type: 'article' },
+  { title: 'Cross Encoder Models', url: 'https://www.sbert.net/examples/cross_encoder/applications/README.html', type: 'docs' },
+],
+
+'memory-ai': [
+  { title: 'Conversation Memory in LangChain', url: 'https://python.langchain.com/docs/modules/memory/', type: 'docs' },
+  { title: 'Long-term Memory for Agents', url: 'https://www.youtube.com/watch?v=2xxziIWmaSA', type: 'video' },
+  { title: 'Memory Systems in AI Agents', url: 'https://www.pinecone.io/learn/series/langchain/langchain-conversational-memory/', type: 'article' },
+
+],
+'agents-ai': [
+  { title: 'LangChain Agents', url: 'https://python.langchain.com/docs/modules/agents/', type: 'docs' },
+  { title: 'OpenAI Agents SDK', url: 'https://openai.github.io/openai-agents-python/', type: 'docs' },
+  { title: 'CrewAI Documentation', url: 'https://docs.crewai.com/', type: 'docs' },
+  { title: 'Building AI Agents', url: 'https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/', type: 'course' },
+  { title: 'AI Agents Explained', url: 'https://www.youtube.com/watch?v=F8NKVhkZZWI', type: 'video' },
+],
+
+'multi-agent-ai': [
+  { title: 'Microsoft AutoGen', url: 'https://microsoft.github.io/autogen/', type: 'docs' },
+  { title: 'CrewAI Multi-Agent Systems', url: 'https://docs.crewai.com/concepts/agents', type: 'docs' },
+  { title: 'Multi-Agent AI Systems', url: 'https://www.youtube.com/watch?v=sal78ACtGTc', type: 'video' },
+  { title: 'Autonomous Agents Research', url: 'https://arxiv.org/abs/2308.08155', type: 'paper' },
+],
+
+'workflow-ai': [
+  { title: 'LangGraph Documentation', url: 'https://langchain-ai.github.io/langgraph/', type: 'docs' },
+  { title: 'Build AI Workflows', url: 'https://www.deeplearning.ai/short-courses/langgraph-for-llm-application-development/', type: 'course' },
+  { title: 'n8n AI Automation', url: 'https://docs.n8n.io/', type: 'docs' },
+  { title: 'AI Workflow Orchestration', url: 'https://www.youtube.com/watch?v=jGg_1h0qzaM', type: 'video' },
+],
+
+'open-llm-ai': [
+  { title: 'Hugging Face Models', url: 'https://huggingface.co/models', type: 'docs' },
+  { title: 'Open LLM Leaderboard', url: 'https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard', type: 'tool' },
+  { title: 'Llama Documentation', url: 'https://www.llama.com/docs/', type: 'docs' },
+  { title: 'Mistral AI Docs', url: 'https://docs.mistral.ai/', type: 'docs' },
+  { title: 'Run Open Source LLMs', url: 'https://www.youtube.com/watch?v=GWB9ApTPTv4', type: 'video' },
+],
+
+'ollama-ai': [
+  { title: 'Ollama Official Docs', url: 'https://ollama.com/library', type: 'docs' },
+  { title: 'Run LLMs Locally with Ollama', url: 'https://github.com/ollama/ollama', type: 'github' },
+  { title: 'Ollama Tutorial', url: 'https://www.youtube.com/watch?v=UtSSMs6ObqY', type: 'video' },
+  { title: 'Ollama + LangChain', url: 'https://python.langchain.com/docs/integrations/llms/ollama/', type: 'docs' },
+],
+
+'vllm-ai': [
+  { title: 'vLLM Documentation', url: 'https://docs.vllm.ai/', type: 'docs' },
+  { title: 'vLLM GitHub Repository', url: 'https://github.com/vllm-project/vllm', type: 'github' },
+  { title: 'Fast LLM Inference with vLLM', url: 'https://www.anyscale.com/blog/continuous-batching-llm-inference', type: 'article' },
+  { title: 'vLLM Tutorial', url: 'https://www.youtube.com/watch?v=8u3Vf4xkxwA', type: 'video' },
+],
+
+'quantization-ai': [
+  { title: 'Quantization — Hugging Face', url: 'https://huggingface.co/docs/transformers/main/en/quantization', type: 'docs' },
+  { title: 'LLM Quantization Explained', url: 'https://www.youtube.com/watch?v=XpoKB3usmKc', type: 'video' },
+  { title: 'bitsandbytes', url: 'https://github.com/TimDettmers/bitsandbytes', type: 'github' },
+  { title: 'GPTQ Quantization Guide', url: 'https://huggingface.co/blog/gptq-integration', type: 'article' },
+],
+
+'lora-ai': [
+  { title: 'LoRA Paper', url: 'https://arxiv.org/abs/2106.09685', type: 'paper' },
+  { title: 'PEFT Documentation', url: 'https://huggingface.co/docs/peft/index', type: 'docs' },
+  { title: 'Fine-tuning LLMs with LoRA', url: 'https://www.deeplearning.ai/short-courses/finetuning-large-language-models/', type: 'course' },
+  { title: 'QLoRA Explained', url: 'https://www.youtube.com/watch?v=t8Y_SpD5DkY', type: 'video' },
+],
+
+'monitoring-ai': [
+  { title: 'LangSmith Documentation', url: 'https://docs.smith.langchain.com/', type: 'docs' },
+  { title: 'Weights & Biases', url: 'https://wandb.ai/site', type: 'tool' },
+  { title: 'OpenTelemetry Docs', url: 'https://opentelemetry.io/docs/', type: 'docs' },
+  { title: 'Monitoring LLM Applications', url: 'https://www.pinecone.io/learn/llm-observability/', type: 'article' },
+],
+
+'evaluation-ai': [
+  { title: 'OpenAI Evals', url: 'https://github.com/openai/evals', type: 'github' },
+  { title: 'DeepEval Framework', url: 'https://docs.confident-ai.com/', type: 'docs' },
+  { title: 'RAG Evaluation Guide', url: 'https://docs.ragas.io/', type: 'docs' },
+  { title: 'LLM Evaluation Explained', url: 'https://www.youtube.com/watch?v=CYk8oQ2A21U', type: 'video' },
+],
+
+'safety-ai': [
+  { title: 'OpenAI Safety Best Practices', url: 'https://platform.openai.com/docs/guides/safety-best-practices', type: 'docs' },
+  { title: 'Guardrails AI', url: 'https://www.guardrailsai.com/', type: 'tool' },
+  { title: 'OWASP Top 10 for LLMs', url: 'https://owasp.org/www-project-top-10-for-large-language-model-applications/', type: 'docs' },
+  { title: 'AI Safety Fundamentals', url: 'https://course.elementsofai.com/', type: 'course' },
+],
 
 
 // ─── Machine Learning Engineer ───
@@ -398,6 +622,258 @@ const RESOURCES = {
   { title: 'MLflow Docs', url: 'https://mlflow.org/docs/latest/index.html', type: 'docs' },
   { title: 'FastAPI Documentation', url: 'https://fastapi.tiangolo.com/', type: 'docs' },
   { title: 'Deploy ML Models to Production', url: 'https://www.coursera.org/learn/introduction-to-machine-learning-in-production', type: 'course' },
+],
+'oop-ml': [
+  { title: 'Python OOP Tutorial — Real Python', url: 'https://realpython.com/python3-object-oriented-programming/', type: 'article' },
+  { title: 'Python OOP — GeeksforGeeks', url: 'https://www.geeksforgeeks.org/python-oops-concepts/', type: 'article' },
+  { title: 'Object-Oriented Programming in Python', url: 'https://www.youtube.com/watch?v=Ej_02ICOIgs', type: 'video' },
+],
+
+'git-ml': [
+  { title: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/', type: 'docs' },
+  { title: 'Learn Git Branching', url: 'https://learngitbranching.js.org/', type: 'interactive' },
+  { title: 'Git Official Docs', url: 'https://git-scm.com/doc', type: 'docs' },
+  { title: 'Atlassian Git Tutorials', url: 'https://www.atlassian.com/git/tutorials', type: 'article' },
+],
+
+'linux-ml': [
+  { title: 'Linux Journey', url: 'https://linuxjourney.com/', type: 'interactive' },
+  { title: 'The Linux Command Line', url: 'https://linuxcommand.org/tlcl.php', type: 'book' },
+  { title: 'Missing Semester — MIT', url: 'https://missing.csail.mit.edu/', type: 'course' },
+],
+
+'linear-algebra-ml': [
+  { title: 'MIT Linear Algebra', url: 'https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/', type: 'course' },
+  { title: 'Essence of Linear Algebra', url: 'https://www.youtube.com/watch?v=fNk_zzaMoSs', type: 'video' },
+  { title: 'Linear Algebra — Khan Academy', url: 'https://www.khanacademy.org/math/linear-algebra', type: 'course' },
+],
+
+'calculus-ml': [
+  { title: 'Calculus 1 — Khan Academy', url: 'https://www.khanacademy.org/math/calculus-1', type: 'course' },
+  { title: 'Essence of Calculus', url: 'https://www.youtube.com/watch?v=WUvTyaaNkzM', type: 'video' },
+  { title: 'MIT Single Variable Calculus', url: 'https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/', type: 'course' },
+],
+
+'probability-ml': [
+  { title: 'Probability and Statistics — Khan Academy', url: 'https://www.khanacademy.org/math/statistics-probability/probability-library', type: 'course' },
+  { title: 'Introduction to Probability', url: 'https://projects.iq.harvard.edu/stat110', type: 'course' },
+  { title: 'StatQuest Probability', url: 'https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF', type: 'video' },
+],
+
+'optimization-ml': [
+  { title: 'Optimization for Machine Learning', url: 'https://www.coursera.org/learn/machine-learning-optimization', type: 'course' },
+  { title: 'Gradient Descent Explained', url: 'https://www.youtube.com/watch?v=sDv4f4s2SB8', type: 'video' },
+  { title: 'Convex Optimization Book', url: 'https://web.stanford.edu/~boyd/cvxbook/', type: 'book' },
+],
+
+'pandas-ml': [
+  { title: '10 Minutes to Pandas', url: 'https://pandas.pydata.org/docs/user_guide/10min.html', type: 'docs' },
+  { title: 'Pandas User Guide', url: 'https://pandas.pydata.org/docs/user_guide/index.html', type: 'docs' },
+  { title: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas', type: 'course' },
+],
+
+'sql-ml': [
+  { title: 'SQLBolt', url: 'https://sqlbolt.com/', type: 'interactive' },
+  { title: 'Mode SQL Tutorial', url: 'https://mode.com/sql-tutorial/', type: 'course' },
+  { title: 'SQL for Data Science', url: 'https://www.coursera.org/learn/sql-for-data-science', type: 'course' },
+],
+
+'data-cleaning-ml': [
+  { title: 'Data Cleaning — Kaggle', url: 'https://www.kaggle.com/learn/data-cleaning', type: 'course' },
+  { title: 'Cleaning Data in Python', url: 'https://realpython.com/python-data-cleaning-numpy-pandas/', type: 'article' },
+  { title: 'Pandas Missing Data Guide', url: 'https://pandas.pydata.org/docs/user_guide/missing_data.html', type: 'docs' },
+],
+
+'eda-ml': [
+  { title: 'EDA with Python', url: 'https://www.kaggle.com/learn/data-visualization', type: 'course' },
+  { title: 'Exploratory Data Analysis Guide', url: 'https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15', type: 'article' },
+  { title: 'EDA Tutorial', url: 'https://www.youtube.com/watch?v=xi0vhXFPegw', type: 'video' },
+],
+
+'data-vis-ml': [
+  { title: 'Matplotlib Tutorials', url: 'https://matplotlib.org/stable/tutorials/index.html', type: 'docs' },
+  { title: 'Seaborn Tutorial', url: 'https://seaborn.pydata.org/tutorial.html', type: 'docs' },
+  { title: 'Plotly Python Docs', url: 'https://plotly.com/python/', type: 'docs' },
+],
+
+'checkpoint-data-ml': [
+  { title: 'Data Analysis Portfolio Projects', url: 'https://www.kaggle.com/datasets', type: 'practice' },
+  { title: 'Python Data Science Handbook', url: 'https://jakevdp.github.io/PythonDataScienceHandbook/', type: 'book' },
+  { title: 'EDA Project Ideas', url: 'https://www.projectpro.io/article/exploratory-data-analysis-projects/510', type: 'project' },
+],
+
+'ml-fundamentals-ml': [
+  { title: 'Machine Learning — Andrew Ng', url: 'https://www.coursera.org/learn/machine-learning', type: 'course' },
+  { title: 'Google ML Crash Course', url: 'https://developers.google.com/machine-learning/crash-course', type: 'course' },
+  { title: 'Hands-On ML with Scikit-Learn', url: 'https://github.com/ageron/handson-ml3', type: 'book' },
+],
+
+'regression-ml': [
+  { title: 'Linear Regression Explained', url: 'https://www.youtube.com/watch?v=nk2CQITm_eo', type: 'video' },
+  { title: 'Regression — Scikit-learn', url: 'https://scikit-learn.org/stable/supervised_learning.html#supervised-learning', type: 'docs' },
+  { title: 'Regression Tutorial', url: 'https://developers.google.com/machine-learning/crash-course/linear-regression', type: 'course' },
+],
+
+'classification-ml': [
+  { title: 'Classification — Google ML Crash Course', url: 'https://developers.google.com/machine-learning/crash-course/classification', type: 'course' },
+  { title: 'Classification Models — Scikit-learn', url: 'https://scikit-learn.org/stable/supervised_learning.html#supervised-learning', type: 'docs' },
+  { title: 'Logistic Regression Explained', url: 'https://www.youtube.com/watch?v=yIYKR4sgzI8', type: 'video' },
+],
+
+'tree-models-ml': [
+  { title: 'Decision Trees — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/tree.html', type: 'docs' },
+  { title: 'Random Forest Explained', url: 'https://www.youtube.com/watch?v=J4Wdy0Wc_xQ', type: 'video' },
+  { title: 'Tree-Based Models', url: 'https://developers.google.com/machine-learning/decision-forests', type: 'course' },
+],
+
+'boosting-ml': [
+  { title: 'Gradient Boosting — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/ensemble.html#gradient-tree-boosting', type: 'docs' },
+  { title: 'Boosting Algorithms Explained', url: 'https://www.youtube.com/watch?v=GM3CDQfQ4sw', type: 'video' },
+  { title: 'Boosting Guide', url: 'https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/', type: 'article' },
+],
+
+'xgboost-ml': [
+  { title: 'XGBoost Documentation', url: 'https://xgboost.readthedocs.io/', type: 'docs' },
+  { title: 'LightGBM Documentation', url: 'https://lightgbm.readthedocs.io/', type: 'docs' },
+  { title: 'XGBoost Tutorial', url: 'https://www.kaggle.com/learn/intermediate-machine-learning', type: 'course' },
+],
+
+'svm-ml': [
+  { title: 'SVM — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/svm.html', type: 'docs' },
+  { title: 'Support Vector Machines Explained', url: 'https://www.youtube.com/watch?v=efR1C6CvhmE', type: 'video' },
+  { title: 'SVM Tutorial', url: 'https://www.ibm.com/topics/support-vector-machine', type: 'article' },
+],
+
+'clustering-ml': [
+  { title: 'Clustering — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/clustering.html', type: 'docs' },
+  { title: 'K-Means Clustering Explained', url: 'https://www.youtube.com/watch?v=4b5d3muPQmA', type: 'video' },
+  { title: 'Clustering in Machine Learning', url: 'https://developers.google.com/machine-learning/clustering', type: 'course' },
+],
+
+'dim-reduction-ml': [
+  { title: 'PCA Explained', url: 'https://www.youtube.com/watch?v=FgakZw6K1QQ', type: 'video' },
+  { title: 'Dimensionality Reduction — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/decomposition.html', type: 'docs' },
+  { title: 't-SNE and PCA Guide', url: 'https://towardsdatascience.com/an-introduction-to-t-sne-with-python-example-5a3a293108d1', type: 'article' },
+],
+
+'feature-eng-ml': [
+  { title: 'Feature Engineering — Kaggle', url: 'https://www.kaggle.com/learn/feature-engineering', type: 'course' },
+  { title: 'Feature Engineering for ML', url: 'https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/', type: 'book' },
+  { title: 'Feature Engineering Guide', url: 'https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/', type: 'article' },
+],
+
+'feature-selection-ml': [
+  { title: 'Feature Selection — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/feature_selection.html', type: 'docs' },
+  { title: 'Feature Selection Explained', url: 'https://www.youtube.com/watch?v=xlHk4okO8Ls', type: 'video' },
+  { title: 'Feature Selection Techniques', url: 'https://machinelearningmastery.com/feature-selection-with-real-and-categorical-data/', type: 'article' },
+],
+
+'model-eval-ml': [
+  { title: 'Model Evaluation — Scikit-learn', url: 'https://scikit-learn.org/stable/model_evaluation.html', type: 'docs' },
+  { title: 'Precision Recall F1 Guide', url: 'https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall', type: 'article' },
+  { title: 'Confusion Matrix Explained', url: 'https://www.youtube.com/watch?v=Kdsp6soqA7o', type: 'video' },
+],
+
+'cross-validation-ml': [
+  { title: 'Cross Validation — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/cross_validation.html', type: 'docs' },
+  { title: 'Cross Validation Explained', url: 'https://www.youtube.com/watch?v=fSytzGwwBVw', type: 'video' },
+  { title: 'K-Fold Validation Guide', url: 'https://machinelearningmastery.com/k-fold-cross-validation/', type: 'article' },
+],
+
+'hyperparameter-ml': [
+  { title: 'Hyperparameter Tuning — Scikit-learn', url: 'https://scikit-learn.org/stable/modules/grid_search.html', type: 'docs' },
+  { title: 'Optuna Documentation', url: 'https://optuna.org/', type: 'docs' },
+  { title: 'Random Search vs Grid Search', url: 'https://www.youtube.com/watch?v=HdlDYng8g9s', type: 'video' },
+],
+
+'sklearn-ml': [
+  { title: 'Scikit-learn Tutorials', url: 'https://scikit-learn.org/stable/tutorial/', type: 'docs' },
+  { title: 'Scikit-learn User Guide', url: 'https://scikit-learn.org/stable/user_guide.html', type: 'docs' },
+  { title: 'Machine Learning with Scikit-learn', url: 'https://www.kaggle.com/learn/intro-to-machine-learning', type: 'course' },
+],
+
+'checkpoint-ml-system': [
+  { title: 'Machine Learning Engineering for Production', url: 'https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops', type: 'course' },
+  { title: 'End-to-End ML Projects', url: 'https://github.com/ageron/handson-ml3', type: 'project' },
+  { title: 'Awesome ML Projects', url: 'https://github.com/topics/machine-learning-project', type: 'github' },
+],
+
+'deep-learning-ml': [
+  { title: 'Deep Learning Specialization', url: 'https://www.coursera.org/specializations/deep-learning', type: 'course' },
+  { title: 'Deep Learning Book', url: 'https://www.deeplearningbook.org/', type: 'book' },
+  { title: '3Blue1Brown Neural Networks', url: 'https://www.youtube.com/watch?v=aircAruvnKk', type: 'video' },
+],
+
+'neural-networks-ml': [
+  { title: 'Neural Networks and Deep Learning', url: 'http://neuralnetworksanddeeplearning.com/', type: 'book' },
+  { title: 'Neural Networks Explained', url: 'https://www.youtube.com/watch?v=bfmFfD2RIcg', type: 'video' },
+  { title: 'PyTorch Neural Network Tutorial', url: 'https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html', type: 'docs' },
+],
+
+'cnn-ml': [
+  { title: 'CNN Explained — Stanford', url: 'https://cs231n.github.io/convolutional-networks/', type: 'course' },
+  { title: 'Convolutional Neural Networks', url: 'https://www.youtube.com/watch?v=YRhxdVk_sIs', type: 'video' },
+  { title: 'TensorFlow CNN Tutorial', url: 'https://www.tensorflow.org/tutorials/images/cnn', type: 'docs' },
+],
+
+'computer-vision-ml': [
+  { title: 'OpenCV Tutorials', url: 'https://docs.opencv.org/master/d9/df8/tutorial_root.html', type: 'docs' },
+  { title: 'Computer Vision Crash Course', url: 'https://www.youtube.com/watch?v=WQeoO7MI0Bs', type: 'video' },
+  { title: 'CS231n Stanford', url: 'https://cs231n.stanford.edu/', type: 'course' },
+],
+
+'rnn-ml': [
+  { title: 'RNN & LSTM Explained', url: 'https://colah.github.io/posts/2015-08-Understanding-LSTMs/', type: 'article' },
+  { title: 'Sequence Models — DeepLearning.AI', url: 'https://www.coursera.org/learn/nlp-sequence-models', type: 'course' },
+  { title: 'LSTM Tutorial', url: 'https://www.youtube.com/watch?v=YCzL96nL7j0', type: 'video' },
+],
+
+'nlp-ml': [
+  { title: 'Hugging Face NLP Course', url: 'https://huggingface.co/learn/nlp-course/chapter1/1', type: 'course' },
+  { title: 'Natural Language Processing Specialization', url: 'https://www.coursera.org/specializations/natural-language-processing', type: 'course' },
+  { title: 'spaCy Documentation', url: 'https://spacy.io/usage', type: 'docs' },
+],
+
+'tensorflow-ml': [
+  { title: 'TensorFlow Tutorials', url: 'https://www.tensorflow.org/tutorials', type: 'docs' },
+  { title: 'TensorFlow Guide', url: 'https://www.tensorflow.org/guide', type: 'docs' },
+  { title: 'TensorFlow in Practice', url: 'https://www.coursera.org/professional-certificates/tensorflow-in-practice', type: 'course' },
+],
+
+'pytorch-ml': [
+  { title: 'PyTorch Tutorials', url: 'https://pytorch.org/tutorials/', type: 'docs' },
+  { title: 'Learn PyTorch', url: 'https://www.learnpytorch.io/', type: 'course' },
+  { title: 'Official PyTorch Examples', url: 'https://github.com/pytorch/examples', type: 'github' },
+],
+
+'docker-ml': [
+  { title: 'Docker Getting Started', url: 'https://docs.docker.com/get-started/', type: 'docs' },
+  { title: 'Docker for ML', url: 'https://www.youtube.com/watch?v=fqMOX6JJhGo', type: 'video' },
+  { title: 'Docker Deep Dive', url: 'https://docker-curriculum.com/', type: 'course' },
+],
+
+'deployment-ml': [
+  { title: 'Deploy ML Models with FastAPI', url: 'https://www.youtube.com/watch?v=7t2alSnE2-I', type: 'video' },
+  { title: 'MLflow Documentation', url: 'https://mlflow.org/docs/latest/index.html', type: 'docs' },
+  { title: 'Introduction to ML in Production', url: 'https://www.coursera.org/learn/introduction-to-machine-learning-in-production', type: 'course' },
+],
+
+'cloud-ml': [
+  { title: 'AWS Machine Learning', url: 'https://aws.amazon.com/machine-learning/', type: 'docs' },
+  { title: 'Google Cloud ML', url: 'https://cloud.google.com/learn/training/machinelearning-ai', type: 'course' },
+  { title: 'Azure ML Documentation', url: 'https://learn.microsoft.com/en-us/azure/machine-learning/', type: 'docs' },
+],
+
+'mlops-ml': [
+  { title: 'Made With ML', url: 'https://madewithml.com/', type: 'course' },
+  { title: 'Full Stack Deep Learning', url: 'https://fullstackdeeplearning.com/', type: 'course' },
+  { title: 'MLOps Guide', url: 'https://neptune.ai/blog/mlops', type: 'article' },
+],
+
+'monitoring-ml': [
+  { title: 'Evidently AI Docs', url: 'https://docs.evidentlyai.com/', type: 'docs' },
+  { title: 'ML Monitoring Guide', url: 'https://neptune.ai/blog/ml-model-monitoring', type: 'article' },
+  { title: 'Data Drift Explained', url: 'https://www.youtube.com/watch?v=tFfTludf0SU', type: 'video' },
 ],
 
   // ─── Skill paths shared ───
