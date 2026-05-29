@@ -9,12 +9,17 @@ const RESOURCES = {
     { title: 'MDN — HTML Basics', url: 'https://developer.mozilla.org/en-US/docs/Learn/HTML', type: 'docs' },
     { title: 'W3Schools HTML Tutorial', url: 'https://www.w3schools.com/html/', type: 'course' },
     { title: 'HTML Crash Course — Traversy Media', url: 'https://www.youtube.com/watch?v=UB1O30fR-EE', type: 'video' },
+    { title: 'HTML Roadmap', url: 'https://roadmap.sh/html', type: 'docs' },
+    { title: 'HTML Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/html', type: 'docs' },
   ],
   css: [
     { title: 'MDN — CSS First Steps', url: 'https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps', type: 'docs' },
     { title: 'CSS-Tricks — Complete Guide to Flexbox', url: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/', type: 'article' },
     { title: 'CSS Crash Course — Traversy Media', url: 'https://www.youtube.com/watch?v=yfoY53QXEnI', type: 'video' },
     { title: 'Learn CSS — web.dev', url: 'https://web.dev/learn/css', type: 'course' },
+    { title: 'CSS Roadmap', url: 'https://roadmap.sh/css', type: 'docs' },
+    { title: 'CSS Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/css-guide', type: 'docs' },
+    { title: 'Responsive Design - Roadmap.sh', url: 'https://roadmap.sh/guides/responsive-design', type: 'docs' },
   ],
   javascript: [
     { title: 'The Modern JavaScript Tutorial', url: 'https://javascript.info/', type: 'course' },
@@ -26,12 +31,17 @@ const RESOURCES = {
     { title: 'The Modern JavaScript Tutorial', url: 'https://javascript.info/', type: 'course' },
     { title: 'MDN — JavaScript Guide', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide', type: 'docs' },
     { title: 'freeCodeCamp — JavaScript', url: 'https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/', type: 'course' },
+    { title: 'JavaScript Roadmap', url: 'https://roadmap.sh/javascript', type: 'docs' },
+    { title: 'JavaScript Basics Guide', url: 'https://roadmap.sh/guides/javascript', type: 'docs' },
+    { title: 'JavaScript Best Practices', url: 'https://roadmap.sh/guides/javascript-best-practices', type: 'docs' },
   ],
 
   // ─── Checkpoints ───
   'cp-static': [
     { title: 'Build a Portfolio Website — freeCodeCamp', url: 'https://www.freecodecamp.org/learn/2022/responsive-web-design/', type: 'course' },
     { title: 'Frontend Mentor Challenges', url: 'https://www.frontendmentor.io/', type: 'course' },
+    { title: 'Building Your First Website', url: 'https://roadmap.sh/guides/how-does-internet-work', type: 'docs' },
+    { title: 'Frontend Projects', url: 'https://roadmap.sh/frontend/projects', type: 'docs' },
   ],
   'cp-interactivity': [
     { title: '30 Day Vanilla JS Challenge', url: 'https://javascript30.com/', type: 'course' },
@@ -54,6 +64,9 @@ const RESOURCES = {
     { title: 'React Official Docs', url: 'https://react.dev/learn', type: 'docs' },
     { title: 'Full React Course — freeCodeCamp', url: 'https://www.youtube.com/watch?v=bMknfKXIFA8', type: 'video' },
     { title: 'React Tutorial — W3Schools', url: 'https://www.w3schools.com/react/', type: 'course' },
+    { title: 'React Roadmap', url: 'https://roadmap.sh/react', type: 'docs' },
+    { title: 'React Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/react', type: 'docs' },
+    { title: 'React Best Practices', url: 'https://roadmap.sh/guides/react-best-practices', type: 'docs' },
   ],
   tailwind: [
     { title: 'Tailwind CSS Docs', url: 'https://tailwindcss.com/docs', type: 'docs' },
@@ -128,25 +141,103 @@ const RESOURCES = {
   // ─── Other paths shared nodes ───
   dom: [
     { title: 'MDN — DOM Introduction', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction', type: 'docs' },
+    { title: 'DOM API', url: 'https://developer.mozilla.org/en-US/docs/Web/API/DOM', type: 'docs' },
+    { title: 'DOM Manipulation', url: 'https://roadmap.sh/guides/dom-manipulation', type: 'docs' },
+    { title: 'JavaScript Events', url: 'https://developer.mozilla.org/en-US/docs/Web/Events', type: 'docs' },
   ],
   es6: [
     { title: 'ES6 Features Overview', url: 'https://es6-features.org/', type: 'article' },
     { title: 'JavaScript ES6 — freeCodeCamp', url: 'https://www.freecodecamp.org/news/write-less-do-more-with-javascript-es6-5fd4a8e50ee2/', type: 'article' },
+    { title: 'Modern JavaScript (ES6+)', url: 'https://roadmap.sh/guides/javascript-es6', type: 'docs' },
+    { title: 'Arrow Functions & Classes', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions', type: 'docs' },
+    { title: 'Async/Await & Promises', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises', type: 'docs' },
   ],
   'state-mgmt': [
     { title: 'Redux Official Tutorial', url: 'https://redux.js.org/tutorials/fundamentals/part-1-overview', type: 'docs' },
     { title: 'Zustand — Lightweight State', url: 'https://github.com/pmndrs/zustand', type: 'docs' },
+    { title: 'State Management Guide', url: 'https://roadmap.sh/guides/state-management', type: 'docs' },
+    { title: 'Context API vs Redux', url: 'https://roadmap.sh/guides/redux-vs-context-api', type: 'docs' },
   ],
   routing: [
     { title: 'React Router Docs', url: 'https://reactrouter.com/en/main/start/tutorial', type: 'docs' },
+    { title: 'React Router Guide', url: 'https://roadmap.sh/guides/react-router', type: 'docs' },
+    { title: 'Client-side Routing', url: 'https://developer.mozilla.org/en-US/docs/Glossary/SPA', type: 'docs' },
   ],
   testing: [
     { title: 'Jest Docs — Getting Started', url: 'https://jestjs.io/docs/getting-started', type: 'docs' },
     { title: 'React Testing Library', url: 'https://testing-library.com/docs/react-testing-library/intro/', type: 'docs' },
+    { title: 'Frontend Testing Guide', url: 'https://roadmap.sh/guides/frontend-testing', type: 'docs' },
+    { title: 'Playwright for E2E', url: 'https://playwright.dev', type: 'docs' },
   ],
   deploy: [
     { title: 'Vercel — Deploy in Seconds', url: 'https://vercel.com/docs', type: 'docs' },
     { title: 'Netlify Docs', url: 'https://docs.netlify.com/', type: 'docs' },
+    { title: 'Build Tools Guide', url: 'https://roadmap.sh/guides/webpack', type: 'docs' },
+    { title: 'Vite Documentation', url: 'https://vitejs.dev', type: 'docs' },
+    { title: 'Deployment Guide', url: 'https://roadmap.sh/guides/deployment', type: 'docs' },
+  ],
+
+  // ─── Additional Frontend Skills ───
+  sass: [
+    { title: 'Sass Official Docs', url: 'https://sass-lang.com/documentation', type: 'docs' },
+    { title: 'Sass Tutorial — W3Schools', url: 'https://www.w3schools.com/sass/', type: 'course' },
+    { title: 'Sass Crash Course — YouTube', url: 'https://www.youtube.com/watch?v=_a5j7M6GENERALM7Y', type: 'video' },
+    { title: 'SCSS Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/scss', type: 'docs' },
+  ],
+  git: [
+    { title: 'Pro Git Book (free)', url: 'https://git-scm.com/book/en/v2', type: 'docs' },
+    { title: 'Learn Git Branching (interactive)', url: 'https://learngitbranching.js.org/', type: 'course' },
+    { title: 'Git Tutorial for Beginners — freeCodeCamp', url: 'https://www.youtube.com/watch?v=RGOj5yH7evk', type: 'video' },
+    { title: 'Git Cheat Sheet — GitHub', url: 'https://education.github.com/git-cheat-sheet-education.pdf', type: 'article' },
+    { title: 'Version Control with Git - Roadmap.sh', url: 'https://roadmap.sh/guides/git', type: 'docs' },
+  ],
+  npm: [
+    { title: 'npm Docs — Getting Started', url: 'https://docs.npmjs.com/getting-started', type: 'docs' },
+    { title: 'What is npm? — freeCodeCamp', url: 'https://www.freecodecamp.org/news/what-is-npm/', type: 'article' },
+    { title: 'npm vs yarn — Comparison', url: 'https://www.youtube.com/watch?v=gNMhQP8K2F0', type: 'video' },
+    { title: 'Package Managers Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/package-managers', type: 'docs' },
+  ],
+  typescript: [
+    { title: 'TypeScript Official Docs', url: 'https://www.typescriptlang.org/docs/', type: 'docs' },
+    { title: 'TypeScript Course for Beginners', url: 'https://www.youtube.com/watch?v=BwuLSPajF40', type: 'video' },
+    { title: 'TypeScript Handbook', url: 'https://www.typescriptlang.org/docs/handbook/', type: 'course' },
+    { title: 'TypeScript Best Practices', url: 'https://roadmap.sh/guides/typescript', type: 'docs' },
+  ],
+  bootstrap: [
+    { title: 'Bootstrap Official Docs', url: 'https://getbootstrap.com/docs/', type: 'docs' },
+    { title: 'Bootstrap Tutorial — W3Schools', url: 'https://www.w3schools.com/bootstrap5/', type: 'course' },
+    { title: 'Bootstrap Crash Course — YouTube', url: 'https://www.youtube.com/watch?v=4sosXZsdy-s', type: 'video' },
+  ],
+  'rest-api': [
+    { title: 'RESTful API Design — Best Practices', url: 'https://restfulapi.net/', type: 'docs' },
+    { title: 'Fetch API — MDN', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API', type: 'docs' },
+    { title: 'Working with APIs in JavaScript', url: 'https://www.youtube.com/watch?v=cuEtnrL2-1E', type: 'video' },
+    { title: 'API Integration Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/rest-api', type: 'docs' },
+  ],
+  webpack: [
+    { title: 'Webpack Official Docs', url: 'https://webpack.js.org/concepts/', type: 'docs' },
+    { title: 'Webpack Crash Course — freeCodeCamp', url: 'https://www.youtube.com/watch?v=3On5Z85jD0o', type: 'video' },
+    { title: 'Build Tools Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/webpack', type: 'docs' },
+  ],
+  graphql: [
+    { title: 'GraphQL Official Docs', url: 'https://graphql.org/learn/', type: 'docs' },
+    { title: 'Apollo Client Tutorial', url: 'https://www.apollographql.com/docs/react/get-started/', type: 'course' },
+    { title: 'GraphQL Crash Course — YouTube', url: 'https://www.youtube.com/watch?v=7giZGFDGnMY', type: 'video' },
+  ],
+  'web-security': [
+    { title: 'OWASP Top 10 - Web Security', url: 'https://owasp.org/www-project-top-ten/', type: 'docs' },
+    { title: 'Web Security Basics — MDN', url: 'https://developer.mozilla.org/en-US/docs/Web/Security', type: 'docs' },
+    { title: 'Frontend Security Best Practices', url: 'https://www.youtube.com/watch?v=iLQp0XIPZzE', type: 'video' },
+  ],
+  performance: [
+    { title: 'Web Vitals Guide', url: 'https://web.dev/vitals/', type: 'docs' },
+    { title: 'Performance Optimization — MDN', url: 'https://developer.mozilla.org/en-US/docs/Web/Performance', type: 'docs' },
+    { title: 'Frontend Performance Optimization', url: 'https://www.youtube.com/watch?v=5fLW5Q5ODiE', type: 'video' },
+  ],
+  pwa: [
+    { title: 'Progressive Web Apps — MDN', url: 'https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps', type: 'docs' },
+    { title: 'PWA Tutorial — Google Developers', url: 'https://developers.google.com/web/progressive-web-apps', type: 'course' },
+    { title: 'PWA Crash Course — YouTube', url: 'https://www.youtube.com/watch?v=4XT23X0Zjak', type: 'video' },
   ],
 
   // ─── Backend path ───
@@ -234,45 +325,79 @@ const RESOURCES = {
   // ─── Skill paths shared ───
   jsx: [
     { title: 'React Docs — Writing Markup with JSX', url: 'https://react.dev/learn/writing-markup-with-jsx', type: 'docs' },
+    { title: 'JSX Guide - React.dev', url: 'https://react.dev/learn/writing-markup-with-jsx', type: 'docs' },
+    { title: 'JSX Deep Dive', url: 'https://roadmap.sh/guides/jsx', type: 'docs' },
   ],
   components: [
     { title: 'React Docs — Your First Component', url: 'https://react.dev/learn/your-first-component', type: 'docs' },
+    { title: 'React Components', url: 'https://react.dev/learn/your-first-component', type: 'docs' },
+    { title: 'Functional Components Guide', url: 'https://roadmap.sh/guides/react-components', type: 'docs' },
   ],
   props: [
     { title: 'React Docs — Passing Props', url: 'https://react.dev/learn/passing-props-to-a-component', type: 'docs' },
+    { title: 'React Props', url: 'https://react.dev/learn/passing-props-to-a-component', type: 'docs' },
+    { title: 'Props Best Practices', url: 'https://roadmap.sh/guides/react-props', type: 'docs' },
   ],
   state: [
     { title: 'React Docs — State', url: 'https://react.dev/learn/state-a-components-memory', type: 'docs' },
+    { title: 'React State', url: 'https://react.dev/learn/state-a-components-memory', type: 'docs' },
+    { title: 'Managing State', url: 'https://react.dev/learn/managing-state', type: 'docs' },
   ],
   hooks: [
     { title: 'React Docs — Hooks', url: 'https://react.dev/reference/react', type: 'docs' },
+    { title: 'React Hooks', url: 'https://react.dev/reference/react/hooks', type: 'docs' },
+    { title: 'Hooks Guide - Roadmap.sh', url: 'https://roadmap.sh/guides/react-hooks', type: 'docs' },
+    { title: 'useEffect Explained', url: 'https://react.dev/reference/react/useEffect', type: 'docs' },
   ],
   context: [
     { title: 'React Docs — Context', url: 'https://react.dev/learn/passing-data-deeply-with-context', type: 'docs' },
+    { title: 'Context API', url: 'https://react.dev/learn/passing-data-deeply-with-context', type: 'docs' },
+    { title: 'When to Use Context', url: 'https://react.dev/reference/react/useContext', type: 'docs' },
   ],
   effects: [
     { title: 'React Docs — Synchronizing with Effects', url: 'https://react.dev/learn/synchronizing-with-effects', type: 'docs' },
+    { title: 'Side Effects & useEffect', url: 'https://react.dev/learn/synchronizing-with-effects', type: 'docs' },
+    { title: 'Effect Cleanup', url: 'https://react.dev/learn/lifecycle-of-reactive-effect', type: 'docs' },
   ],
   patterns: [
     { title: 'React Patterns', url: 'https://www.patterns.dev/react', type: 'article' },
+    { title: 'Advanced React Patterns', url: 'https://roadmap.sh/guides/advanced-react-patterns', type: 'docs' },
+    { title: 'Compound Components', url: 'https://react.dev/learn', type: 'docs' },
+    { title: 'Render Props & HOCs', url: 'https://react.dev/learn/render-props', type: 'docs' },
   ],
   syntax: [
     { title: 'JavaScript.info — Fundamentals', url: 'https://javascript.info/first-steps', type: 'course' },
+    { title: 'JavaScript Basics', url: 'https://react.dev/learn/javascript', type: 'docs' },
+    { title: 'MDN JavaScript Guide', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide', type: 'docs' },
   ],
   types: [
     { title: 'MDN — Data Types', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', type: 'docs' },
+    { title: 'JavaScript Data Types', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', type: 'docs' },
+    { title: 'Type Coercion', url: 'https://roadmap.sh/guides/javascript-type-coercion', type: 'docs' },
   ],
   functions: [
     { title: 'MDN — Functions', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions', type: 'docs' },
+    { title: 'Functions', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions', type: 'docs' },
+    { title: 'Scope & Closures', url: 'https://roadmap.sh/guides/javascript-closures', type: 'docs' },
+    { title: 'This & Binding', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this', type: 'docs' },
   ],
   events: [
     { title: 'MDN — Events', url: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events', type: 'docs' },
+    { title: 'Event Handling', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Event', type: 'docs' },
+    { title: 'Event Delegation', url: 'https://roadmap.sh/guides/event-delegation', type: 'docs' },
+    { title: 'Event Loop', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop', type: 'docs' },
   ],
   async: [
     { title: 'JavaScript.info — Promises', url: 'https://javascript.info/promise-basics', type: 'course' },
+    { title: 'Promises', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise', type: 'docs' },
+    { title: 'Async/Await', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function', type: 'docs' },
+    { title: 'Async Programming Guide', url: 'https://roadmap.sh/guides/javascript-promises-async-await', type: 'docs' },
   ],
   modules: [
     { title: 'MDN — JavaScript Modules', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules', type: 'docs' },
+    { title: 'ES Modules', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules', type: 'docs' },
+    { title: 'Module Bundlers', url: 'https://roadmap.sh/guides/module-bundlers', type: 'docs' },
+    { title: 'npm & Package Management', url: 'https://roadmap.sh/guides/npm', type: 'docs' },
   ],
   basics: [
     { title: 'Getting Started Guide', url: 'https://roadmap.sh/', type: 'docs' },
