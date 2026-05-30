@@ -10,6 +10,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState('dashboard')
   const [selectedPathId, setSelectedPathId] = useState(null)
   const [selectedProjectId, setSelectedProjectId] = useState(null)
+  const [selectedProjectCategory, setSelectedProjectCategory] = useState('Frontend')
 
   const handleViewPath = (pathId) => {
     setSelectedPathId(pathId)
@@ -23,7 +24,8 @@ export default function App() {
     setSelectedProjectId(null)
   }
 
-  const handleViewProjects = () => {
+  const handleViewProjects = (category) => {
+    setSelectedProjectCategory(category || 'Frontend')
     setCurrentView('projects')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -81,7 +83,11 @@ export default function App() {
           <Journey onOpenPath={handleViewPath} />
         )}
         {currentView === 'projects' && (
-          <ProjectsPage onViewProject={handleViewProject} onBack={handleBackToDashboard} />
+          <ProjectsPage
+            onViewProject={handleViewProject}
+            onBack={handleBackToDashboard}
+            initialCategory={selectedProjectCategory}
+          />
         )}
         {currentView === 'project-detail' && (
           <ProjectDetail projectId={selectedProjectId} onBack={handleBackToProjects} />
