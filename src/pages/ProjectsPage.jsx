@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { getProjectsByCategory } from '../services/storage'
 import './ProjectsPage.css'
 
-const CATEGORIES = ['Frontend', 'Backend', 'DevOps']
+const CATEGORIES = ['Frontend', 'Backend', 'DevOps', 'Game Prototype', 'AI Opponent']
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced']
 
 const DIFF_LABELS = {
@@ -17,8 +17,11 @@ const DIFF_COLORS = {
   Advanced: '#ff5252'
 }
 
-export default function ProjectsPage({ onViewProject, onBack }) {
-  const [activeCategory, setActiveCategory] = useState('Frontend')
+export default function ProjectsPage({ onViewProject, onBack, initialCategory }) {
+  const [activeCategory, setActiveCategory] = useState(initialCategory || 'Frontend')
+  useEffect(() => {
+    if (initialCategory) setActiveCategory(initialCategory)
+  }, [initialCategory])
   const [activeDifficulties, setActiveDifficulties] = useState([])
 
   const toggleDifficulty = (d) => {

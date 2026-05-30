@@ -136,7 +136,45 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'mlops',       label: 'MLOps',               level: 7, type: 'skill', children: [] }
     ]
   },
+  {
+  id: 'gameplayprogrammer',
+  name: 'Gameplay Programmer',
+  category: 'role',
+  description: 'Lập trình gameplay, AI, combat system và các cơ chế hoạt động trong game.',
+  icon: '🎮',
+  color: '#89c2ff',
+  nodes: [
+    { id: 'gp-client',       label: 'Client Side Development',                 level: 0, type: 'skill', children: ['gp-math','gp-phy'] },
+    { id: 'gp-math',         label: 'Game Mathematics',                level: 1, type: 'skill', children: ['gp-engine'] },
+    { id: 'gp-phy',          label: 'Game Physics',                level: 1, type: 'skill', children: ['gp-engine'] },
+    { id: 'gp-engine',       label: 'Unity / Unreal Engine',    level: 2, type: 'skill', children: ['gp-cpp'] },
+    { id: 'gp-cpp',          label: 'Programming Languages',     level: 3, type: 'skill', children: ['gp-gra','gp-grap'] },
+    { id: 'gp-gra',          label: 'Computer Graphics',    level: 4, type: 'skill', children: ['gp-ai'] },
+    { id: 'gp-grap',         label: 'Graphics API',    level: 4, type: 'skill', children: ['gp-ai'] },
+    { id: 'gp-ai',           label: 'Game AI',        level: 5, type: 'skill', children: ['gp-optimization'] },
+    { id: 'gp-ren',          label: 'Advanced Rendering',   level: 6, type: 'skill', children: [] },
+    { id: 'gp-chk',          label: 'Checkpoint',   level: 7, type: 'checkpoint', children: [] },
+  ]
+},
 
+{
+  id: 'gamedesigner',
+  name: 'Game Designer',
+  category: 'role',
+  description: 'Thiết kế gameplay, level, mechanics và trải nghiệm người chơi.',
+  icon: '🕹️',
+  color: '#ffd6a5',
+  nodes: [
+    { id: 'gd-gamedesign',   label: 'Game Design Basics',       level: 0, type: 'skill', children: ['gd-mechanics'] },
+    { id: 'gd-mechanics',    label: 'Gameplay Mechanics',       level: 1, type: 'skill', children: ['gd-leveldesign'] },
+    { id: 'gd-leveldesign',  label: 'Level Design',             level: 2, type: 'skill', children: ['gd-storytelling'] },
+    { id: 'gd-storytelling', label: 'Storytelling & Narrative', level: 3, type: 'skill', children: ['gd-gdd'] },
+    { id: 'gd-gdd',          label: 'Game Design Document',     level: 4, type: 'skill', children: ['gd-balancing'] },
+    { id: 'gd-balancing',    label: 'Game Balancing',           level: 5, type: 'skill', children: ['gd-ux'] },
+    { id: 'gd-ux',           label: 'Player Experience (UX)',   level: 6, type: 'skill', children: ['gd-prototype'] },
+    { id: 'gd-prototype',    label: 'Prototype with Unity',     level: 7, type: 'skill', children: [] }
+  ]
+  },
   // ═══ SKILL-BASED ═══
   {
     id: 'react-skill',
@@ -258,9 +296,7 @@ const DEFAULT_CAREER_PATHS = [
 
 // ─── Initialization ────────────────────────────────────
 const initializeStorage = () => {
-  if (!localStorage.getItem(STORAGE_KEYS.CAREER_PATHS)) {
-    localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
-  }
+  localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
 }
 
 // ─── Career Paths CRUD ─────────────────────────────────
@@ -576,6 +612,54 @@ export const PROJECTS = [
       'Grafana dashboards display cluster and application metrics'
     ],
     started: 215
+  }
+  ,
+  // ═══ GAME PROJECTS ═══
+  {
+    id: 'game-prototype',
+    pathId: 'gameplayprogrammer',
+    category: 'Game Prototype',
+    difficulty: 'Intermediate',
+    tags: ['Unity', 'Gameplay', 'Prototype'],
+    title: 'Prototype Game — Basic Mechanics',
+    description: 'Xây dựng prototype game nhỏ tập trung vào cơ chế gameplay chính (movement, input, collision).',
+    longDescription: 'Create a small playable prototype that demonstrates the core mechanics of a game: player movement, basic enemy behavior, collision responses, and a simple scoring system. This project is ideal for learning game loop structure, input handling, and prototyping iteration cycles.',
+    requirements: [
+      'Player movement with smooth controls',
+      'At least one enemy type with simple AI',
+      'Collision handling and health/score system',
+      'Playable build or web export for quick testing'
+    ],
+    checklist: [
+      'Prototype runs at stable frame rate',
+      'Controls feel responsive',
+      'Enemy encounters affect score/health',
+      'README includes how to run the prototype'
+    ],
+    started: 45
+  },
+  {
+    id: 'ai-opponent',
+    pathId: 'gameplayprogrammer',
+    category: 'AI Opponent',
+    difficulty: 'Advanced',
+    tags: ['AI', 'Pathfinding', 'Behavior Tree'],
+    title: 'AI Opponent — Pathfinding & Behavior',
+    description: 'Triển khai đối thủ AI sử dụng pathfinding và logic hành vi để tương tác với người chơi.',
+    longDescription: 'Implement an AI opponent for a simple game using pathfinding (A* or navmesh) and a behavior system (state machine or behavior tree). The opponent should navigate the level, chase or avoid the player based on state, and demonstrate configurable behaviors for difficulty tuning.',
+    requirements: [
+      'Pathfinding implementation (A* or navmesh)',
+      'Behavior logic (patrol, chase, flee)',
+      'Tunable parameters for difficulty',
+      'Demo scene showcasing AI behaviors'
+    ],
+    checklist: [
+      'AI finds valid paths around obstacles',
+      'State transitions are observable and configurable',
+      'Performance is acceptable for small levels',
+      'Documentation explains how AI decisions are made'
+    ],
+    started: 10
   }
 ]
 
