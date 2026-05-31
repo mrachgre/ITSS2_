@@ -321,7 +321,95 @@ const RESOURCES = {
   mlops: [
     { title: 'MLOps Guide — neptune.ai', url: 'https://neptune.ai/blog/mlops', type: 'article' },
   ],
+    // ─── Gameplay Programmer ───
+'gp-client': [
+  { title: 'Client Side Architecture', url: 'https://gabrielgambetta.com/client-server-game-architecture.html', type: 'docs' },
+],
 
+'gp-math': [
+  { title: 'Game Mathematics', url: 'https://gamemath.com/book/intro.html', type: 'doc' },
+],
+
+'gp-phy': [
+  { title: 'Game Physics', url: 'https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection', type: 'docs' },
+  { title: 'Master Game Physics', url: 'https://www.udemy.com/course/gamephysics/', type: 'course' },
+],
+
+'gp-engine': [
+  { title: 'Unity Learn', url: 'https://learn.unity.com/', type: 'course' },
+  { title: 'Unreal Engine Documentation', url: 'https://dev.epicgames.com/documentation/en-us/unreal-engine', type: 'docs' },
+  { title: 'Choose a Game Engine', url: 'https://www.youtube.com/watch?v=aMgB018o71U', type: 'video' },
+],
+
+'gp-cpp': [
+  { title: 'Learn C++ for Game Development', url: 'https://learn.microsoft.com/en-us/cpp/overview/game-development-cpp?view=msvc-170', type: 'docs' },
+  { title: 'Learn C++', url: 'https://www.udemy.com/course/unreal-engine-5-code/?utm_campaign=Search_Keyword_Beta_Prof_la.VI_cc.VN&utm_source=google&utm_medium=paid-search&portfolio=Vietnam&utm_audience=mx&utm_tactic=nb&utm_term=l%E1%BA%ADp+tr%C3%ACnh+game&utm_content=g&funnel=&test=&gad_source=1&gad_campaignid=23194768998&gbraid=0AAAAADROdO0UZvOXqWQ4dg095mz4M3cha&gclid=Cj0KCQjwz9_QBhD_ARIsADnSCfDU8wPNriV5MhtFCM9g0ptfa0ipfMGhdST7SrVql1g5HsfPuG0TO5oaAtrxEALw_wcB&couponCode=PMNVD2525', type: 'course' },
+],
+
+'gp-gra': [
+  { title: 'Introduce to computer Graphics', url: 'https://open.umn.edu/opentextbooks/textbooks/420', type: 'article' },
+  { title: 'how Game Graphics Work', url: 'https://www.youtube.com/watch?v=C8YtdC8mxTU', type: 'video' },
+  { title: 'Shader', url: 'https://gamedesigning.org/learn/shaders/', type: 'article' },
+  { title: 'Texture', url: 'https://docs.unity3d.com/Manual/Textures.html', type: 'article' },
+  { title: 'Map', url: 'https://www.gamedeveloper.com/design/designing-maps-that-complement-game-mechanics', type: 'article' },
+],
+
+'gp-grap': [
+  { title: 'OpenGL Tutorial', url: 'https://www.youtube.com/playlist?list=PLPaoO-vpZnumdcb4tZc4x5Q-v7CkrQ6M-', type: 'video' },
+  { title: 'OpenGL Documentation', url: 'https://www.opengl.org/', type: 'docs' }, 
+],
+
+'gp-ai': [
+  { title: 'machine learning', url: 'https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-explained', type: 'article' },
+  { title: 'How 1 Game Developer With AI ', url: 'https://www.youtube.com/watch?v=cbDyGYRkz54', type: 'video' },
+],
+
+'gp-ren': [
+  { title: 'Advanced Rendering', url: 'https://www.advances.realtimerendering.com/', type: 'article' },
+  { title: 'Physically-Based Rendering', url: 'https://dev.epicgames.com/community/learning/tutorials/Yx3q/unreal-engine-physically-based-rendering-pbr-explained-in-depth', type: 'article' },
+],
+'gp-chk': [
+  { title: 'Open source games', url: 'https://github.com/bobeff/open-source-games?fbclid=IwY2xjawSGH6tleHRuA2FlbQIxMABicmlkETFPdTJrTUdqZk5mSlpJMnpxc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgZHdlW1Nca5CvcgDRbXLJIh0mS_Z7n_RHQaTRTk4nZqg5or9t513lRQUYvK_aem_FhCYP9P-b1dpboHkJkVvQQ', type: 'source' },
+],
+// ─── Game Designer ───
+'gd-gamedesign': [
+  { title: 'Introduction to Game Design', url: 'https://www.coursera.org/learn/game-design', type: 'course' },
+  { title: 'Game Design Overview', url: 'https://www.youtube.com/watch?v=4FocGpxxOkQ', type: 'video' },
+],
+
+'gd-mechanics': [
+  { title: 'Game Mechanics Explained', url: 'https://gamedevelopment.tutsplus.com/articles/game-design-concepts-understanding-game-mechanics--gamedev-1308', type: 'article' },
+  { title: 'Top 10 Game Mechanics Every Designer Should Know', url: 'https://www.youtube.com/watch?v=_vwr8Uwq8Fg', type: 'video' },
+],
+
+'gd-leveldesign': [
+  { title: 'Level Design Basics', url: 'https://book.leveldesignbook.com/', type: 'docs' },
+  { title: 'Level Design Video Tutorial', url: 'https://www.youtube.com/watch?v=jRCvoWPTCvI', type: 'video' },
+],
+
+'gd-storytelling': [
+  { title: 'Narrative Design for Games', url: 'https://gamedesignskills.com/game-design/narrative-design/', type: 'article' },
+  { title: 'VIDEO GAME VÀ NGHỆ THUẬT KỂ CHUYỆN ĐỘC ĐÁO', url: 'https://www.youtube.com/watch?v=GrjjE3Q6rgo', type: 'video' },
+],
+
+'gd-gdd': [
+  { title: 'Game Design Document Template', url: 'https://www.nuclino.com/articles/game-design-document-template', type: 'docs' },
+],
+
+'gd-balancing': [
+  { title: 'Game Balance Concepts', url: 'https://www.gamedeveloper.com/design/design-101-balancing-games', type: 'article' },
+  { title: 'Game Balance', url: 'https://gamedesignskills.com/game-design/game-balance/', type: 'docs' },
+],
+
+'gd-ux': [
+  { title: 'UX Design for Games', url: 'https://itviec.com/blog/ui-ux-game/', type: 'article' },
+  { title: 'UX tutorial', url: 'https://www.reddit.com/r/PBBG/comments/1stsbwf/new_player_experiencetutorial_old_school/?tl=vi', type: 'video' },
+],
+
+'gd-prototype': [
+  { title: 'Unity Prototype Tutorial', url: 'https://learn.unity.com/project/creator-kit-beginner-code', type: 'course' },
+  { title: 'Game Prototype Development', url: 'https://www.youtube.com/watch?v=wwZENsy9X1g', type: 'video' },
+],
   // ─── Skill paths shared ───
   jsx: [
     { title: 'React Docs — Writing Markup with JSX', url: 'https://react.dev/learn/writing-markup-with-jsx', type: 'docs' },
