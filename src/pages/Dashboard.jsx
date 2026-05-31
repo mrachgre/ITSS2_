@@ -8,7 +8,7 @@ export default function Dashboard({ onViewPath, onViewProjects }) {
   const [careerPaths, setCareerPaths] = useState([])
   const [userProgress, setUserProgress] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
-  
+
   useEffect(() => {
     setCareerPaths(getAllCareerPaths())
     setUserProgress(getUserProgress())
@@ -92,12 +92,12 @@ export default function Dashboard({ onViewPath, onViewProjects }) {
           <span className="section-label-text">Ý Tưởng Dự Án</span>
         </div>
         <div className="project-ideas-row">
-          {['Frontend', 'Backend', 'DevOps', 'Game Prototype', 'AI Opponent'].map(cat => (
+          {['Frontend', 'Backend', 'DevOps'].map(cat => (
             <button
               key={cat}
               className="project-idea-btn"
-              onClick={() => onViewProjects(cat)}
-              id={`project-idea-${cat.toLowerCase().replace(/\s+/g, '-')}`}
+              onClick={onViewProjects}
+              id={`project-idea-${cat.toLowerCase()}`}
             >
               {cat}
             </button>
