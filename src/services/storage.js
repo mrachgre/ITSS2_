@@ -46,17 +46,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'performance', label: 'Performance Optimization', level: 7, type: 'skill', children: ['pwa', 'deploy'] },
       { id: 'pwa', label: 'Progressive Web Apps (PWA)', level: 7, type: 'skill', children: ['deploy'] },
       { id: 'deploy', label: 'Build & Deploy', level: 8, type: 'skill', children: [] }
-      { id: 'html', label: 'HTML', level: 0, type: 'skill', children: ['css'] },
-      { id: 'css', label: 'CSS', level: 0, type: 'skill', children: ['js-basics'] },
-      { id: 'js-basics', label: 'JavaScript Basics', level: 1, type: 'skill', children: ['dom', 'es6'] },
-      { id: 'cp-static', label: 'Checkpoint — Static Pages', level: 2, type: 'checkpoint', children: ['dom', 'es6'] },
-      { id: 'dom', label: 'DOM Manipulation', level: 3, type: 'skill', children: ['react'] },
-      { id: 'es6', label: 'ES6+ Features', level: 3, type: 'skill', children: ['react'] },
-      { id: 'react', label: 'React.js', level: 4, type: 'skill', children: ['state-mgmt', 'routing'] },
-      { id: 'state-mgmt', label: 'State Management', level: 5, type: 'skill', children: ['testing'] },
-      { id: 'routing', label: 'React Router', level: 5, type: 'skill', children: ['testing'] },
-      { id: 'testing', label: 'Testing', level: 6, type: 'skill', children: ['deploy'] },
-      { id: 'deploy', label: 'Build & Deploy', level: 7, type: 'skill', children: [] }
     ]
   },
   {
@@ -75,7 +64,7 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'orm', label: 'ORM / Query Builder', level: 4, type: 'skill', children: ['caching'] },
       { id: 'caching', label: 'Caching (Redis)', level: 5, type: 'skill', children: ['messaging'] },
       { id: 'messaging', label: 'Message Queues', level: 6, type: 'skill', children: ['deploy'] },
-      { id: 'deploy', label: 'Deployment', level: 7, type: 'skill', children: [] }
+      { id: 'deploy', label: 'Deployment', level: 7, type: 'skill', children: [] },
       { id: 'linux',      label: 'Terminal & Linux',     level: 0, type: 'skill', children: ['git'] },
       { id: 'git',        label: 'Git & GitHub',         level: 0, type: 'skill', children: ['http'] },
       { id: 'http',       label: 'HTTP & APIs',          level: 0, type: 'skill', children: ['java'] },
@@ -121,22 +110,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'github', label: 'GitHub', level: 3, type: 'skill', children: ['cp-frontend'] },
       { id: 'git', label: 'Git', level: 3, type: 'skill', children: ['cp-frontend'] },
       { id: 'cp-frontend', label: 'Checkpoint - Frontend Apps', level: 4, type: 'checkpoint', children: ['nodejs'] },
-      { id: 'html', label: 'HTML', level: 0, type: 'skill', children: ['css'] },
-      { id: 'css', label: 'CSS', level: 0, type: 'skill', children: ['javascript'] },
-      { id: 'javascript', label: 'JavaScript', level: 0, type: 'skill', children: ['cp-static', 'cp-interactivity', 'npm'] },
-      { id: 'cp-static', label: 'Checkpoint - Static Webpages', level: 1, type: 'checkpoint', children: ['cp-collab'] },
-      { id: 'cp-interactivity', label: 'Checkpoint - Interactivity', level: 1, type: 'checkpoint', children: ['cp-external'] },
-      { id: 'npm', label: 'npm', level: 1, type: 'skill', children: ['cp-external'] },
-      { id: 'cp-collab', label: 'Checkpoint - Collaborative Work', level: 2, type: 'checkpoint', children: ['react', 'tailwind'] },
-      { id: 'cp-external', label: 'Checkpoint - External Packages', level: 2, type: 'checkpoint', children: ['github', 'git'] },
-      { id: 'react', label: 'React', level: 3, type: 'skill', children: ['cp-frontend'] },
-      {
-        id: 'tailwind', label: 'Tailwind CSS', level: 3, type: 'skill', children: ['cp-frontend'],
-        tip: 'Bạn có thể bỏ qua phần này và quay lại sau khi học Backend'
-      },
-      { id: 'github', label: 'GitHub', level: 3, type: 'skill', children: ['cp-frontend'] },
-      { id: 'git', label: 'Git', level: 3, type: 'skill', children: ['cp-frontend'] },
-      { id: 'cp-frontend', label: 'Checkpoint - Frontend Apps', level: 4, type: 'checkpoint', children: ['nodejs'] },
       // ─── Backend ───
       {
         id: 'nodejs', label: 'Node.js', level: 5, type: 'skill', children: ['cp-cli'],
@@ -152,26 +125,7 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'jwt', label: 'JWT Auth', level: 9, type: 'skill', children: ['cp-complete'] },
       { id: 'restful', label: 'RESTful APIs', level: 9, type: 'skill', children: ['cp-complete'] },
       { id: 'cp-complete', label: 'Checkpoint — Complete App', level: 10, type: 'checkpoint', children: ['route53', 'ses', 'ec2', 'vpc', 's3'] },
-      {
-        id: 'nodejs', label: 'Node.js', level: 5, type: 'skill', children: ['cp-cli'],
-        tip: 'Bạn có thể chọn bất kỳ ngôn ngữ backend nào. Khuyến nghị là Node.js vì bạn đã quen với JavaScript và dễ dàng hơn để bắt đầu.'
-      },
-      { id: 'cp-cli', label: 'Checkpoint — CLI Apps', level: 6, type: 'checkpoint', children: ['postgresql'] },
-      { id: 'postgresql', label: 'PostgreSQL', level: 7, type: 'skill', children: ['cp-crud'] },
-      {
-        id: 'cp-crud', label: 'Checkpoint — Simple CRUD Apps', level: 8, type: 'checkpoint', children: ['redis', 'jwt', 'restful'],
-        tip: 'Sử dụng các checkpoint và đừng quên thực hành những gì bạn đã học. Có các ý tưởng dự án tại mỗi checkpoint để bạn củng cố kiến thức.'
-      },
-      { id: 'redis', label: 'Redis', level: 9, type: 'skill', children: ['cp-complete'] },
-      { id: 'jwt', label: 'JWT Auth', level: 9, type: 'skill', children: ['cp-complete'] },
-      { id: 'restful', label: 'RESTful APIs', level: 9, type: 'skill', children: ['cp-complete'] },
-      { id: 'cp-complete', label: 'Checkpoint — Complete App', level: 10, type: 'checkpoint', children: ['route53', 'ses', 'ec2', 'vpc', 's3'] },
       // ─── DevOps ───
-      { id: 'route53', label: 'Route53', level: 11, type: 'skill', children: [] },
-      { id: 'ses', label: 'SES', level: 11, type: 'skill', children: [] },
-      { id: 'ec2', label: 'EC2', level: 12, type: 'skill', children: [] },
-      { id: 'vpc', label: 'VPC', level: 12, type: 'skill', children: [] },
-      { id: 's3', label: 'S3', level: 12, type: 'skill', children: [] }
       { id: 'route53', label: 'Route53', level: 11, type: 'skill', children: [] },
       { id: 'ses', label: 'SES', level: 11, type: 'skill', children: [] },
       { id: 'ec2', label: 'EC2', level: 12, type: 'skill', children: [] },
@@ -226,9 +180,8 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'mlops', label: 'MLOps', level: 7, type: 'skill', children: [] }
     ]
   },
-
-{
-  id: 'aiengineer',
+  {
+    id: 'aiengineer',
   name: 'AI Engineer',
   category: 'role',
   description: 'Build AI-powered applications using LLMs, RAG systems, AI agents and production-ready GenAI infrastructure.',
@@ -1252,13 +1205,8 @@ const DEFAULT_CAREER_PATHS = [
     }
   ]
 },
-
-      { id: 'dl', label: 'Deep Learning', level: 6, type: 'skill', children: ['mlops'] },
-      { id: 'mlops', label: 'MLOps', level: 7, type: 'skill', children: [] }
-    ]
-  },
   {
-  id: 'gameplayprogrammer',
+    id: 'gameplayprogrammer',
   name: 'Gameplay Programmer',
   category: 'role',
   description: 'Lập trình gameplay, AI, combat system và các cơ chế hoạt động trong game.',
@@ -1313,14 +1261,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'context', label: 'Context API', level: 4, type: 'skill', children: ['patterns'] },
       { id: 'effects', label: 'Side Effects', level: 4, type: 'skill', children: ['patterns'] },
       { id: 'patterns', label: 'Advanced Patterns', level: 5, type: 'skill', children: [] }
-      { id: 'jsx', label: 'JSX', level: 0, type: 'skill', children: ['components'] },
-      { id: 'components', label: 'Components', level: 1, type: 'skill', children: ['props', 'state'] },
-      { id: 'props', label: 'Props', level: 2, type: 'skill', children: ['hooks'] },
-      { id: 'state', label: 'State', level: 2, type: 'skill', children: ['hooks'] },
-      { id: 'hooks', label: 'Hooks', level: 3, type: 'skill', children: ['context', 'effects'] },
-      { id: 'context', label: 'Context API', level: 4, type: 'skill', children: ['patterns'] },
-      { id: 'effects', label: 'Side Effects', level: 4, type: 'skill', children: ['patterns'] },
-      { id: 'patterns', label: 'Advanced Patterns', level: 5, type: 'skill', children: [] }
     ]
   },
   {
@@ -1331,13 +1271,6 @@ const DEFAULT_CAREER_PATHS = [
     icon: '📜',
     color: '#f7df1e',
     nodes: [
-      { id: 'syntax', label: 'Syntax & Basics', level: 0, type: 'skill', children: ['types'] },
-      { id: 'types', label: 'Data Types', level: 1, type: 'skill', children: ['functions', 'dom'] },
-      { id: 'functions', label: 'Functions & Scope', level: 2, type: 'skill', children: ['async'] },
-      { id: 'dom', label: 'DOM APIs', level: 2, type: 'skill', children: ['events'] },
-      { id: 'events', label: 'Events', level: 3, type: 'skill', children: ['async'] },
-      { id: 'async', label: 'Async / Promises', level: 4, type: 'skill', children: ['modules'] },
-      { id: 'modules', label: 'Modules & Tooling', level: 5, type: 'skill', children: [] }
       { id: 'syntax', label: 'Syntax & Basics', level: 0, type: 'skill', children: ['types'] },
       { id: 'types', label: 'Data Types', level: 1, type: 'skill', children: ['functions', 'dom'] },
       { id: 'functions', label: 'Functions & Scope', level: 2, type: 'skill', children: ['async'] },
@@ -1361,12 +1294,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'enums', label: 'Enums & Unions', level: 2, type: 'skill', children: ['advanced'] },
       { id: 'advanced', label: 'Advanced Types', level: 3, type: 'skill', children: ['config'] },
       { id: 'config', label: 'TS Config & Tooling', level: 4, type: 'skill', children: [] }
-      { id: 'basics', label: 'Basic Types', level: 0, type: 'skill', children: ['interfaces'] },
-      { id: 'interfaces', label: 'Interfaces', level: 1, type: 'skill', children: ['generics', 'enums'] },
-      { id: 'generics', label: 'Generics', level: 2, type: 'skill', children: ['advanced'] },
-      { id: 'enums', label: 'Enums & Unions', level: 2, type: 'skill', children: ['advanced'] },
-      { id: 'advanced', label: 'Advanced Types', level: 3, type: 'skill', children: ['config'] },
-      { id: 'config', label: 'TS Config & Tooling', level: 4, type: 'skill', children: [] }
     ]
   },
   {
@@ -1377,13 +1304,6 @@ const DEFAULT_CAREER_PATHS = [
     icon: '🐍',
     color: '#3776ab',
     nodes: [
-      { id: 'basics', label: 'Syntax & Basics', level: 0, type: 'skill', children: ['data-structures'] },
-      { id: 'data-structures', label: 'Data Structures', level: 1, type: 'skill', children: ['oop', 'functions'] },
-      { id: 'oop', label: 'OOP', level: 2, type: 'skill', children: ['stdlib'] },
-      { id: 'functions', label: 'Functions & Decorators', level: 2, type: 'skill', children: ['stdlib'] },
-      { id: 'stdlib', label: 'Standard Library', level: 3, type: 'skill', children: ['packages'] },
-      { id: 'packages', label: 'Package Management', level: 4, type: 'skill', children: ['testing'] },
-      { id: 'testing', label: 'Testing', level: 5, type: 'skill', children: [] }
       { id: 'basics', label: 'Syntax & Basics', level: 0, type: 'skill', children: ['data-structures'] },
       { id: 'data-structures', label: 'Data Structures', level: 1, type: 'skill', children: ['oop', 'functions'] },
       { id: 'oop', label: 'OOP', level: 2, type: 'skill', children: ['stdlib'] },
@@ -1407,12 +1327,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'subq', label: 'Sub-queries', level: 2, type: 'skill', children: ['indexes'] },
       { id: 'indexes', label: 'Indexes & Perf', level: 3, type: 'skill', children: ['transactions'] },
       { id: 'transactions', label: 'Transactions', level: 4, type: 'skill', children: [] }
-      { id: 'basics', label: 'SELECT & WHERE', level: 0, type: 'skill', children: ['joins'] },
-      { id: 'joins', label: 'JOINs', level: 1, type: 'skill', children: ['agg', 'subq'] },
-      { id: 'agg', label: 'Aggregations', level: 2, type: 'skill', children: ['indexes'] },
-      { id: 'subq', label: 'Sub-queries', level: 2, type: 'skill', children: ['indexes'] },
-      { id: 'indexes', label: 'Indexes & Perf', level: 3, type: 'skill', children: ['transactions'] },
-      { id: 'transactions', label: 'Transactions', level: 4, type: 'skill', children: [] }
     ]
   },
   {
@@ -1423,12 +1337,6 @@ const DEFAULT_CAREER_PATHS = [
     icon: '🐳',
     color: '#2496ed',
     nodes: [
-      { id: 'concepts', label: 'Core Concepts', level: 0, type: 'skill', children: ['images'] },
-      { id: 'images', label: 'Images & Dockerfile', level: 1, type: 'skill', children: ['containers'] },
-      { id: 'containers', label: 'Containers', level: 2, type: 'skill', children: ['networking', 'volumes'] },
-      { id: 'networking', label: 'Networking', level: 3, type: 'skill', children: ['compose'] },
-      { id: 'volumes', label: 'Volumes', level: 3, type: 'skill', children: ['compose'] },
-      { id: 'compose', label: 'Docker Compose', level: 4, type: 'skill', children: [] }
       { id: 'concepts', label: 'Core Concepts', level: 0, type: 'skill', children: ['images'] },
       { id: 'images', label: 'Images & Dockerfile', level: 1, type: 'skill', children: ['containers'] },
       { id: 'containers', label: 'Containers', level: 2, type: 'skill', children: ['networking', 'volumes'] },
@@ -1451,12 +1359,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'remote', label: 'Remote & Push/Pull', level: 2, type: 'skill', children: ['workflows'] },
       { id: 'workflows', label: 'Git Workflows', level: 3, type: 'skill', children: ['advanced'] },
       { id: 'advanced', label: 'Advanced (stash, cherry-pick)', level: 4, type: 'skill', children: [] }
-      { id: 'git-basics', label: 'Init, Add, Commit', level: 0, type: 'skill', children: ['git-branching'] },
-      { id: 'git-branching', label: 'Branching', level: 1, type: 'skill', children: ['git-merging', 'git-remote'] },
-      { id: 'git-merging', label: 'Merging & Rebasing', level: 2, type: 'skill', children: ['git-workflows'] },
-      { id: 'git-remote', label: 'Remote & Push/Pull', level: 2, type: 'skill', children: ['git-workflows'] },
-      { id: 'git-workflows', label: 'Git Workflows', level: 3, type: 'skill', children: ['git-advanced'] },
-      { id: 'git-advanced', label: 'Advanced (stash, cherry-pick)', level: 4, type: 'skill', children: [] }
     ]
   }
 ]
@@ -1464,10 +1366,7 @@ const DEFAULT_CAREER_PATHS = [
 // ─── Initialization ────────────────────────────────────
 // Always sync career paths from source so edits to DEFAULT_CAREER_PATHS
 // are reflected immediately without manually clearing localStorage.
-// Always sync career paths from source so edits to DEFAULT_CAREER_PATHS
-// are reflected immediately without manually clearing localStorage.
 const initializeStorage = () => {
-  localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
   localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
 }
  

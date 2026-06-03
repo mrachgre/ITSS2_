@@ -1254,8 +1254,8 @@ const RESOURCES = {
   'mongodb': [
     { title: 'MongoDB Official Basics', url: 'https://www.mongodb.com/basics', type: 'docs' },
     { title: 'MongoDB Crash Course', url: 'https://www.youtube.com/watch?v=ofme2o29ngU', type: 'video' },
-  ]
-  kotlin: [
+  ],
+  'kotlin': [
     { title: 'Kotlin Bootcamp for Programmers', url: 'https://developer.android.com/courses/kotlin-bootcamp/overview', type: 'course' },
     { title: 'Kotlin Docs — Basic Syntax', url: 'https://kotlinlang.org/docs/basic-syntax.html', type: 'docs' }
   ],
