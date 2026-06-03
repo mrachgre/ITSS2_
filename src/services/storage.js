@@ -283,6 +283,65 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'git-workflows', label: 'Git Workflows', level: 3, type: 'skill', children: ['git-advanced'] },
       { id: 'git-advanced', label: 'Advanced (stash, cherry-pick)', level: 4, type: 'skill', children: [] }
     ]
+  },
+  // Thêm vào trong mảng DEFAULT_CAREER_PATHS
+  {
+    id: 'android',
+    name: 'Android Developer',
+    category: 'role',
+    description: 'Xây dựng ứng dụng di động native cho hệ điều hành Android bằng Kotlin.',
+    icon: '🤖',
+    color: '#3DDC84',
+    nodes: [
+      { 
+        id: 'kotlin', label: 'Kotlin & Basics', level: 0, type: 'skill', children: ['android-studio'], 
+      },
+      { id: 'android-studio', label: 'Android Studio & Gradle', level: 1, type: 'skill', children: ['app-components'] },
+      { id: 'app-components', label: 'App Components', level: 2, type: 'skill', children: ['android-ui'] },
+      { id: 'android-ui', label: 'UI (XML & Jetpack Compose)', level: 3, type: 'skill', children: ['android-arch'] },
+      { id: 'android-arch', label: 'Architecture (MVVM, DI)', level: 4, type: 'skill', children: ['android-storage'] },
+      { id: 'android-storage', label: 'Storage (Room, DataStore)', level: 5, type: 'skill', children: ['android-async'] },
+      { id: 'android-async', label: 'Coroutines & Flow', level: 6, type: 'skill', children: ['android-network'] },
+      { id: 'android-network', label: 'Networking (Retrofit)', level: 7, type: 'skill', children: ['android-firebase'] },
+      { id: 'android-firebase', label: 'Firebase & Services', level: 8, type: 'skill', children: ['android-testing'] },
+      { id: 'android-testing', label: 'Testing (JUnit, Espresso)', level: 9, type: 'skill', children: ['android-dist'] },
+      { id: 'android-dist', label: 'Distribution (Play Store)', level: 10, type: 'skill', children: [] }
+    ],
+    sections: [
+      { afterLevel: 1, label: 'Bắt đầu với Android Framework', sublabel: 'Nền tảng' },
+      { afterLevel: 3, label: 'Kiến trúc & Quản lý dữ liệu', sublabel: 'Xây dựng app chuyên nghiệp' },
+      { afterLevel: 7, label: 'Dịch vụ nâng cao & Xuất bản', sublabel: 'Hoàn thiện' }
+    ]
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cyber Security Specialist',
+    category: 'role',
+    description: 'Bảo vệ hệ thống, mạng lưới và dữ liệu khỏi các cuộc tấn công mạng.',
+    icon: '🛡️',
+    color: '#00ffcc', // Màu neon cyan/green đặc trưng của hacker/security
+    nodes: [
+      { 
+        id: 'cs-it-fundamentals', label: 'IT & OS Fundamentals', level: 0, type: 'skill', children: ['cs-networking']
+      },
+      { id: 'cs-networking', label: 'Networking (OSI, TCP/IP, DNS)', level: 1, type: 'skill', children: ['cs-scripting'] },
+      { 
+        id: 'cs-scripting', label: 'Scripting (Python, Bash)', level: 2, type: 'skill', children: ['cs-security-core']
+      },
+      { id: 'cs-security-core', label: 'Core Concepts (CIA, Crypto, IAM)', level: 3, type: 'checkpoint', children: ['cs-network-sec'] },
+      { id: 'cs-network-sec', label: 'Network Sec (Firewalls, IDS/IPS)', level: 4, type: 'skill', children: ['cs-app-sec'] },
+      { id: 'cs-app-sec', label: 'App Sec & OWASP Top 10', level: 5, type: 'skill', children: ['cs-soc-ir'] },
+      { id: 'cs-soc-ir', label: 'SOC & Incident Response', level: 6, type: 'skill', children: ['cs-cloud-sec'] },
+      { id: 'cs-cloud-sec', label: 'Cloud Security Basics', level: 7, type: 'skill', children: ['cs-ctf-certs'] },
+      { 
+        id: 'cs-ctf-certs', label: 'CTFs & Certifications (Sec+, CEH)', level: 8, type: 'checkpoint', children: [],
+      }
+    ],
+    sections: [
+      { afterLevel: 2, label: 'Nền Tảng Hệ Thống', sublabel: 'IT, Mạng & Tự động hóa' },
+      { afterLevel: 5, label: 'Kiến Thức Bảo Mật Lõi', sublabel: 'Tấn công & Phòng thủ' },
+      { afterLevel: 8, label: 'Thực Chiến & Chứng Chỉ', sublabel: 'Phát triển nghề nghiệp' }
+    ]
   }
 ]
 
@@ -622,6 +681,54 @@ export const PROJECTS = [
       'Grafana dashboards display cluster and application metrics'
     ],
     started: 215
+  },
+  {
+    id: 'cs-osint-tool',
+    pathId: 'cybersecurity',
+    category: 'Security',
+    difficulty: 'Intermediate',
+    tags: ['Python', 'OSINT', 'Networking', 'API'],
+    title: 'Công Cụ Phân Tích IP (OSINT)',
+    description: 'Xây dựng tool CLI bằng Python để tự động thu thập thông tin tình báo từ một địa chỉ IP hoặc domain.',
+    longDescription: 'Phát triển một công cụ dòng lệnh (CLI) bằng Python để phân tích tự động các dấu hiệu khả nghi của một IP hoặc Domain. Công cụ sẽ gọi các public API (như VirusTotal, AbuseIPDB, Shodan) để kiểm tra lịch sử độc hại, vị trí địa lý, thông tin WHOIS và các port đang mở. Dự án này giúp rèn luyện kỹ năng Scripting, tương tác API, và hiểu biết về Threat Intelligence.',
+    requirements: [
+      'Scripting: Viết mã Python sạch, sử dụng thư viện `requests` có xử lý lỗi (try/except) khi gọi API bị timeout hoặc lỗi.',
+      'Tích hợp API: Gọi ít nhất 2 API bên ngoài (VD: VirusTotal, IP-API) để lấy dữ liệu json.',
+      'Xử lý Dữ liệu: Phân tích cú pháp JSON trả về và format hiển thị báo cáo ra console một cách dễ đọc.',
+      'CLI Argument: Sử dụng thư viện `argparse` để nhận input từ user (ví dụ: `python scanner.py --ip 8.8.8.8`).'
+    ],
+    checklist: [
+      'Công cụ nhận diện đúng định dạng IP hoặc Domain hợp lệ',
+      'Kết nối API thành công và trả về dữ liệu chuẩn xác',
+      'Hiển thị cảnh báo màu sắc (đỏ/xanh) trên terminal nếu phát hiện IP độc hại',
+      'README hướng dẫn cách cài đặt thư viện và thiết lập API keys'
+    ],
+    started: 215
+  },
+  // Thêm vào trong mảng PROJECTS
+  {
+    id: 'mb-rpg-wiki',
+    pathId: 'android',
+    category: 'Mobile',
+    difficulty: 'Intermediate',
+    tags: ['Kotlin', 'Room', 'Retrofit', 'MVVM'],
+    title: 'Ứng Dụng Cẩm Nang Game RPG',
+    description: 'Xây dựng một wiki app trên Android tra cứu thông tin vật phẩm, lore và nhân vật cho một tựa game Soulslike.',
+    longDescription: 'Phát triển một ứng dụng Android native sử dụng Kotlin để tra cứu thông tin (vũ khí, bản đồ, lore cốt truyện) của các game hành động RPG. Ứng dụng cần sử dụng kiến trúc MVVM, lấy dữ liệu từ một public API (hoặc mock data) bằng Retrofit, và lưu trữ offline vào database cục bộ bằng Room để người chơi có thể tra cứu khi không có mạng. Sử dụng Coroutines và Flow để xử lý các tác vụ bất đồng bộ một cách mượt mà.',
+    requirements: [
+      'Giao diện: Thiết kế UI dark-theme bằng XML ConstraintLayout hoặc Jetpack Compose, có RecyclerView hiển thị danh sách vật phẩm.',
+      'Kiến trúc MVVM: Tách biệt logic UI (Activity/Fragment), ViewModel và Repository.',
+      'Networking: Sử dụng Retrofit để gọi API lấy thông tin nhân vật/vật phẩm.',
+      'Database: Triển khai Room Database để cache dữ liệu, hỗ trợ đọc offline.',
+      'Asynchronism: Dùng Kotlin Coroutines để gọi API và truy vấn Room mà không chặn Main Thread.'
+    ],
+    checklist: [
+      'App chạy mượt mà không crash khi mất mạng',
+      'Danh sách hiển thị đúng hình ảnh và tên vật phẩm',
+      'Vuốt để làm mới (SwipeRefreshLayout) hoạt động tốt',
+      'README có file APK hoặc screenshots của màn hình chính'
+    ],
+    started: 420
   }
 ]
 

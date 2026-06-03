@@ -1221,6 +1221,85 @@ const RESOURCES = {
   config: [
     { title: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig', type: 'docs' },
   ],
+  kotlin: [
+    { title: 'Kotlin Bootcamp for Programmers', url: 'https://developer.android.com/courses/kotlin-bootcamp/overview', type: 'course' },
+    { title: 'Kotlin Docs — Basic Syntax', url: 'https://kotlinlang.org/docs/basic-syntax.html', type: 'docs' }
+  ],
+  'android-studio': [
+    { title: 'Build your first Android app', url: 'https://developer.android.com/training/basics/firstapp', type: 'docs' },
+    { title: 'Gradle for Android — Overview', url: 'https://developer.android.com/studio/build', type: 'docs' }
+  ],
+  'app-components': [
+    { title: 'Understand the Activity Lifecycle', url: 'https://developer.android.com/guide/components/activities/activity-lifecycle', type: 'article' },
+    { title: 'Intents and Intent Filters', url: 'https://developer.android.com/guide/components/intents-filters', type: 'docs' }
+  ],
+  'android-ui': [
+    { title: 'Jetpack Compose Basics', url: 'https://developer.android.com/courses/pathways/compose', type: 'course' },
+    { title: 'RecyclerView in Android', url: 'https://developer.android.com/guide/topics/ui/layout/recyclerview', type: 'docs' }
+  ],
+  'android-arch': [
+    { title: 'Guide to app architecture', url: 'https://developer.android.com/topic/architecture', type: 'docs' },
+    { title: 'Dependency Injection with Hilt', url: 'https://developer.android.com/training/dependency-injection/hilt-android', type: 'article' }
+  ],
+  'android-storage': [
+    { title: 'Save data in a local database using Room', url: 'https://developer.android.com/training/data-storage/room', type: 'docs' },
+    { title: 'DataStore overview', url: 'https://developer.android.com/topic/libraries/architecture/datastore', type: 'docs' }
+  ],
+  'android-async': [
+    { title: 'Kotlin coroutines on Android', url: 'https://developer.android.com/kotlin/coroutines', type: 'docs' },
+    { title: 'StateFlow and SharedFlow', url: 'https://developer.android.com/kotlin/flow/stateflow-and-sharedflow', type: 'article' }
+  ],
+  'android-network': [
+    { title: 'Retrofit Official Documentation', url: 'https://square.github.io/retrofit/', type: 'docs' },
+    { title: 'Connect to the internet with Retrofit', url: 'https://developer.android.com/courses/pathways/android-basics-kotlin-unit-4-pathway-2', type: 'course' }
+  ],
+  'android-firebase': [
+    { title: 'Add Firebase to your Android project', url: 'https://firebase.google.com/docs/android/setup', type: 'docs' }
+  ],
+  'android-testing': [
+    { title: 'Test apps on Android', url: 'https://developer.android.com/training/testing', type: 'docs' },
+    { title: 'Espresso UI testing', url: 'https://developer.android.com/training/testing/espresso', type: 'article' }
+  ],
+  'android-dist': [
+    { title: 'Publish your app', url: 'https://developer.android.com/studio/publish', type: 'docs' }
+  ],
+  // Thêm vào object RESOURCES
+  'cs-it-fundamentals': [
+    { title: 'Linux Journey (Học Linux cơ bản)', url: 'https://linuxjourney.com/', type: 'course' },
+    { title: 'Windows OS Basics', url: 'https://learn.microsoft.com/en-us/windows/win32/sysinfo/operating-system-version', type: 'docs' }
+  ],
+  'cs-networking': [
+    { title: 'Computer Networking - freeCodeCamp', url: 'https://www.youtube.com/watch?v=qiQR5rTSshw', type: 'video' },
+    { title: 'OSI Model Explained', url: 'https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/', type: 'article' }
+  ],
+  'cs-scripting': [
+    { title: 'Python for Cybersecurity', url: 'https://www.freecodecamp.org/news/python-for-cybersecurity/', type: 'article' },
+    { title: 'Bash Scripting Tutorial', url: 'https://linuxconfig.org/bash-scripting-tutorial-for-beginners', type: 'docs' }
+  ],
+  'cs-security-core': [
+    { title: 'CIA Triad - Nguyên tắc bảo mật lõi', url: 'https://www.fortinet.com/resources/cyberglossary/cia-triad', type: 'article' },
+    { title: 'Cryptography Basics', url: 'https://www.khanacademy.org/computing/computer-science/cryptography', type: 'course' }
+  ],
+  'cs-network-sec': [
+    { title: 'What is a Firewall?', url: 'https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html', type: 'article' },
+    { title: 'IDS vs IPS Explained', url: 'https://www.varonis.com/blog/ids-vs-ips', type: 'article' }
+  ],
+  'cs-app-sec': [
+    { title: 'OWASP Top 10 Web Vulnerabilities', url: 'https://owasp.org/www-project-top-ten/', type: 'docs' },
+    { title: 'Web Security Academy - PortSwigger', url: 'https://portswigger.net/web-security', type: 'course' }
+  ],
+  'cs-soc-ir': [
+    { title: 'Incident Response Lifecycle', url: 'https://www.crowdstrike.com/cybersecurity-101/incident-response/', type: 'article' },
+    { title: 'What is SIEM?', url: 'https://www.ibm.com/topics/siem', type: 'article' }
+  ],
+  'cs-cloud-sec': [
+    { title: 'AWS Security Fundamentals', url: 'https://aws.amazon.com/security/', type: 'docs' },
+    { title: 'What is Cloud Security?', url: 'https://www.cloudflare.com/learning/cloud/what-is-cloud-security/', type: 'article' }
+  ],
+  'cs-ctf-certs': [
+    { title: 'TryHackMe - Beginner Pathways', url: 'https://tryhackme.com/', type: 'course' },
+    { title: 'CompTIA Security+ Prep', url: 'https://www.comptia.org/certifications/security', type: 'docs' }
+  ],
 }
 
 /** Get resources for a node ID. Returns [] if none found. */
