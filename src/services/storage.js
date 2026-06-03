@@ -166,45 +166,7 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'mlops', label: 'MLOps', level: 7, type: 'skill', children: [] }
     ]
   },
-  {
-  id: 'gameplayprogrammer',
-  name: 'Gameplay Programmer',
-  category: 'role',
-  description: 'Lập trình gameplay, AI, combat system và các cơ chế hoạt động trong game.',
-  icon: '🎮',
-  color: '#89c2ff',
-  nodes: [
-    { id: 'gp-client',       label: 'Client Side Development',                 level: 0, type: 'skill', children: ['gp-math','gp-phy'] },
-    { id: 'gp-math',         label: 'Game Mathematics',                level: 1, type: 'skill', children: ['gp-engine'] },
-    { id: 'gp-phy',          label: 'Game Physics',                level: 1, type: 'skill', children: ['gp-engine'] },
-    { id: 'gp-engine',       label: 'Unity / Unreal Engine',    level: 2, type: 'skill', children: ['gp-cpp'] },
-    { id: 'gp-cpp',          label: 'Programming Languages',     level: 3, type: 'skill', children: ['gp-gra','gp-grap'] },
-    { id: 'gp-gra',          label: 'Computer Graphics',    level: 4, type: 'skill', children: ['gp-ai'] },
-    { id: 'gp-grap',         label: 'Graphics API',    level: 4, type: 'skill', children: ['gp-ai'] },
-    { id: 'gp-ai',           label: 'Game AI',        level: 5, type: 'skill', children: ['gp-optimization'] },
-    { id: 'gp-ren',          label: 'Advanced Rendering',   level: 6, type: 'skill', children: [] },
-    { id: 'gp-chk',          label: 'Checkpoint',   level: 7, type: 'checkpoint', children: [] },
-  ]
-},
 
-{
-  id: 'gamedesigner',
-  name: 'Game Designer',
-  category: 'role',
-  description: 'Thiết kế gameplay, level, mechanics và trải nghiệm người chơi.',
-  icon: '🕹️',
-  color: '#ffd6a5',
-  nodes: [
-    { id: 'gd-gamedesign',   label: 'Game Design Basics',       level: 0, type: 'skill', children: ['gd-mechanics'] },
-    { id: 'gd-mechanics',    label: 'Gameplay Mechanics',       level: 1, type: 'skill', children: ['gd-leveldesign'] },
-    { id: 'gd-leveldesign',  label: 'Level Design',             level: 2, type: 'skill', children: ['gd-storytelling'] },
-    { id: 'gd-storytelling', label: 'Storytelling & Narrative', level: 3, type: 'skill', children: ['gd-gdd'] },
-    { id: 'gd-gdd',          label: 'Game Design Document',     level: 4, type: 'skill', children: ['gd-balancing'] },
-    { id: 'gd-balancing',    label: 'Game Balancing',           level: 5, type: 'skill', children: ['gd-ux'] },
-    { id: 'gd-ux',           label: 'Player Experience (UX)',   level: 6, type: 'skill', children: ['gd-prototype'] },
-    { id: 'gd-prototype',    label: 'Prototype with Unity',     level: 7, type: 'skill', children: [] }
-  ]
-  },
   // ═══ SKILL-BASED ═══
   {
     id: 'react-skill',
