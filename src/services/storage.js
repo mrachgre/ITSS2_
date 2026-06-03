@@ -55,15 +55,24 @@ const DEFAULT_CAREER_PATHS = [
     icon: '⚙️',
     color: '#4ecdc4',
     nodes: [
-      { id: 'lang', label: 'Pick a Language', level: 0, type: 'skill', children: ['http'] },
-      { id: 'http', label: 'HTTP & APIs', level: 1, type: 'skill', children: ['framework'] },
-      { id: 'framework', label: 'Web Framework', level: 2, type: 'skill', children: ['database', 'auth'] },
-      { id: 'database', label: 'Database (SQL/NoSQL)', level: 3, type: 'skill', children: ['orm'] },
-      { id: 'auth', label: 'Auth & Security', level: 3, type: 'skill', children: ['caching'] },
-      { id: 'orm', label: 'ORM / Query Builder', level: 4, type: 'skill', children: ['caching'] },
-      { id: 'caching', label: 'Caching (Redis)', level: 5, type: 'skill', children: ['messaging'] },
-      { id: 'messaging', label: 'Message Queues', level: 6, type: 'skill', children: ['deploy'] },
-      { id: 'deploy', label: 'Deployment', level: 7, type: 'skill', children: [] }
+      { id: 'linux',      label: 'Terminal & Linux',     level: 0, type: 'skill', children: ['git'] },
+      { id: 'git',        label: 'Git & GitHub',         level: 0, type: 'skill', children: ['http'] },
+      { id: 'http',       label: 'HTTP & APIs',          level: 0, type: 'skill', children: ['java'] },
+      { id: 'java',       label: 'Java Programming',     level: 1, type: 'skill', children: ['cp-cli'] },
+      { id: 'cp-cli',     label: 'Checkpoint — Java CLI', level: 2, type: 'checkpoint', children: ['spring-boot'], tip: 'Viết các chương trình console quản lý bằng Java để nắm vững OOP.' },
+      { id: 'spring-boot',label: 'Spring Boot Framework',level: 3, type: 'skill', children: ['mysql', 'mongodb'] },
+      { id: 'mysql',      label: 'MySQL (Relational DB)',level: 4, type: 'skill', children: ['cp-crud'] },
+      { id: 'mongodb',    label: 'MongoDB (NoSQL)',      level: 4, type: 'skill', children: ['cp-crud'] },
+      { id: 'cp-crud',    label: 'Checkpoint — RESTful CRUD', level: 5, type: 'checkpoint', children: ['orm', 'auth'], tip: 'Xây dựng API quản lý Task (Task Manager API) kết nối với Database.' },
+      { id: 'orm',        label: 'Hibernate / ORM',      level: 6, type: 'skill', children: ['testing-backend'] },
+      { id: 'auth',       label: 'Auth & Security',      level: 6, type: 'skill', children: ['testing-backend'] },
+      { id: 'testing-backend', label: 'Backend Testing', level: 7, type: 'skill', children: ['caching', 'messaging'] },
+      { id: 'caching',    label: 'Caching (Redis)',      level: 8, type: 'skill', children: ['docker'] },
+      { id: 'messaging',  label: 'Message Queues',       level: 8, type: 'skill', children: ['docker'] },
+      { id: 'docker',     label: 'Docker Containers',    level: 9, type: 'skill', children: ['cicd'] },
+      { id: 'cicd',       label: 'CI/CD Pipelines',      level: 9, type: 'skill', children: ['cp-complete'] },
+      { id: 'cp-complete',label: 'Checkpoint — Microservice', level: 10, type: 'checkpoint', children: ['deploy'], tip: 'Tích hợp Auth, Caching và Docker vào một dịch vụ Backend hoàn chỉnh.' },
+      { id: 'deploy',     label: 'Deployment',           level: 11, type: 'skill', children: [] }
     ]
   },
   {
@@ -304,12 +313,12 @@ const DEFAULT_CAREER_PATHS = [
     icon: '🌿',
     color: '#f05032',
     nodes: [
-      { id: 'basics', label: 'Init, Add, Commit', level: 0, type: 'skill', children: ['branching'] },
-      { id: 'branching', label: 'Branching', level: 1, type: 'skill', children: ['merging', 'remote'] },
-      { id: 'merging', label: 'Merging & Rebasing', level: 2, type: 'skill', children: ['workflows'] },
-      { id: 'remote', label: 'Remote & Push/Pull', level: 2, type: 'skill', children: ['workflows'] },
-      { id: 'workflows', label: 'Git Workflows', level: 3, type: 'skill', children: ['advanced'] },
-      { id: 'advanced', label: 'Advanced (stash, cherry-pick)', level: 4, type: 'skill', children: [] }
+      { id: 'git-basics', label: 'Init, Add, Commit', level: 0, type: 'skill', children: ['git-branching'] },
+      { id: 'git-branching', label: 'Branching', level: 1, type: 'skill', children: ['git-merging', 'git-remote'] },
+      { id: 'git-merging', label: 'Merging & Rebasing', level: 2, type: 'skill', children: ['git-workflows'] },
+      { id: 'git-remote', label: 'Remote & Push/Pull', level: 2, type: 'skill', children: ['git-workflows'] },
+      { id: 'git-workflows', label: 'Git Workflows', level: 3, type: 'skill', children: ['git-advanced'] },
+      { id: 'git-advanced', label: 'Advanced (stash, cherry-pick)', level: 4, type: 'skill', children: [] }
     ]
   }
 ]
