@@ -6,7 +6,8 @@ const STORAGE_KEYS = {
   CAREER_PATHS: 'carrierpath_career_paths',
   COMPLETED_SKILLS: 'carrierpath_completed_skills',
   PINNED_NODES: 'carrierpath_pinned_nodes',
-  DAILY_CHECKINS: 'carrierpath_daily_checkins'
+  DAILY_CHECKINS: 'carrierpath_daily_checkins',
+  WORKSPACE: 'carrierpath_workspace'
 }
 
 // ─── Default data ──────────────────────────────────────
@@ -353,9 +354,16 @@ export const getDailyCheckins = () => {
   return JSON.parse(localStorage.getItem(STORAGE_KEYS.DAILY_CHECKINS) || '{}')
 }
 
-export const upsertDailyCheckin = (dateKey, { minutes = 0, note = '' }) => {
+// Check-in shape: { minutes, note, status: 'ahead'|'on-track'|'behind', locked: true }
+export const upsertDailyCheckin = (dateKey, { minutes = 0, note = '', status = 'on-track' }) => {
   const all = getDailyCheckins()
-  all[dateKey] = { minutes: Number(minutes) || 0, note: String(note || '') }
+  all[dateKey] = {
+    minutes: Number(minutes) || 0,
+    note: String(note || ''),
+    status,
+    locked: true,
+    savedAt: new Date().toISOString()
+  }
   localStorage.setItem(STORAGE_KEYS.DAILY_CHECKINS, JSON.stringify(all))
 }
 
@@ -364,6 +372,15 @@ export const deleteDailyCheckin = (dateKey) => {
   delete all[dateKey]
   localStorage.setItem(STORAGE_KEYS.DAILY_CHECKINS, JSON.stringify(all))
 }
+
+// Return the date key for the next check-in given the last check-in date and frequency
+// frequency: 'daily' = +1 day | 'every2days' = +2 days | 'weekly' = +7 days
+export const getNextCheckinDate = (lastDateKey, frequency) => {
+  if (!lastDateKey) return null
+  const intervalDays = frequency === 'weekly' ? 7 : frequency === 'every2days' ? 2 : 1
+  return addDays(lastDateKey, intervalDays)
+}
+
 
 // ─── Projects ──────────────────────────────────────────
 export const PROJECTS = [
@@ -601,3 +618,167 @@ export const PROJECTS = [
 
 export const getProject = (id) => PROJECTS.find(p => p.id === id)
 export const getProjectsByCategory = (category) => PROJECTS.filter(p => p.category === category)
+
+// ═══════════════════════════════════════════════════════
+//  Personal Workspace — main roadmap + weekly plan
+// ═══════════════════════════════════════════════════════
+
+// ─── Date helpers ──────────────────────────────────────
+function storageToday() {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+function addDays(dateStr, days) {
+  const [y, m, d] = dateStr.split('-').map(Number)
+  const date = new Date(y, m - 1, d)
+  date.setDate(date.getDate() + days)
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+}
+
+// ─── Weekly templates (hardcoded recommended durations) ─
+//  Each value = total weeks recommended for that roadmap
+export const WEEKLY_TEMPLATES = {
+  frontend:          11,
+  backend:            9,
+  fullstack:         16,
+  devops:             9,
+  datascience:        8,
+  'react-skill':      8,
+  'javascript-skill': 7,
+  'typescript-skill': 6,
+  'python-skill':     7,
+  'sql-skill':        6,
+  'docker-skill':     6,
+  'git-skill':        6,
+}
+
+// ─── Workspace CRUD ────────────────────────────────────
+// Workspace shape:
+// {
+//   pathId: string,
+//   startDate: 'YYYY-MM-DD',
+//   checkinFrequency: 'daily' | 'every2days' | 'weekly',
+//   weeklyPlan: [{
+//     week: number,
+//     nodeIds: string[],
+//     missedNodeIds: string[],
+//     status: 'upcoming' | 'active' | 'done' | 'failed',
+//     startDate: 'YYYY-MM-DD',
+//     endDate: 'YYYY-MM-DD'
+//   }]
+// }
+
+export const getWorkspace = () => {
+  const raw = localStorage.getItem(STORAGE_KEYS.WORKSPACE)
+  return raw ? JSON.parse(raw) : null
+}
+
+export const saveWorkspace = (ws) => {
+  localStorage.setItem(STORAGE_KEYS.WORKSPACE, JSON.stringify(ws))
+}
+
+export const clearWorkspace = () => {
+  localStorage.removeItem(STORAGE_KEYS.WORKSPACE)
+}
+
+// ─── Generate weekly plan from scratch ─────────────────
+export const generateWeeklyPlan = (pathId, startDate) => {
+  const path = getCareerPath(pathId)
+  if (!path) return []
+
+  // Sort nodes by level so earlier skills come first
+  const nodes = (path.nodes || []).slice().sort((a, b) => a.level - b.level || a.id.localeCompare(b.id))
+  const totalWeeks = WEEKLY_TEMPLATES[pathId] || Math.max(nodes.length, 4)
+
+  // Distribute nodes evenly: first (n % w) weeks get one extra node
+  const n = nodes.length
+  const w = totalWeeks
+  const base = Math.floor(n / w)
+  const extra = n % w
+
+  const plan = []
+  let nodeIdx = 0
+
+  for (let i = 0; i < w; i++) {
+    const count = base + (i < extra ? 1 : 0)
+    const weekStart = addDays(startDate, i * 7)
+    const weekEnd   = addDays(startDate, i * 7 + 6)
+    plan.push({
+      week: i + 1,
+      nodeIds: nodes.slice(nodeIdx, nodeIdx + count).map(nd => nd.id),
+      missedNodeIds: [],
+      status: 'upcoming',
+      startDate: weekStart,
+      endDate: weekEnd,
+    })
+    nodeIdx += count
+  }
+
+  return plan
+}
+
+// ─── Evaluate week statuses based on current date & completions ─
+export const checkAndFailMissedWeeks = (workspace) => {
+  const today = storageToday()
+  const completed = getCompletedSkills(workspace.pathId)
+
+  const updatedPlan = workspace.weeklyPlan.map(week => {
+    const allDone = week.nodeIds.length > 0 && week.nodeIds.every(id => completed.includes(id))
+
+    if (week.endDate < today) {
+      // Past week
+      if (allDone) return { ...week, status: 'done', missedNodeIds: [] }
+      const missed = week.nodeIds.filter(id => !completed.includes(id))
+      return { ...week, status: 'failed', missedNodeIds: missed }
+    } else if (week.startDate <= today) {
+      // Current week
+      if (allDone) return { ...week, status: 'done', missedNodeIds: [] }
+      return { ...week, status: 'active', missedNodeIds: [] }
+    } else {
+      // Future week
+      return { ...week, status: 'upcoming', missedNodeIds: [] }
+    }
+  })
+
+  return { ...workspace, weeklyPlan: updatedPlan }
+}
+
+// ─── Reassign a missed node from a failed week ──────────
+// mode: 'merge'   — add alongside existing nodes in target week
+// mode: 'cascade' — add to target week, push its last node to next, cascading forward
+export const reassignMissedNode = (workspace, nodeId, fromWeekNum, toWeekNum, mode) => {
+  // Deep copy the plan
+  const plan = workspace.weeklyPlan.map(w => ({
+    ...w,
+    nodeIds: [...w.nodeIds],
+    missedNodeIds: [...(w.missedNodeIds || [])],
+  }))
+
+  // Remove from source week
+  const fromIdx = plan.findIndex(w => w.week === fromWeekNum)
+  if (fromIdx !== -1) {
+    plan[fromIdx].missedNodeIds = plan[fromIdx].missedNodeIds.filter(id => id !== nodeId)
+    plan[fromIdx].nodeIds       = plan[fromIdx].nodeIds.filter(id => id !== nodeId)
+  }
+
+  const toIdx = plan.findIndex(w => w.week === toWeekNum)
+  if (toIdx === -1) return { ...workspace, weeklyPlan: plan }
+
+  if (mode === 'merge') {
+    // Simply add the missed node into the target week
+    plan[toIdx].nodeIds.push(nodeId)
+  } else {
+    // Cascade: insert node at front of target week,
+    // then bubble the last node of each subsequent week forward
+    plan[toIdx].nodeIds.unshift(nodeId)
+    for (let i = toIdx; i < plan.length - 1; i++) {
+      if (plan[i].nodeIds.length > 1) {
+        const overflow = plan[i].nodeIds.pop()
+        plan[i + 1].nodeIds.unshift(overflow)
+      }
+    }
+  }
+
+  return { ...workspace, weeklyPlan: plan }
+}
