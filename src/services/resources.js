@@ -119,23 +119,59 @@ const RESOURCES = {
   'cp-complete': [
     { title: 'Full Stack Project Ideas — roadmap.sh', url: 'https://roadmap.sh/projects', type: 'article' },
   ],
+  'testing-backend': [
+    { title: 'JUnit 5 User Guide', url: 'https://junit.org/junit5/docs/current/user-guide/', type: 'docs' },
+    { title: 'Mockito Crash Course', url: 'https://www.youtube.com/watch?v=HSGWcq_2AAM', type: 'video' },
+  ],
+  'mongodb': [
+    { title: 'MongoDB Official Basics', url: 'https://www.mongodb.com/basics', type: 'docs' },
+    { title: 'MongoDB Crash Course', url: 'https://www.youtube.com/watch?v=ofme2o29ngU', type: 'video' },
+  ],
+  "java": [
+    { title: "Java Programming Tutorial — dev.java", url: "https://dev.java/learn/", type: "docs" },
+    { title: "Java Full Course for Beginners", url: "https://www.youtube.com/watch?v=xk4_1vDrzzo", type: "video" }
+  ],
+  "spring-boot": [
+    { title: "Spring Boot Official Guides", url: "https://spring.io/guides", type: "docs" },
+    { title: "Spring Boot Tutorial for Beginners", url: "https://www.youtube.com/watch?v=9SGDpanrc8U", type: "video" },
+    { title: "Building REST services with Spring", url: "https://spring.io/guides/tutorials/rest/", type: "docs" }
+  ],
+  "mysql": [
+    { title: "MySQL Tutorial for Developers", url: "https://www.mysqltutorial.org/", type: "docs" },
+    { title: "MySQL Crash Course", url: "https://www.youtube.com/watch?v=7S_tz1z_5bA", type: "video" }
+  ],
+  "docker": [
+    { title: "Docker 101 - Getting Started", url: "https://docs.docker.com/get-started/", type: "docs" },
+    { title: "Docker Tutorial for Beginners", url: "https://www.youtube.com/watch?v=pTFZFxd4hOI", type: "video" }
+  ],
 
   // ─── DevOps / AWS ───
   route53: [
     { title: 'AWS Route 53 Docs', url: 'https://docs.aws.amazon.com/Route53/', type: 'docs' },
+    { title: 'Route 53 Tutorial for Beginners', url: 'https://www.youtube.com/watch?v=lBAwVqeHULI', type: 'video' },
+    { title: 'How DNS and Route 53 Work', url: 'https://aws.amazon.com/route53/what-is-dns/', type: 'article' },
   ],
   ses: [
     { title: 'AWS SES Docs', url: 'https://docs.aws.amazon.com/ses/', type: 'docs' },
+    { title: 'Send Emails with Node.js & AWS SES', url: 'https://www.youtube.com/watch?v=yJ4HqE9R3Zc', type: 'video' },
+    { title: 'SES Best Practices', url: 'https://docs.aws.amazon.com/ses/latest/DeveloperGuide/best-practices.html', type: 'docs' },
   ],
   ec2: [
     { title: 'AWS EC2 Getting Started', url: 'https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html', type: 'docs' },
     { title: 'EC2 Tutorial for Beginners', url: 'https://www.youtube.com/watch?v=iHX-jtKIVNA', type: 'video' },
+    { title: 'Deploy Node.js App to EC2', url: 'https://www.youtube.com/watch?v=NjYsXuSBZ5U', type: 'video' },
+    { title: 'AWS EC2 Pricing & Instance Types', url: 'https://aws.amazon.com/ec2/instance-types/', type: 'article' },
   ],
   vpc: [
     { title: 'AWS VPC Docs', url: 'https://docs.aws.amazon.com/vpc/', type: 'docs' },
+    { title: 'AWS VPC Crash Course', url: 'https://www.youtube.com/watch?v=J3EEhEU1H5s', type: 'video' },
+    { title: 'Networking Basics for Cloud', url: 'https://aws.amazon.com/vpc/faqs/', type: 'article' },
   ],
   s3: [
     { title: 'AWS S3 Getting Started', url: 'https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html', type: 'docs' },
+    { title: 'S3 Crash Course — Traversy Media', url: 'https://www.youtube.com/watch?v=e6w9LwZJFIA', type: 'video' },
+    { title: 'Upload Files to S3 using Node.js', url: 'https://www.youtube.com/watch?v=NZElg91l_vw', type: 'video' },
+    { title: 'S3 Security Best Practices', url: 'https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html', type: 'article' },
   ],
 
   // ─── Other paths shared nodes ───
@@ -410,6 +446,40 @@ const RESOURCES = {
   { title: 'Unity Prototype Tutorial', url: 'https://learn.unity.com/project/creator-kit-beginner-code', type: 'course' },
   { title: 'Game Prototype Development', url: 'https://www.youtube.com/watch?v=wwZENsy9X1g', type: 'video' },
 ],
+  // ─── Git & Github ───
+  'git-basics': [
+    { title: 'Atlassian Git Tutorial: Basics', url: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository', type: 'docs' },
+    { title: 'Git Crash Course for Beginners', url: 'https://www.youtube.com/watch?v=8JJ101D3knE', type: 'video' },
+    { title: 'How to Use Git & GitHub – Intro for Beginners', url: 'https://www.freecodecamp.org/news/introduction-to-git-and-github/', type: 'article' },
+    { title: 'Practical Git and Git Workflows Guide', url: 'https://www.freecodecamp.org/news/practical-git-and-git-workflows/', type: 'article' },
+  ],
+  'git-branching': [
+    { title: 'Learn Git Branching (Interactive Visualizer)', url: 'https://learngitbranching.js.org/', type: 'course' },
+    { title: 'Atlassian: Using Branches', url: 'https://www.atlassian.com/git/tutorials/using-branches', type: 'docs' },
+    { title: 'Git Branching Strategy Explained', url: 'https://www.youtube.com/watch?v=e2IbNHi4uCI', type: 'video' },
+  ],
+  'git-merging': [
+    { title: 'Merging vs. Rebasing (Atlassian)', url: 'https://www.atlassian.com/git/tutorials/merging-vs-rebasing', type: 'docs' },
+    { title: 'How to Resolve Merge Conflicts', url: 'https://www.youtube.com/watch?v=JtIX3HJKwfo', type: 'video' },
+    { title: 'Git Branching - Rebasing (Official Docs)', url: 'https://git-scm.com/book/en/v2/Git-Branching-Rebasing', type: 'docs' },
+  ],
+  'git-remote': [
+    { title: 'Working with Remotes', url: 'https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes', type: 'docs' },
+    { title: 'Pushing and Pulling Data', url: 'https://www.youtube.com/watch?v=yXT1ElMEkW8', type: 'video' },
+    { title: 'Understanding git fetch vs git pull', url: 'https://www.freecodecamp.org/news/git-fetch-vs-pull/', type: 'article' },
+  ],
+  'git-workflows': [
+    { title: 'Comparing Git Workflows', url: 'https://www.atlassian.com/git/tutorials/comparing-workflows', type: 'docs' },
+    { title: 'Understanding GitHub Flow', url: 'https://docs.github.com/en/get-started/using-github/github-flow', type: 'docs' },
+    { title: 'GitFlow Workflow Tutorial', url: 'https://www.youtube.com/watch?v=aJnFGMclhU8', type: 'video' },
+  ],
+  'git-advanced': [
+    { title: 'Git Stash Tutorial', url: 'https://www.atlassian.com/git/tutorials/saving-changes/git-stash', type: 'docs' },
+    { title: 'The Git Cherry Pick Command (Guide)', url: 'https://www.freecodecamp.org/news/the-git-cherry-pick-command/', type: 'article' },
+    { title: 'How to Use Cherry Pick & Avoid Duplicates', url: 'https://www.freecodecamp.org/news/git-cherry-pick-avoid-duplicate-commits/', type: 'article' },
+    { title: 'Using Git Reflog to Restore Lost Commits', url: 'https://www.youtube.com/watch?v=LqA-qQ9d16Q', type: 'video' },
+    { title: 'Undo anything with Git', url: 'https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/', type: 'article' },
+  ],
   // ─── Skill paths shared ───
   jsx: [
     { title: 'React Docs — Writing Markup with JSX', url: 'https://react.dev/learn/writing-markup-with-jsx', type: 'docs' },
