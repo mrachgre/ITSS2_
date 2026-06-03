@@ -275,8 +275,7 @@ const DEFAULT_CAREER_PATHS = [
         id: 'kotlin', label: 'Kotlin & Basics', level: 0, type: 'skill', children: ['android-studio'], 
       },
       { id: 'android-studio', label: 'Android Studio & Gradle', level: 1, type: 'skill', children: ['app-components'] },
-      { id: 'app-components', label: 'App Components', level: 2, type: 'skill', children: ['android-ui'], 
-        tip: 'Nắm chắc Activity Lifecycle, Intents, và Services là cốt lõi của mọi ứng dụng Android.' },
+      { id: 'app-components', label: 'App Components', level: 2, type: 'skill', children: ['android-ui'] },
       { id: 'android-ui', label: 'UI (XML & Jetpack Compose)', level: 3, type: 'skill', children: ['android-arch'] },
       { id: 'android-arch', label: 'Architecture (MVVM, DI)', level: 4, type: 'skill', children: ['android-storage'] },
       { id: 'android-storage', label: 'Storage (Room, DataStore)', level: 5, type: 'skill', children: ['android-async'] },
@@ -301,13 +300,11 @@ const DEFAULT_CAREER_PATHS = [
     color: '#00ffcc', // Màu neon cyan/green đặc trưng của hacker/security
     nodes: [
       { 
-        id: 'cs-it-fundamentals', label: 'IT & OS Fundamentals', level: 0, type: 'skill', children: ['cs-networking'],
-        tip: 'Bạn cần hiểu rõ cách hệ điều hành (Linux/Windows) và máy ảo hoạt động trước khi tìm cách bảo vệ hoặc tấn công chúng.'
+        id: 'cs-it-fundamentals', label: 'IT & OS Fundamentals', level: 0, type: 'skill', children: ['cs-networking']
       },
       { id: 'cs-networking', label: 'Networking (OSI, TCP/IP, DNS)', level: 1, type: 'skill', children: ['cs-scripting'] },
       { 
-        id: 'cs-scripting', label: 'Scripting (Python, Bash)', level: 2, type: 'skill', children: ['cs-security-core'], 
-        tip: 'Tự động hóa là kỹ năng bắt buộc để phân tích log và tự viết các công cụ bảo mật.' 
+        id: 'cs-scripting', label: 'Scripting (Python, Bash)', level: 2, type: 'skill', children: ['cs-security-core']
       },
       { id: 'cs-security-core', label: 'Core Concepts (CIA, Crypto, IAM)', level: 3, type: 'checkpoint', children: ['cs-network-sec'] },
       { id: 'cs-network-sec', label: 'Network Sec (Firewalls, IDS/IPS)', level: 4, type: 'skill', children: ['cs-app-sec'] },
@@ -316,7 +313,6 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'cs-cloud-sec', label: 'Cloud Security Basics', level: 7, type: 'skill', children: ['cs-ctf-certs'] },
       { 
         id: 'cs-ctf-certs', label: 'CTFs & Certifications (Sec+, CEH)', level: 8, type: 'checkpoint', children: [],
-        tip: 'Thực hành trên TryHackMe, HackTheBox và hướng tới các chứng chỉ như CompTIA Security+.'
       }
     ],
     sections: [
