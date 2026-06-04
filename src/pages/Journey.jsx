@@ -371,6 +371,16 @@ export default function Journey({ onOpenPath }) {
   const [reassignOpen, setReassignOpen]       = useState(false)
   const [reassignTargets, setReassignTargets] = useState({})
 
+  // Task B — inline timeline editor
+  const [tlEditWeek, setTlEditWeek] = useState(null)
+
+  // Task B — selected date shown in check-in panel (null = today)
+  const [selectedCheckinDate, setSelectedCheckinDate] = useState(null)
+
+  // Task C — custom add-node dropdown
+  const [tlAddDropdownOpen, setTlAddDropdownOpen] = useState(false)
+  const [tlAddSearch, setTlAddSearch] = useState('')
+
   // TASK 5 — Demo offset
   const [demoOffset, setDemoOffsetState] = useState(getDemoOffset())
   const today = useMemo(() => {
@@ -431,6 +441,16 @@ export default function Journey({ onOpenPath }) {
     }
   }, [phase, selPathId, paths])
 
+  // Task C — close custom dropdown when clicking outside
+  useEffect(() => {
+    if (!tlAddDropdownOpen) return
+    const handler = (e) => {
+      if (!e.target.closest('.tl-add-dropdown-wrap')) setTlAddDropdownOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [tlAddDropdownOpen])
+
   // ── Check-in availability (uses virtual today) ──────────
   const checkinAvailability = useMemo(() => {
     if (!workspace) return { canCheckin: false, nextDate: null, lastDate: null }
@@ -442,6 +462,9 @@ export default function Journey({ onOpenPath }) {
   }, [checkins, workspace, today])
 
   const todayCheckin = checkins[today]
+  // Task B — date/checkin shown in the check-in panel
+  const viewDate    = selectedCheckinDate || today
+  const viewCheckin = checkins[viewDate]
   const prevCheckin  = useMemo(() => {
     const dates = Object.keys(checkins).sort().filter(d => d < today)
     return dates.length ? checkins[dates[dates.length - 1]] : null
@@ -556,7 +579,35 @@ export default function Journey({ onOpenPath }) {
     setReassignTargets({})
   }
 
-  // ── Derived ────────────────────────────────────────────
+  // ── Task B helpers ────────────────────────────────────
+  const getNodeLabel = (id) =>
+    activePath?.nodes?.find(n => n.id === id)?.label || id
+
+  const addNodeToWeek = (nodeId, weekNum) => {
+    if (!nodeId) return
+    const plan = workspace.weeklyPlan.map(w =>
+      w.week === weekNum && !w.nodeIds.includes(nodeId)
+        ? { ...w, nodeIds: [...w.nodeIds, nodeId] }
+        : { ...w, nodeIds: [...w.nodeIds] }
+    )
+    const updated = { ...workspace, weeklyPlan: plan }
+    saveWorkspace(updated)
+    setWorkspace(updated)
+  }
+
+  const removeNodeFromWeek = (nodeId, weekNum) => {
+    const week = workspace.weeklyPlan.find(w => w.week === weekNum)
+    if (!week || week.nodeIds.length <= 1) return   // don't allow empty
+    const plan = workspace.weeklyPlan.map(w =>
+      w.week === weekNum
+        ? { ...w, nodeIds: w.nodeIds.filter(id => id !== nodeId) }
+        : { ...w, nodeIds: [...w.nodeIds] }
+    )
+    const updated = { ...workspace, weeklyPlan: plan }
+    saveWorkspace(updated)
+    setWorkspace(updated)
+  }
+
   const activePath     = useMemo(() => paths.find(p => p.id === workspace?.pathId), [paths, workspace])
   const currentWeek    = useMemo(() => {
     if (!workspace) return null
@@ -853,43 +904,57 @@ export default function Journey({ onOpenPath }) {
           )}
         </section>
 
-        {/* Check-in — TASK 4 */}
+        {/* Check-in — Tasks A+B+4 */}
         <section className="journey-card">
           <div className="journey-card-header">
             <h3>✏️ Check-in</h3>
             <span className="freq-badge">{FREQ_LABELS[workspace?.checkinFrequency]}</span>
           </div>
 
-          {/* Previous status reminder */}
-          {prevCheckin?.status && prevCheckin.status !== 'on-track' && (
+          {/* Task B — banner when browsing a past date from timeline */}
+          {selectedCheckinDate && selectedCheckinDate !== today && (
+            <div className="ci-view-banner">
+              📅 Đang xem: <strong>{fmtDateLong(selectedCheckinDate)}</strong>
+              <button className="btn btn-ghost"
+                style={{ fontSize: '0.75rem', padding: '3px 8px' }}
+                onClick={() => { setSelectedCheckinDate(null); setTlEditWeek(null) }}>
+                ← Về hôm nay
+              </button>
+            </div>
+          )}
+
+          {/* Previous status reminder — only when viewing today */}
+          {(!selectedCheckinDate || selectedCheckinDate === today) &&
+            prevCheckin?.status && prevCheckin.status !== 'on-track' && (
             <div className={`ci-prev-status ${CHECKIN_STATUS[prevCheckin.status]?.cls}`}>
               Lần trước: {CHECKIN_STATUS[prevCheckin.status]?.emoji} {CHECKIN_STATUS[prevCheckin.status]?.label}
             </div>
           )}
 
-          {/* TASK 4A — locked card re-renders with spread state */}
-          {todayCheckin?.locked ? (
+          {/* Locked / form / wait — driven by viewCheckin + viewDate */}
+          {viewCheckin?.locked ? (
             <div className="ci-locked-card">
               <div className="ci-locked-header">
-                <div className={`ci-status-badge ${CHECKIN_STATUS[todayCheckin.status]?.cls}`}>
-                  {CHECKIN_STATUS[todayCheckin.status]?.emoji} {CHECKIN_STATUS[todayCheckin.status]?.label}
+                <div className={`ci-status-badge ${CHECKIN_STATUS[viewCheckin.status]?.cls}`}>
+                  {CHECKIN_STATUS[viewCheckin.status]?.emoji} {CHECKIN_STATUS[viewCheckin.status]?.label}
                 </div>
-                <span className="ci-locked-date">{today}</span>
+                <span className="ci-locked-date">{viewDate}</span>
               </div>
               <div className="ci-locked-body">
-                <div className="ci-locked-minutes">⏱ {todayCheckin.minutes} phút</div>
-                {/* TASK 4A — always render note even if empty string */}
-                {todayCheckin.note !== undefined && todayCheckin.note !== '' && (
-                  <div className="ci-locked-note">{todayCheckin.note}</div>
+                <div className="ci-locked-minutes">⏱ {viewCheckin.minutes} phút</div>
+                {viewCheckin.note !== undefined && viewCheckin.note !== '' && (
+                  <div className="ci-locked-note">{viewCheckin.note}</div>
                 )}
               </div>
-              <button className="ci-delete-btn" onClick={() => handleDeleteCheckin(today)}>
-                🗑 Xóa check-in này
-              </button>
+              {/* Delete only allowed for today's entry */}
+              {viewDate === today && (
+                <button className="ci-delete-btn" onClick={() => handleDeleteCheckin(today)}>
+                  🗑 Xóa check-in này
+                </button>
+              )}
             </div>
-          ) : checkinAvailability.canCheckin ? (
+          ) : viewDate === today && checkinAvailability.canCheckin ? (
             <div className="checkin-form">
-              {/* TASK 4B — updated labels */}
               <div className="ci-status-picker">
                 {Object.entries(CHECKIN_STATUS).map(([key, { label, emoji, cls }]) => (
                   <button key={key} id={`ci-status-${key}`}
@@ -909,13 +974,21 @@ export default function Journey({ onOpenPath }) {
               <button type="button" className="btn btn-primary ci-save-btn"
                 onClick={handleSaveCheckin} id="save-checkin-btn">💾 Lưu check-in</button>
             </div>
-          ) : (
+          ) : viewDate === today ? (
             <div className="ci-wait-banner">
               <div className="ci-wait-icon">🔒</div>
               <div>
                 <div className="ci-wait-title">Check-in tiếp theo</div>
                 <div className="ci-wait-date">{fmtDateLong(checkinAvailability.nextDate)}</div>
                 <div className="ci-wait-sub">Lần cuối: {fmtDate(checkinAvailability.lastDate)}</div>
+              </div>
+            </div>
+          ) : (
+            <div className="ci-wait-banner">
+              <div className="ci-wait-icon">📭</div>
+              <div>
+                <div className="ci-wait-title">Không có check-in</div>
+                <div className="ci-wait-sub">Chưa có dữ liệu check-in cho ngày này.</div>
               </div>
             </div>
           )}
@@ -941,22 +1014,108 @@ export default function Journey({ onOpenPath }) {
           </div>
           <div className="timeline-scroll">
             {workspace?.weeklyPlan?.map(week => {
-              const meta   = WEEK_META[week.status] || WEEK_META.upcoming
-              const nodeId = week.nodeIds[0]
-              const node   = activePath?.nodes?.find(n => n.id === nodeId)
-              const label  = node?.label || week.label || nodeId
-              const isCur  = week.status === 'active'
+              const meta           = WEEK_META[week.status] || WEEK_META.upcoming
+              const nodeId         = week.nodeIds[0]
+              const node           = activePath?.nodes?.find(n => n.id === nodeId)
+              const label          = node?.label || week.label || nodeId
+              const isCur          = week.status === 'active'
+              const isEditing      = tlEditWeek === week.week
+              // Task A — check-in status for this period's start date
+              const checkinForWeek = checkins[week.startDate]
+              const ciMeta         = checkinForWeek ? CHECKIN_STATUS[checkinForWeek.status] : null
+              // Task A — override emoji with check-in status if a check-in exists
+              const displayEmoji   = ciMeta ? ciMeta.emoji : meta.emoji
               return (
-                <div key={week.week} className={`tl-week ${meta.cls} ${isCur ? 'tl-current' : ''}`}>
-                  <div className="tl-emoji">{meta.emoji}</div>
+                <div
+                  key={week.week}
+                  className={`tl-week ${meta.cls} ${isCur ? 'tl-current' : ''} ${isEditing ? 'tl-editing' : ''}`}
+                  onClick={() => {
+                    const isSame = tlEditWeek === week.week
+                    setTlEditWeek(isSame ? null : week.week)
+                    setSelectedCheckinDate(isSame ? null : week.startDate)
+                  }}
+                >
+                  <div className="tl-emoji">{displayEmoji}</div>
                   <div className="tl-wk">#{week.week}</div>
                   <div className="tl-node-label">{label}</div>
                   <div className="tl-dates">{fmtDate(week.startDate)}</div>
                   {week.status === 'failed' && <div className="tl-missed">Trễ</div>}
+                  {/* Task A — check-in label dot (first word only) */}
+                  {ciMeta && (
+                    <div className={`tl-checkin-dot ${ciMeta.cls}`}>
+                      {ciMeta.label.split(' ')[0]}
+                    </div>
+                  )}
                 </div>
               )
             })}
           </div>
+
+          {/* Task B — inline week editor panel */}
+          {tlEditWeek && (() => {
+            const selectedWeek = workspace.weeklyPlan.find(w => w.week === tlEditWeek)
+            if (!selectedWeek) return null
+            return (
+              <div className="tl-edit-panel">
+                <div className="tl-edit-title">
+                  Kỳ #{tlEditWeek} — {fmtDate(selectedWeek.startDate)}
+                  <button className="btn btn-ghost rp-close"
+                    style={{ marginLeft: 'auto' }}
+                    onClick={() => setTlEditWeek(null)}>✕</button>
+                </div>
+                <div className="tl-edit-tags">
+                  {selectedWeek.nodeIds.map(id => (
+                    <span key={id} className="tl-edit-tag">
+                      {getNodeLabel(id)}
+                      <button
+                        disabled={selectedWeek.nodeIds.length <= 1}
+                        onClick={() => removeNodeFromWeek(id, tlEditWeek)}>✕</button>
+                    </span>
+                  ))}
+                </div>
+                {/* Task C — custom styled dropdown (replaces native select) */}
+                {(() => {
+                  const available = (activePath?.nodes || [])
+                    .filter(n => !selectedWeek.nodeIds.includes(n.id))
+                    .filter(n => tlAddSearch === '' ||
+                      n.label.toLowerCase().includes(tlAddSearch.toLowerCase()))
+                  return (
+                    <div className="tl-add-dropdown-wrap">
+                      <button className="tl-add-trigger"
+                        onClick={() => { setTlAddDropdownOpen(o => !o); setTlAddSearch('') }}>
+                        + Thêm node vào kỳ này...
+                        <span>{tlAddDropdownOpen ? '▲' : '▼'}</span>
+                      </button>
+                      {tlAddDropdownOpen && (
+                        <div className="tl-add-menu">
+                          <input className="tl-add-search"
+                            placeholder="Tìm kiếm node..."
+                            value={tlAddSearch}
+                            onChange={e => setTlAddSearch(e.target.value)}
+                            autoFocus />
+                          <div className="tl-add-options">
+                            {available.length === 0 && (
+                              <div className="tl-add-empty">Không có node nào</div>
+                            )}
+                            {available.map(n => (
+                              <button key={n.id} className="tl-add-option"
+                                onClick={() => {
+                                  addNodeToWeek(n.id, tlEditWeek)
+                                  setTlAddDropdownOpen(false)
+                                  setTlAddSearch('')
+                                }}>
+                                {n.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })()}
+              </div>
+            )
+          })()}
         </section>
 
         {/* Pinned Nodes */}

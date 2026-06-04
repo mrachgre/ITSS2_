@@ -14,15 +14,25 @@ export default function RoadmapGraph({
   onPinNode,
   isPinned
 }) {
+  // Task A — deduplicate nodes by id
+  const uniqueNodes = useMemo(() => {
+    const seen = new Set()
+    return nodes.filter(n => {
+      if (seen.has(n.id)) return false
+      seen.add(n.id)
+      return true
+    })
+  }, [nodes])
+
   const levelGroups = useMemo(() => {
     const map = new Map()
-    for (const n of nodes) {
+    for (const n of uniqueNodes) {
       const lvl = Number.isFinite(n.level) ? n.level : 0
       if (!map.has(lvl)) map.set(lvl, [])
       map.get(lvl).push(n)
     }
     return Array.from(map.entries()).sort((a, b) => a[0] - b[0])
-  }, [nodes])
+  }, [uniqueNodes])
 
   const sectionAfterLevel = useMemo(() => {
     const m = new Map()
@@ -31,7 +41,8 @@ export default function RoadmapGraph({
   }, [sections])
 
   return (
-    <div className="rg-container">
+    // Task B — pass --pc CSS variable from pathColor
+    <div className="rg-container" style={{ '--pc': pathColor }}>
       <div className="rg-spine" />
       {levelGroups.map(([level, items], gi) => {
         const sectionDivider = sectionAfterLevel.get(level) || null
