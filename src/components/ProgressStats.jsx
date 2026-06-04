@@ -14,15 +14,11 @@ export default function ProgressStats({ userProgress }) {
   ]
 
   return (
-    <div className="progress-stats">
+    <div className="progress-strip">
       {stats.map((s, i) => (
-        <div key={i} className="stat-card" style={{ animationDelay: `${i * 100}ms` }}>
-          <div className="stat-icon">{s.icon}</div>
-          <div className="stat-content">
-            <p className="stat-label">{s.label}</p>
-            <p className="stat-value">{s.value}</p>
-          </div>
-          <div className="stat-bg" style={{ backgroundColor: s.color }} />
+        <div key={i} className="pstrip-cell" style={{ '--sc': s.color }}>
+          <span className="pstrip-value" style={{ color: s.color }}>{s.value}</span>
+          <span className="pstrip-label">{s.label}</span>
         </div>
       ))}
     </div>

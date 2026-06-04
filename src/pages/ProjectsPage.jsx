@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { getProjectsByCategory } from '../services/storage'
 import './ProjectsPage.css'
 
-const CATEGORIES = ['Frontend', 'Backend', 'DevOps']
+const CATEGORIES = ['Frontend', 'Backend', 'DevOps','Mobile','Security']
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced']
 
 const DIFF_LABELS = {

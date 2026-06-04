@@ -6,7 +6,8 @@ const STORAGE_KEYS = {
   CAREER_PATHS: 'carrierpath_career_paths',
   COMPLETED_SKILLS: 'carrierpath_completed_skills',
   PINNED_NODES: 'carrierpath_pinned_nodes',
-  DAILY_CHECKINS: 'carrierpath_daily_checkins'
+  DAILY_CHECKINS: 'carrierpath_daily_checkins',
+  WORKSPACE: 'carrierpath_workspace'
 }
 
 // ─── Default data ──────────────────────────────────────
@@ -23,16 +24,36 @@ const DEFAULT_CAREER_PATHS = [
     color: '#ff6b6b',
     nodes: [
       { id: 'html', label: 'HTML', level: 0, type: 'skill', children: ['css'] },
+<<<<<<< HEAD
       { id: 'css', label: 'CSS', level: 0, type: 'skill', children: ['js-basics'] },
       { id: 'js-basics', label: 'JavaScript Basics', level: 1, type: 'skill', children: ['dom', 'es6'] },
-      { id: 'cp-static', label: 'Checkpoint — Static Pages', level: 2, type: 'checkpoint', children: ['dom', 'es6'] },
+      { id: 'cp-static', label: 'Practice - Static Pages', level: 2, type: 'checkpoint', children: ['dom', 'es6'] },
       { id: 'dom', label: 'DOM Manipulation', level: 3, type: 'skill', children: ['react'] },
       { id: 'es6', label: 'ES6+ Features', level: 3, type: 'skill', children: ['react'] },
+=======
+      { id: 'css', label: 'CSS', level: 0, type: 'skill', children: ['js-basics', 'sass'] },
+      { id: 'js-basics', label: 'JavaScript Basics', level: 1, type: 'skill', children: ['dom', 'es6', 'git'] },
+      { id: 'sass', label: 'Sass / SCSS', level: 1, type: 'skill', children: ['tailwind', 'bootstrap'] },
+      { id: 'cp-static', label: 'Checkpoint — Static Pages', level: 2, type: 'checkpoint', children: ['dom', 'es6', 'git'] },
+      { id: 'git', label: 'Git & Version Control', level: 2, type: 'skill', children: ['npm', 'dom'] },
+      { id: 'npm', label: 'npm & Package Managers', level: 2, type: 'skill', children: ['typescript', 'webpack'] },
+      { id: 'dom', label: 'DOM Manipulation', level: 3, type: 'skill', children: ['rest-api', 'react'] },
+      { id: 'es6', label: 'ES6+ Features', level: 3, type: 'skill', children: ['react', 'typescript'] },
+      { id: 'typescript', label: 'TypeScript', level: 3, type: 'skill', children: ['react'] },
+      { id: 'tailwind', label: 'Tailwind CSS', level: 3, type: 'skill', children: ['react'] },
+      { id: 'bootstrap', label: 'Bootstrap', level: 3, type: 'skill', children: ['react'] },
+      { id: 'rest-api', label: 'REST API Integration', level: 4, type: 'skill', children: ['react', 'web-security'] },
+      { id: 'webpack', label: 'Webpack & Build Tools', level: 4, type: 'skill', children: ['react', 'deploy'] },
+>>>>>>> 1aaebb2231ea6b4121360ac8b44648f4bfecdd5f
       { id: 'react', label: 'React.js', level: 4, type: 'skill', children: ['state-mgmt', 'routing'] },
-      { id: 'state-mgmt', label: 'State Management', level: 5, type: 'skill', children: ['testing'] },
+      { id: 'state-mgmt', label: 'State Management', level: 5, type: 'skill', children: ['testing', 'graphql'] },
       { id: 'routing', label: 'React Router', level: 5, type: 'skill', children: ['testing'] },
-      { id: 'testing', label: 'Testing', level: 6, type: 'skill', children: ['deploy'] },
-      { id: 'deploy', label: 'Build & Deploy', level: 7, type: 'skill', children: [] }
+      { id: 'testing', label: 'Testing (Jest/Vitest)', level: 6, type: 'skill', children: ['web-security', 'performance'] },
+      { id: 'web-security', label: 'Web Security Basics', level: 6, type: 'skill', children: ['performance', 'pwa'] },
+      { id: 'graphql', label: 'GraphQL', level: 6, type: 'skill', children: ['deploy'] },
+      { id: 'performance', label: 'Performance Optimization', level: 7, type: 'skill', children: ['pwa', 'deploy'] },
+      { id: 'pwa', label: 'Progressive Web Apps (PWA)', level: 7, type: 'skill', children: ['deploy'] },
+      { id: 'deploy', label: 'Build & Deploy', level: 8, type: 'skill', children: [] }
     ]
   },
   {
@@ -51,7 +72,25 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'orm', label: 'ORM / Query Builder', level: 4, type: 'skill', children: ['caching'] },
       { id: 'caching', label: 'Caching (Redis)', level: 5, type: 'skill', children: ['messaging'] },
       { id: 'messaging', label: 'Message Queues', level: 6, type: 'skill', children: ['deploy'] },
-      { id: 'deploy', label: 'Deployment', level: 7, type: 'skill', children: [] }
+      { id: 'deploy', label: 'Deployment', level: 7, type: 'skill', children: [] },
+      { id: 'linux',      label: 'Terminal & Linux',     level: 0, type: 'skill', children: ['git'] },
+      { id: 'git',        label: 'Git & GitHub',         level: 0, type: 'skill', children: ['http'] },
+      { id: 'http',       label: 'HTTP & APIs',          level: 0, type: 'skill', children: ['java'] },
+      { id: 'java',       label: 'Java Programming',     level: 1, type: 'skill', children: ['cp-cli'] },
+      { id: 'cp-cli',     label: 'Checkpoint — Java CLI', level: 2, type: 'checkpoint', children: ['spring-boot'], tip: 'Viết các chương trình console quản lý bằng Java để nắm vững OOP.' },
+      { id: 'spring-boot',label: 'Spring Boot Framework',level: 3, type: 'skill', children: ['mysql', 'mongodb'] },
+      { id: 'mysql',      label: 'MySQL (Relational DB)',level: 4, type: 'skill', children: ['cp-crud'] },
+      { id: 'mongodb',    label: 'MongoDB (NoSQL)',      level: 4, type: 'skill', children: ['cp-crud'] },
+      { id: 'cp-crud',    label: 'Checkpoint — RESTful CRUD', level: 5, type: 'checkpoint', children: ['orm', 'auth'], tip: 'Xây dựng API quản lý Task (Task Manager API) kết nối với Database.' },
+      { id: 'orm',        label: 'Hibernate / ORM',      level: 6, type: 'skill', children: ['testing-backend'] },
+      { id: 'auth',       label: 'Auth & Security',      level: 6, type: 'skill', children: ['testing-backend'] },
+      { id: 'testing-backend', label: 'Backend Testing', level: 7, type: 'skill', children: ['caching', 'messaging'] },
+      { id: 'caching',    label: 'Caching (Redis)',      level: 8, type: 'skill', children: ['docker'] },
+      { id: 'messaging',  label: 'Message Queues',       level: 8, type: 'skill', children: ['docker'] },
+      { id: 'docker',     label: 'Docker Containers',    level: 9, type: 'skill', children: ['cicd'] },
+      { id: 'cicd',       label: 'CI/CD Pipelines',      level: 9, type: 'skill', children: ['cp-complete'] },
+      { id: 'cp-complete',label: 'Checkpoint — Microservice', level: 10, type: 'checkpoint', children: ['deploy'], tip: 'Tích hợp Auth, Caching và Docker vào một dịch vụ Backend hoàn chỉnh.' },
+      { id: 'deploy',     label: 'Deployment',           level: 11, type: 'skill', children: [] }
     ]
   },
   {
@@ -66,11 +105,11 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'html', label: 'HTML', level: 0, type: 'skill', children: ['css'] },
       { id: 'css', label: 'CSS', level: 0, type: 'skill', children: ['javascript'] },
       { id: 'javascript', label: 'JavaScript', level: 0, type: 'skill', children: ['cp-static', 'cp-interactivity', 'npm'] },
-      { id: 'cp-static', label: 'Checkpoint - Static Webpages', level: 1, type: 'checkpoint', children: ['cp-collab'] },
-      { id: 'cp-interactivity', label: 'Checkpoint - Interactivity', level: 1, type: 'checkpoint', children: ['cp-external'] },
+      { id: 'cp-static', label: 'Practice - Static Webpages', level: 1, type: 'checkpoint', children: ['cp-collab'] },
+      { id: 'cp-interactivity', label: 'Practice - Interactivity', level: 1, type: 'checkpoint', children: ['cp-external'] },
       { id: 'npm', label: 'npm', level: 1, type: 'skill', children: ['cp-external'] },
-      { id: 'cp-collab', label: 'Checkpoint - Collaborative Work', level: 2, type: 'checkpoint', children: ['react', 'tailwind'] },
-      { id: 'cp-external', label: 'Checkpoint - External Packages', level: 2, type: 'checkpoint', children: ['github', 'git'] },
+      { id: 'cp-collab', label: 'Practice - Collaborative Work', level: 2, type: 'checkpoint', children: ['react', 'tailwind'] },
+      { id: 'cp-external', label: 'Practice - External Packages', level: 2, type: 'checkpoint', children: ['github', 'git'] },
       { id: 'react', label: 'React', level: 3, type: 'skill', children: ['cp-frontend'] },
       {
         id: 'tailwind', label: 'Tailwind CSS', level: 3, type: 'skill', children: ['cp-frontend'],
@@ -78,22 +117,22 @@ const DEFAULT_CAREER_PATHS = [
       },
       { id: 'github', label: 'GitHub', level: 3, type: 'skill', children: ['cp-frontend'] },
       { id: 'git', label: 'Git', level: 3, type: 'skill', children: ['cp-frontend'] },
-      { id: 'cp-frontend', label: 'Checkpoint - Frontend Apps', level: 4, type: 'checkpoint', children: ['nodejs'] },
+      { id: 'cp-frontend', label: 'Practice - Frontend Apps', level: 4, type: 'checkpoint', children: ['nodejs'] },
       // ─── Backend ───
       {
         id: 'nodejs', label: 'Node.js', level: 5, type: 'skill', children: ['cp-cli'],
         tip: 'Bạn có thể chọn bất kỳ ngôn ngữ backend nào. Khuyến nghị là Node.js vì bạn đã quen với JavaScript và dễ dàng hơn để bắt đầu.'
       },
-      { id: 'cp-cli', label: 'Checkpoint — CLI Apps', level: 6, type: 'checkpoint', children: ['postgresql'] },
+      { id: 'cp-cli', label: 'Practice - CLI Apps', level: 6, type: 'checkpoint', children: ['postgresql'] },
       { id: 'postgresql', label: 'PostgreSQL', level: 7, type: 'skill', children: ['cp-crud'] },
       {
-        id: 'cp-crud', label: 'Checkpoint — Simple CRUD Apps', level: 8, type: 'checkpoint', children: ['redis', 'jwt', 'restful'],
+        id: 'cp-crud', label: 'Practice - Simple CRUD Apps', level: 8, type: 'checkpoint', children: ['redis', 'jwt', 'restful'],
         tip: 'Sử dụng các checkpoint và đừng quên thực hành những gì bạn đã học. Có các ý tưởng dự án tại mỗi checkpoint để bạn củng cố kiến thức.'
       },
       { id: 'redis', label: 'Redis', level: 9, type: 'skill', children: ['cp-complete'] },
       { id: 'jwt', label: 'JWT Auth', level: 9, type: 'skill', children: ['cp-complete'] },
       { id: 'restful', label: 'RESTful APIs', level: 9, type: 'skill', children: ['cp-complete'] },
-      { id: 'cp-complete', label: 'Checkpoint — Complete App', level: 10, type: 'checkpoint', children: ['route53', 'ses', 'ec2', 'vpc', 's3'] },
+      { id: 'cp-complete', label: 'Practice - Complete App', level: 10, type: 'checkpoint', children: ['route53', 'ses', 'ec2', 'vpc', 's3'] },
       // ─── DevOps ───
       { id: 'route53', label: 'Route53', level: 11, type: 'skill', children: [] },
       { id: 'ses', label: 'SES', level: 11, type: 'skill', children: [] },
@@ -128,12 +167,38 @@ const DEFAULT_CAREER_PATHS = [
   },
   {
     id: 'datascience',
-    name: 'Data Scientist',
+    name: 'Data Science',
     category: 'role',
     description: 'Phân tích dữ liệu, xây dựng mô hình ML và khám phá thông tin chi tiết.',
     icon: '📊',
     color: '#a8e6cf',
     nodes: [
+<<<<<<< HEAD
+      { id: 'python', label: 'Python Fundamentals', level: 0, type: 'skill', children: ['cp-ds-python', 'pandas'] },
+      { id: 'math', label: 'Math & Statistics', level: 0, type: 'skill', children: ['cp-ds-python', 'ml'] },
+      { id: 'cp-ds-python', label: 'Practice - Python Data Notebook', level: 1, type: 'checkpoint', children: ['pandas', 'viz'], tip: 'Load a CSV, clean simple issues, calculate summaries, and explain what the data contains.' },
+      { id: 'pandas', label: 'Pandas / NumPy', level: 2, type: 'skill', children: ['cp-ds-cleaning', 'viz'] },
+      { id: 'viz', label: 'Data Visualization', level: 2, type: 'skill', children: ['cp-ds-eda'] },
+      { id: 'cp-ds-cleaning', label: 'Practice - Clean a Real Dataset', level: 3, type: 'checkpoint', children: ['cp-ds-eda'], tip: 'Choose a messy public dataset and document every cleaning decision.' },
+      { id: 'cp-ds-eda', label: 'Practice - Exploratory Data Analysis', level: 3, type: 'checkpoint', children: ['feature-eng', 'ml'], tip: 'Create charts and written findings before training a model.' },
+      { id: 'feature-eng', label: 'Feature Engineering', level: 4, type: 'skill', children: ['cp-ds-features', 'ml'] },
+      { id: 'ml', label: 'Machine Learning', level: 4, type: 'skill', children: ['cp-ds-model'] },
+      { id: 'cp-ds-features', label: 'Practice - Feature Pipeline', level: 5, type: 'checkpoint', children: ['cp-ds-model', 'mlops'], tip: 'Turn cleaning and feature steps into repeatable functions or a scikit-learn pipeline.' },
+      { id: 'cp-ds-model', label: 'Practice - Train and Evaluate Models', level: 5, type: 'checkpoint', children: ['dl', 'mlops'], tip: 'Compare at least two baseline models with a clear metric and validation split.' },
+      { id: 'dl', label: 'Deep Learning', level: 6, type: 'skill', children: ['cp-ds-deep-learning'] },
+      { id: 'cp-ds-deep-learning', label: 'Practice - Neural Network Experiment', level: 7, type: 'checkpoint', children: ['mlops'], tip: 'Train a small neural network only after establishing a classical ML baseline.' },
+      { id: 'mlops', label: 'MLOps', level: 7, type: 'skill', children: ['cp-ds-deploy'] },
+      { id: 'cp-ds-deploy', label: 'Practice - Deploy a Data Product', level: 8, type: 'checkpoint', children: [], tip: 'Package a model or dashboard so another user can run it from a clean setup.' }
+    ],
+    sections: [
+      { afterLevel: 3, label: 'Modeling starts after EDA', sublabel: 'Do not skip cleaning and exploration' },
+      { afterLevel: 5, label: 'Production path branches here', sublabel: 'Deep learning is optional; MLOps is useful for most models' }
+=======
+      { id: 'python', label: 'Python', level: 0, type: 'skill', children: ['math'] },
+      { id: 'math', label: 'Math & Statistics', level: 1, type: 'skill', children: ['pandas'] },
+      { id: 'pandas', label: 'Pandas / NumPy', level: 2, type: 'skill', children: ['viz', 'ml'] },
+      { id: 'viz', label: 'Data Visualization', level: 3, type: 'skill', children: ['ml'] },
+      { id: 'ml', label: 'Machine Learning', level: 4, type: 'skill', children: ['dl', 'feature-eng'] },
       { id: 'python', label: 'Python', level: 0, type: 'skill', children: ['math'] },
       { id: 'math', label: 'Math & Statistics', level: 1, type: 'skill', children: ['pandas'] },
       { id: 'pandas', label: 'Pandas / NumPy', level: 2, type: 'skill', children: ['viz', 'ml'] },
@@ -142,9 +207,1073 @@ const DEFAULT_CAREER_PATHS = [
       { id: 'feature-eng', label: 'Feature Engineering', level: 5, type: 'skill', children: ['dl'] },
       { id: 'dl', label: 'Deep Learning', level: 6, type: 'skill', children: ['mlops'] },
       { id: 'mlops', label: 'MLOps', level: 7, type: 'skill', children: [] }
+>>>>>>> 1aaebb2231ea6b4121360ac8b44648f4bfecdd5f
     ]
   },
+  {
+    id: 'aiengineer',
+  name: 'AI Engineer',
+  category: 'role',
+  description: 'Build AI-powered applications using LLMs, RAG systems, AI agents and production-ready GenAI infrastructure.',
+  icon: '🤖',
+  color: '#845ef7',
 
+  sections: [
+    'Programming Foundations',
+    'Backend Engineering',
+    'LLM Fundamentals',
+    'Prompt Engineering',
+    'Embeddings & Vector Search',
+    'RAG Systems',
+    'AI Agents',
+    'Open Source LLMs',
+    'Inference Optimization',
+    'Deployment & MLOps',
+    'Evaluation & Safety',
+    'Projects & Portfolio'
+  ],
+
+  nodes: [
+
+    // ─────────────────────────────
+    // Programming Foundations
+    // ─────────────────────────────
+
+    {
+      id: 'python-ai',
+      label: 'Python Basics',
+      section: 'Programming Foundations',
+      level: 0,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['oop-ai', 'git-ai'],
+      projects: [
+        'CLI chatbot',
+        'File summarizer',
+        'Simple API client'
+      ]
+    },
+
+    {
+      id: 'oop-ai',
+      label: 'OOP in Python',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['async-ai']
+    },
+
+    {
+      id: 'git-ai',
+      label: 'Git & GitHub',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linux-ai']
+    },
+
+    {
+      id: 'linux-ai',
+      label: 'Linux & CLI',
+      section: 'Programming Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['docker-ai']
+    },
+
+    // ─────────────────────────────
+    // Backend Engineering
+    // ─────────────────────────────
+
+    {
+      id: 'rest-ai',
+      label: 'REST APIs',
+      section: 'Backend Engineering',
+      level: 3,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['fastapi-ai']
+    },
+
+    {
+      id: 'fastapi-ai',
+      label: 'FastAPI',
+      section: 'Backend Engineering',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['websocket-ai']
+    },
+
+    {
+      id: 'async-ai',
+      label: 'Async Programming',
+      section: 'Backend Engineering',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['fastapi-ai']
+    },
+
+    {
+      id: 'websocket-ai',
+      label: 'WebSockets',
+      section: 'Backend Engineering',
+      level: 5,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['checkpoint-api-ai']
+    },
+
+    {
+      id: 'checkpoint-api-ai',
+      label: 'Checkpoint — AI Backend Service',
+      section: 'Backend Engineering',
+      level: 6,
+      difficulty: 'intermediate',
+      type: 'checkpoint',
+      children: ['llm-basics-ai'],
+      projects: [
+        'Streaming chatbot backend',
+        'AI API gateway',
+        'Document upload service'
+      ]
+    },
+
+    // ─────────────────────────────
+    // LLM Fundamentals
+    // ─────────────────────────────
+
+    {
+      id: 'llm-basics-ai',
+      label: 'LLM Fundamentals',
+      section: 'LLM Fundamentals',
+      level: 7,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['transformers-ai', 'prompt-ai']
+    },
+
+    {
+      id: 'transformers-ai',
+      label: 'Transformers',
+      section: 'LLM Fundamentals',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['tokens-ai']
+    },
+
+    {
+      id: 'tokens-ai',
+      label: 'Tokenization',
+      section: 'LLM Fundamentals',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['embeddings-ai']
+    },
+
+    {
+      id: 'embeddings-ai',
+      label: 'Embeddings',
+      section: 'Embeddings & Vector Search',
+      level: 10,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['semantic-search-ai']
+    },
+
+    {
+      id: 'semantic-search-ai',
+      label: 'Semantic Search',
+      section: 'Embeddings & Vector Search',
+      level: 11,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['vector-db-ai']
+    },
+
+    {
+      id: 'vector-db-ai',
+      label: 'Vector Databases',
+      section: 'Embeddings & Vector Search',
+      level: 12,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['hybrid-search-ai']
+    },
+
+    {
+      id: 'hybrid-search-ai',
+      label: 'Hybrid Search',
+      section: 'Embeddings & Vector Search',
+      level: 13,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['rag-ai']
+    },
+
+    // ─────────────────────────────
+    // Prompt Engineering
+    // ─────────────────────────────
+
+    {
+      id: 'prompt-ai',
+      label: 'Prompt Engineering',
+      section: 'Prompt Engineering',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['structured-output-ai']
+    },
+
+    {
+      id: 'structured-output-ai',
+      label: 'Structured Outputs',
+      section: 'Prompt Engineering',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['function-calling-ai']
+    },
+
+    {
+      id: 'function-calling-ai',
+      label: 'Function Calling',
+      section: 'Prompt Engineering',
+      level: 10,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['tool-calling-ai']
+    },
+
+    {
+      id: 'tool-calling-ai',
+      label: 'Tool Calling',
+      section: 'Prompt Engineering',
+      level: 11,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mcp-ai']
+    },
+
+    {
+      id: 'mcp-ai',
+      label: 'Model Context Protocol (MCP)',
+      section: 'Prompt Engineering',
+      level: 12,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['agents-ai']
+    },
+
+    // ─────────────────────────────
+    // RAG Systems
+    // ─────────────────────────────
+
+    {
+      id: 'rag-ai',
+      label: 'RAG Systems',
+      section: 'RAG Systems',
+      level: 14,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['chunking-ai']
+    },
+
+    {
+      id: 'chunking-ai',
+      label: 'Chunking Strategies',
+      section: 'RAG Systems',
+      level: 15,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['retrieval-ai']
+    },
+
+    {
+      id: 'retrieval-ai',
+      label: 'Retrieval Optimization',
+      section: 'RAG Systems',
+      level: 16,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['reranking-ai']
+    },
+
+    {
+      id: 'reranking-ai',
+      label: 'Reranking',
+      section: 'RAG Systems',
+      level: 17,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['memory-ai']
+    },
+
+    {
+      id: 'memory-ai',
+      label: 'Conversation Memory',
+      section: 'RAG Systems',
+      level: 18,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['checkpoint-rag-ai']
+    },
+
+    {
+      id: 'checkpoint-rag-ai',
+      label: 'Checkpoint — Production RAG App',
+      section: 'RAG Systems',
+      level: 19,
+      difficulty: 'advanced',
+      type: 'checkpoint',
+      children: ['agents-ai'],
+      projects: [
+        'PDF chatbot',
+        'Company knowledge assistant',
+        'AI search engine'
+      ]
+    },
+
+    // ─────────────────────────────
+    // AI Agents
+    // ─────────────────────────────
+
+    {
+      id: 'agents-ai',
+      label: 'AI Agents',
+      section: 'AI Agents',
+      level: 20,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['multi-agent-ai']
+    },
+
+    {
+      id: 'multi-agent-ai',
+      label: 'Multi-Agent Systems',
+      section: 'AI Agents',
+      level: 21,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['workflow-ai']
+    },
+
+    {
+      id: 'workflow-ai',
+      label: 'AI Workflows',
+      section: 'AI Agents',
+      level: 22,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['evaluation-ai']
+    },
+
+    // ─────────────────────────────
+    // Open Source LLMs
+    // ─────────────────────────────
+
+    {
+      id: 'open-llm-ai',
+      label: 'Open-source LLMs',
+      section: 'Open Source LLMs',
+      level: 23,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['ollama-ai']
+    },
+
+    {
+      id: 'ollama-ai',
+      label: 'Ollama',
+      section: 'Open Source LLMs',
+      level: 24,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['vllm-ai']
+    },
+
+    {
+      id: 'vllm-ai',
+      label: 'vLLM',
+      section: 'Inference Optimization',
+      level: 25,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['quantization-ai']
+    },
+
+    {
+      id: 'quantization-ai',
+      label: 'Quantization',
+      section: 'Inference Optimization',
+      level: 26,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['lora-ai']
+    },
+
+    {
+      id: 'lora-ai',
+      label: 'LoRA / PEFT',
+      section: 'Inference Optimization',
+      level: 27,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['deployment-ai']
+    },
+
+    // ─────────────────────────────
+    // Deployment
+    // ─────────────────────────────
+
+    {
+      id: 'docker-ai',
+      label: 'Docker',
+      section: 'Deployment & MLOps',
+      level: 28,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['deployment-ai']
+    },
+
+    {
+      id: 'deployment-ai',
+      label: 'Deploy AI Applications',
+      section: 'Deployment & MLOps',
+      level: 29,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['monitoring-ai']
+    },
+
+    {
+      id: 'monitoring-ai',
+      label: 'Monitoring & Observability',
+      section: 'Deployment & MLOps',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['evaluation-ai']
+    },
+
+    // ─────────────────────────────
+    // Evaluation & Safety
+    // ─────────────────────────────
+
+    {
+      id: 'evaluation-ai',
+      label: 'LLM Evaluation',
+      section: 'Evaluation & Safety',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['safety-ai']
+    },
+
+    {
+      id: 'safety-ai',
+      label: 'AI Safety & Guardrails',
+      section: 'Evaluation & Safety',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: []
+    }
+  ]
+},
+
+{
+  id: 'machinelearning',
+  name: 'Machine Learning Engineer',
+  category: 'role',
+  description: 'Build machine learning models, training pipelines, recommendation systems and production ML infrastructure.',
+  icon: '🧠',
+  color: '#20c997',
+
+  sections: [
+    'Programming Foundations',
+    'Math Foundations',
+    'Data Analysis',
+    'Machine Learning Fundamentals',
+    'Classical Machine Learning',
+    'Feature Engineering',
+    'Deep Learning',
+    'Specializations',
+    'MLOps & Deployment',
+    'Projects & Portfolio'
+  ],
+
+  nodes: [
+
+    // ─────────────────────────────
+    // Programming Foundations
+    // ─────────────────────────────
+
+    {
+      id: 'python-ml',
+      label: 'Python Basics',
+      section: 'Programming Foundations',
+      level: 0,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['oop-ml', 'git-ml'],
+      projects: [
+        'CSV analyzer',
+        'Data cleaner',
+        'Simple ML scripts'
+      ]
+    },
+
+    {
+      id: 'oop-ml',
+      label: 'OOP in Python',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['numpy-ml']
+    },
+
+    {
+      id: 'git-ml',
+      label: 'Git & GitHub',
+      section: 'Programming Foundations',
+      level: 1,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linux-ml']
+    },
+
+    {
+      id: 'linux-ml',
+      label: 'Linux & CLI',
+      section: 'Programming Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['docker-ml']
+    },
+
+    // ─────────────────────────────
+    // Math Foundations
+    // ─────────────────────────────
+
+    {
+      id: 'math-ml',
+      label: 'Math for ML',
+      section: 'Math Foundations',
+      level: 2,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['linear-algebra-ml', 'statistics-ml']
+    },
+
+    {
+      id: 'linear-algebra-ml',
+      label: 'Linear Algebra',
+      section: 'Math Foundations',
+      level: 3,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['calculus-ml']
+    },
+
+    {
+      id: 'calculus-ml',
+      label: 'Calculus',
+      section: 'Math Foundations',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['probability-ml']
+    },
+
+    {
+      id: 'statistics-ml',
+      label: 'Statistics',
+      section: 'Math Foundations',
+      level: 3,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['probability-ml']
+    },
+
+    {
+      id: 'probability-ml',
+      label: 'Probability',
+      section: 'Math Foundations',
+      level: 4,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['optimization-ml']
+    },
+
+    {
+      id: 'optimization-ml',
+      label: 'Optimization',
+      section: 'Math Foundations',
+      level: 5,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['numpy-ml']
+    },
+
+    // ─────────────────────────────
+    // Data Analysis
+    // ─────────────────────────────
+
+    {
+      id: 'numpy-ml',
+      label: 'NumPy',
+      section: 'Data Analysis',
+      level: 6,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['pandas-ml']
+    },
+
+    {
+      id: 'pandas-ml',
+      label: 'Pandas',
+      section: 'Data Analysis',
+      level: 7,
+      difficulty: 'beginner',
+      type: 'skill',
+      children: ['sql-ml']
+    },
+
+    {
+      id: 'sql-ml',
+      label: 'SQL',
+      section: 'Data Analysis',
+      level: 8,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['data-cleaning-ml']
+    },
+
+    {
+      id: 'data-cleaning-ml',
+      label: 'Data Cleaning',
+      section: 'Data Analysis',
+      level: 9,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['eda-ml']
+    },
+
+    {
+      id: 'eda-ml',
+      label: 'Exploratory Data Analysis',
+      section: 'Data Analysis',
+      level: 10,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['data-vis-ml']
+    },
+
+    {
+      id: 'data-vis-ml',
+      label: 'Data Visualization',
+      section: 'Data Analysis',
+      level: 11,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['checkpoint-data-ml']
+    },
+
+    {
+      id: 'checkpoint-data-ml',
+      label: 'Checkpoint — Data Analysis Project',
+      section: 'Data Analysis',
+      level: 12,
+      difficulty: 'intermediate',
+      type: 'checkpoint',
+      children: ['ml-fundamentals-ml'],
+      projects: [
+        'Sales analytics dashboard',
+        'Netflix dataset analysis',
+        'EDA portfolio project'
+      ]
+    },
+
+    // ─────────────────────────────
+    // ML Fundamentals
+    // ─────────────────────────────
+
+    {
+      id: 'ml-fundamentals-ml',
+      label: 'Machine Learning Fundamentals',
+      section: 'Machine Learning Fundamentals',
+      level: 13,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['supervised-ml', 'unsupervised-ml']
+    },
+
+    {
+      id: 'supervised-ml',
+      label: 'Supervised Learning',
+      section: 'Machine Learning Fundamentals',
+      level: 14,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['regression-ml', 'classification-ml']
+    },
+
+    {
+      id: 'regression-ml',
+      label: 'Regression Algorithms',
+      section: 'Classical Machine Learning',
+      level: 15,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['classification-ml']
+    },
+
+    {
+      id: 'classification-ml',
+      label: 'Classification Algorithms',
+      section: 'Classical Machine Learning',
+      level: 16,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['tree-models-ml']
+    },
+
+    {
+      id: 'tree-models-ml',
+      label: 'Decision Trees & Random Forest',
+      section: 'Classical Machine Learning',
+      level: 17,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['boosting-ml']
+    },
+
+    {
+      id: 'boosting-ml',
+      label: 'Boosting Algorithms',
+      section: 'Classical Machine Learning',
+      level: 18,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['xgboost-ml']
+    },
+
+    {
+      id: 'xgboost-ml',
+      label: 'XGBoost & LightGBM',
+      section: 'Classical Machine Learning',
+      level: 19,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['svm-ml']
+    },
+
+    {
+      id: 'svm-ml',
+      label: 'Support Vector Machines',
+      section: 'Classical Machine Learning',
+      level: 20,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['unsupervised-ml']
+    },
+
+    {
+      id: 'unsupervised-ml',
+      label: 'Unsupervised Learning',
+      section: 'Machine Learning Fundamentals',
+      level: 14,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['clustering-ml']
+    },
+
+    {
+      id: 'clustering-ml',
+      label: 'Clustering',
+      section: 'Classical Machine Learning',
+      level: 15,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['dim-reduction-ml']
+    },
+
+    {
+      id: 'dim-reduction-ml',
+      label: 'Dimensionality Reduction',
+      section: 'Classical Machine Learning',
+      level: 16,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['feature-eng-ml']
+    },
+
+    // ─────────────────────────────
+    // Feature Engineering
+    // ─────────────────────────────
+
+    {
+      id: 'feature-eng-ml',
+      label: 'Feature Engineering',
+      section: 'Feature Engineering',
+      level: 21,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['feature-selection-ml']
+    },
+
+    {
+      id: 'feature-selection-ml',
+      label: 'Feature Selection',
+      section: 'Feature Engineering',
+      level: 22,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['model-eval-ml']
+    },
+
+    {
+      id: 'model-eval-ml',
+      label: 'Model Evaluation',
+      section: 'Feature Engineering',
+      level: 23,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cross-validation-ml']
+    },
+
+    {
+      id: 'cross-validation-ml',
+      label: 'Cross Validation',
+      section: 'Feature Engineering',
+      level: 24,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['hyperparameter-ml']
+    },
+
+    {
+      id: 'hyperparameter-ml',
+      label: 'Hyperparameter Tuning',
+      section: 'Feature Engineering',
+      level: 25,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['sklearn-ml']
+    },
+
+    {
+      id: 'sklearn-ml',
+      label: 'Scikit-learn',
+      section: 'Feature Engineering',
+      level: 26,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['checkpoint-ml-system']
+    },
+
+    {
+      id: 'checkpoint-ml-system',
+      label: 'Checkpoint — End-to-End ML System',
+      section: 'Feature Engineering',
+      level: 27,
+      difficulty: 'advanced',
+      type: 'checkpoint',
+      children: ['deep-learning-ml'],
+      projects: [
+        'Fraud detection system',
+        'Recommendation system',
+        'Stock prediction pipeline'
+      ]
+    },
+
+    // ─────────────────────────────
+    // Deep Learning
+    // ─────────────────────────────
+
+    {
+      id: 'deep-learning-ml',
+      label: 'Deep Learning',
+      section: 'Deep Learning',
+      level: 28,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['neural-networks-ml']
+    },
+
+    {
+      id: 'neural-networks-ml',
+      label: 'Neural Networks',
+      section: 'Deep Learning',
+      level: 29,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cnn-ml', 'rnn-ml']
+    },
+
+    {
+      id: 'cnn-ml',
+      label: 'CNN',
+      section: 'Deep Learning',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['computer-vision-ml']
+    },
+
+    {
+      id: 'computer-vision-ml',
+      label: 'Computer Vision',
+      section: 'Specializations',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['tensorflow-ml']
+    },
+
+    {
+      id: 'rnn-ml',
+      label: 'RNN & LSTM',
+      section: 'Deep Learning',
+      level: 30,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['nlp-ml']
+    },
+
+    {
+      id: 'nlp-ml',
+      label: 'Natural Language Processing',
+      section: 'Specializations',
+      level: 31,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['pytorch-ml']
+    },
+
+    {
+      id: 'tensorflow-ml',
+      label: 'TensorFlow',
+      section: 'Deep Learning',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    {
+      id: 'pytorch-ml',
+      label: 'PyTorch',
+      section: 'Deep Learning',
+      level: 32,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    // ─────────────────────────────
+    // MLOps
+    // ─────────────────────────────
+
+    {
+      id: 'docker-ml',
+      label: 'Docker',
+      section: 'MLOps & Deployment',
+      level: 33,
+      difficulty: 'intermediate',
+      type: 'skill',
+      children: ['deployment-ml']
+    },
+
+    {
+      id: 'deployment-ml',
+      label: 'Deploy ML Models',
+      section: 'MLOps & Deployment',
+      level: 34,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['cloud-ml']
+    },
+
+    {
+      id: 'cloud-ml',
+      label: 'AWS / Azure / GCP',
+      section: 'MLOps & Deployment',
+      level: 35,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['mlops-ml']
+    },
+
+    {
+      id: 'mlops-ml',
+      label: 'MLOps',
+      section: 'MLOps & Deployment',
+      level: 36,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: ['monitoring-ml']
+    },
+
+    {
+      id: 'monitoring-ml',
+      label: 'Monitoring & Drift Detection',
+      section: 'MLOps & Deployment',
+      level: 37,
+      difficulty: 'advanced',
+      type: 'skill',
+      children: []
+    }
+  ]
+},
+  {
+    id: 'gameplayprogrammer',
+  name: 'Gameplay Programmer',
+  category: 'role',
+  description: 'Lập trình gameplay, AI, combat system và các cơ chế hoạt động trong game.',
+  icon: '🎮',
+  color: '#89c2ff',
+  nodes: [
+    { id: 'gp-client',       label: 'Client Side Development',                 level: 0, type: 'skill', children: ['gp-math','gp-phy'] },
+    { id: 'gp-math',         label: 'Game Mathematics',                level: 1, type: 'skill', children: ['gp-engine'] },
+    { id: 'gp-phy',          label: 'Game Physics',                level: 1, type: 'skill', children: ['gp-engine'] },
+    { id: 'gp-engine',       label: 'Unity / Unreal Engine',    level: 2, type: 'skill', children: ['gp-cpp'] },
+    { id: 'gp-cpp',          label: 'Programming Languages',     level: 3, type: 'skill', children: ['gp-gra','gp-grap'] },
+    { id: 'gp-gra',          label: 'Computer Graphics',    level: 4, type: 'skill', children: ['gp-ai'] },
+    { id: 'gp-grap',         label: 'Graphics API',    level: 4, type: 'skill', children: ['gp-ai'] },
+    { id: 'gp-ai',           label: 'Game AI',        level: 5, type: 'skill', children: ['gp-optimization'] },
+    { id: 'gp-ren',          label: 'Advanced Rendering',   level: 6, type: 'skill', children: [] },
+    { id: 'gp-chk',          label: 'Checkpoint',   level: 7, type: 'checkpoint', children: [] },
+  ]
+},
+
+{
+  id: 'gamedesigner',
+  name: 'Game Designer',
+  category: 'role',
+  description: 'Thiết kế gameplay, level, mechanics và trải nghiệm người chơi.',
+  icon: '🕹️',
+  color: '#ffd6a5',
+  nodes: [
+    { id: 'gd-gamedesign',   label: 'Game Design Basics',       level: 0, type: 'skill', children: ['gd-mechanics'] },
+    { id: 'gd-mechanics',    label: 'Gameplay Mechanics',       level: 1, type: 'skill', children: ['gd-leveldesign'] },
+    { id: 'gd-leveldesign',  label: 'Level Design',             level: 2, type: 'skill', children: ['gd-storytelling'] },
+    { id: 'gd-storytelling', label: 'Storytelling & Narrative', level: 3, type: 'skill', children: ['gd-gdd'] },
+    { id: 'gd-gdd',          label: 'Game Design Document',     level: 4, type: 'skill', children: ['gd-balancing'] },
+    { id: 'gd-balancing',    label: 'Game Balancing',           level: 5, type: 'skill', children: ['gd-ux'] },
+    { id: 'gd-ux',           label: 'Player Experience (UX)',   level: 6, type: 'skill', children: ['gd-prototype'] },
+    { id: 'gd-prototype',    label: 'Prototype with Unity',     level: 7, type: 'skill', children: [] }
+  ]
+  },
   // ═══ SKILL-BASED ═══
   {
     id: 'react-skill',
@@ -271,6 +1400,7 @@ const initializeStorage = () => {
   localStorage.setItem(STORAGE_KEYS.CAREER_PATHS, JSON.stringify(DEFAULT_CAREER_PATHS))
 }
  
+ 
 // ─── Career Paths CRUD ─────────────────────────────────
 export const getAllCareerPaths = () => {
   initializeStorage()
@@ -341,9 +1471,16 @@ export const getDailyCheckins = () => {
   return JSON.parse(localStorage.getItem(STORAGE_KEYS.DAILY_CHECKINS) || '{}')
 }
 
-export const upsertDailyCheckin = (dateKey, { minutes = 0, note = '' }) => {
+// Check-in shape: { minutes, note, status: 'ahead'|'on-track'|'behind', locked: true }
+export const upsertDailyCheckin = (dateKey, { minutes = 0, note = '', status = 'on-track' }) => {
   const all = getDailyCheckins()
-  all[dateKey] = { minutes: Number(minutes) || 0, note: String(note || '') }
+  all[dateKey] = {
+    minutes: Number(minutes) || 0,
+    note: String(note || ''),
+    status,
+    locked: true,
+    savedAt: new Date().toISOString()
+  }
   localStorage.setItem(STORAGE_KEYS.DAILY_CHECKINS, JSON.stringify(all))
 }
 
@@ -352,6 +1489,15 @@ export const deleteDailyCheckin = (dateKey) => {
   delete all[dateKey]
   localStorage.setItem(STORAGE_KEYS.DAILY_CHECKINS, JSON.stringify(all))
 }
+
+// Return the date key for the next check-in given the last check-in date and frequency
+// frequency: 'daily' = +1 day | 'every2days' = +2 days | 'weekly' = +7 days
+export const getNextCheckinDate = (lastDateKey, frequency) => {
+  if (!lastDateKey) return null
+  const intervalDays = frequency === 'weekly' ? 7 : frequency === 'every2days' ? 2 : 1
+  return addDays(lastDateKey, intervalDays)
+}
+
 
 // ─── Projects ──────────────────────────────────────────
 export const PROJECTS = [
@@ -584,8 +1730,220 @@ export const PROJECTS = [
       'Grafana dashboards display cluster and application metrics'
     ],
     started: 215
+  },
+  {
+    id: 'cs-osint-tool',
+    pathId: 'cybersecurity',
+    category: 'Security',
+    difficulty: 'Intermediate',
+    tags: ['Python', 'OSINT', 'Networking', 'API'],
+    title: 'Công Cụ Phân Tích IP (OSINT)',
+    description: 'Xây dựng tool CLI bằng Python để tự động thu thập thông tin tình báo từ một địa chỉ IP hoặc domain.',
+    longDescription: 'Phát triển một công cụ dòng lệnh (CLI) bằng Python để phân tích tự động các dấu hiệu khả nghi của một IP hoặc Domain. Công cụ sẽ gọi các public API (như VirusTotal, AbuseIPDB, Shodan) để kiểm tra lịch sử độc hại, vị trí địa lý, thông tin WHOIS và các port đang mở. Dự án này giúp rèn luyện kỹ năng Scripting, tương tác API, và hiểu biết về Threat Intelligence.',
+    requirements: [
+      'Scripting: Viết mã Python sạch, sử dụng thư viện `requests` có xử lý lỗi (try/except) khi gọi API bị timeout hoặc lỗi.',
+      'Tích hợp API: Gọi ít nhất 2 API bên ngoài (VD: VirusTotal, IP-API) để lấy dữ liệu json.',
+      'Xử lý Dữ liệu: Phân tích cú pháp JSON trả về và format hiển thị báo cáo ra console một cách dễ đọc.',
+      'CLI Argument: Sử dụng thư viện `argparse` để nhận input từ user (ví dụ: `python scanner.py --ip 8.8.8.8`).'
+    ],
+    checklist: [
+      'Công cụ nhận diện đúng định dạng IP hoặc Domain hợp lệ',
+      'Kết nối API thành công và trả về dữ liệu chuẩn xác',
+      'Hiển thị cảnh báo màu sắc (đỏ/xanh) trên terminal nếu phát hiện IP độc hại',
+      'README hướng dẫn cách cài đặt thư viện và thiết lập API keys'
+    ],
+    started: 215
+  },
+  // Thêm vào trong mảng PROJECTS
+  {
+    id: 'mb-rpg-wiki',
+    pathId: 'android',
+    category: 'Mobile',
+    difficulty: 'Intermediate',
+    tags: ['Kotlin', 'Room', 'Retrofit', 'MVVM'],
+    title: 'Ứng Dụng Cẩm Nang Game RPG',
+    description: 'Xây dựng một wiki app trên Android tra cứu thông tin vật phẩm, lore và nhân vật cho một tựa game Soulslike.',
+    longDescription: 'Phát triển một ứng dụng Android native sử dụng Kotlin để tra cứu thông tin (vũ khí, bản đồ, lore cốt truyện) của các game hành động RPG. Ứng dụng cần sử dụng kiến trúc MVVM, lấy dữ liệu từ một public API (hoặc mock data) bằng Retrofit, và lưu trữ offline vào database cục bộ bằng Room để người chơi có thể tra cứu khi không có mạng. Sử dụng Coroutines và Flow để xử lý các tác vụ bất đồng bộ một cách mượt mà.',
+    requirements: [
+      'Giao diện: Thiết kế UI dark-theme bằng XML ConstraintLayout hoặc Jetpack Compose, có RecyclerView hiển thị danh sách vật phẩm.',
+      'Kiến trúc MVVM: Tách biệt logic UI (Activity/Fragment), ViewModel và Repository.',
+      'Networking: Sử dụng Retrofit để gọi API lấy thông tin nhân vật/vật phẩm.',
+      'Database: Triển khai Room Database để cache dữ liệu, hỗ trợ đọc offline.',
+      'Asynchronism: Dùng Kotlin Coroutines để gọi API và truy vấn Room mà không chặn Main Thread.'
+    ],
+    checklist: [
+      'App chạy mượt mà không crash khi mất mạng',
+      'Danh sách hiển thị đúng hình ảnh và tên vật phẩm',
+      'Vuốt để làm mới (SwipeRefreshLayout) hoạt động tốt',
+      'README có file APK hoặc screenshots của màn hình chính'
+    ],
+    started: 420
   }
 ]
 
 export const getProject = (id) => PROJECTS.find(p => p.id === id)
 export const getProjectsByCategory = (category) => PROJECTS.filter(p => p.category === category)
+
+// ═══════════════════════════════════════════════════════
+//  Personal Workspace — main roadmap + weekly plan
+// ═══════════════════════════════════════════════════════
+
+// ─── Date helpers ──────────────────────────────────────
+function storageToday() {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+function addDays(dateStr, days) {
+  const [y, m, d] = dateStr.split('-').map(Number)
+  const date = new Date(y, m - 1, d)
+  date.setDate(date.getDate() + days)
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+}
+
+// ─── Weekly templates (hardcoded recommended durations) ─
+//  Each value = total weeks recommended for that roadmap
+export const WEEKLY_TEMPLATES = {
+  frontend:          11,
+  backend:            9,
+  fullstack:         16,
+  devops:             9,
+  datascience:        8,
+  'react-skill':      8,
+  'javascript-skill': 7,
+  'typescript-skill': 6,
+  'python-skill':     7,
+  'sql-skill':        6,
+  'docker-skill':     6,
+  'git-skill':        6,
+}
+
+// ─── Workspace CRUD ────────────────────────────────────
+// Workspace shape:
+// {
+//   pathId: string,
+//   startDate: 'YYYY-MM-DD',
+//   checkinFrequency: 'daily' | 'every2days' | 'weekly',
+//   weeklyPlan: [{
+//     week: number,
+//     nodeIds: string[],
+//     missedNodeIds: string[],
+//     status: 'upcoming' | 'active' | 'done' | 'failed',
+//     startDate: 'YYYY-MM-DD',
+//     endDate: 'YYYY-MM-DD'
+//   }]
+// }
+
+export const getWorkspace = () => {
+  const raw = localStorage.getItem(STORAGE_KEYS.WORKSPACE)
+  return raw ? JSON.parse(raw) : null
+}
+
+export const saveWorkspace = (ws) => {
+  localStorage.setItem(STORAGE_KEYS.WORKSPACE, JSON.stringify(ws))
+}
+
+export const clearWorkspace = () => {
+  localStorage.removeItem(STORAGE_KEYS.WORKSPACE)
+}
+
+// ─── Generate weekly plan from scratch ─────────────────
+export const generateWeeklyPlan = (pathId, startDate) => {
+  const path = getCareerPath(pathId)
+  if (!path) return []
+
+  // Sort nodes by level so earlier skills come first
+  const nodes = (path.nodes || []).slice().sort((a, b) => a.level - b.level || a.id.localeCompare(b.id))
+  const totalWeeks = WEEKLY_TEMPLATES[pathId] || Math.max(nodes.length, 4)
+
+  // Distribute nodes evenly: first (n % w) weeks get one extra node
+  const n = nodes.length
+  const w = totalWeeks
+  const base = Math.floor(n / w)
+  const extra = n % w
+
+  const plan = []
+  let nodeIdx = 0
+
+  for (let i = 0; i < w; i++) {
+    const count = base + (i < extra ? 1 : 0)
+    const weekStart = addDays(startDate, i * 7)
+    const weekEnd   = addDays(startDate, i * 7 + 6)
+    plan.push({
+      week: i + 1,
+      nodeIds: nodes.slice(nodeIdx, nodeIdx + count).map(nd => nd.id),
+      missedNodeIds: [],
+      status: 'upcoming',
+      startDate: weekStart,
+      endDate: weekEnd,
+    })
+    nodeIdx += count
+  }
+
+  return plan
+}
+
+// ─── Evaluate week statuses based on current date & completions ─
+export const checkAndFailMissedWeeks = (workspace) => {
+  const today = storageToday()
+  const completed = getCompletedSkills(workspace.pathId)
+
+  const updatedPlan = workspace.weeklyPlan.map(week => {
+    const allDone = week.nodeIds.length > 0 && week.nodeIds.every(id => completed.includes(id))
+
+    if (week.endDate < today) {
+      // Past week
+      if (allDone) return { ...week, status: 'done', missedNodeIds: [] }
+      const missed = week.nodeIds.filter(id => !completed.includes(id))
+      return { ...week, status: 'failed', missedNodeIds: missed }
+    } else if (week.startDate <= today) {
+      // Current week
+      if (allDone) return { ...week, status: 'done', missedNodeIds: [] }
+      return { ...week, status: 'active', missedNodeIds: [] }
+    } else {
+      // Future week
+      return { ...week, status: 'upcoming', missedNodeIds: [] }
+    }
+  })
+
+  return { ...workspace, weeklyPlan: updatedPlan }
+}
+
+// ─── Reassign a missed node from a failed week ──────────
+// mode: 'merge'   — add alongside existing nodes in target week
+// mode: 'cascade' — add to target week, push its last node to next, cascading forward
+export const reassignMissedNode = (workspace, nodeId, fromWeekNum, toWeekNum, mode) => {
+  // Deep copy the plan
+  const plan = workspace.weeklyPlan.map(w => ({
+    ...w,
+    nodeIds: [...w.nodeIds],
+    missedNodeIds: [...(w.missedNodeIds || [])],
+  }))
+
+  // Remove from source week
+  const fromIdx = plan.findIndex(w => w.week === fromWeekNum)
+  if (fromIdx !== -1) {
+    plan[fromIdx].missedNodeIds = plan[fromIdx].missedNodeIds.filter(id => id !== nodeId)
+    plan[fromIdx].nodeIds       = plan[fromIdx].nodeIds.filter(id => id !== nodeId)
+  }
+
+  const toIdx = plan.findIndex(w => w.week === toWeekNum)
+  if (toIdx === -1) return { ...workspace, weeklyPlan: plan }
+
+  if (mode === 'merge') {
+    // Simply add the missed node into the target week
+    plan[toIdx].nodeIds.push(nodeId)
+  } else {
+    // Cascade: insert node at front of target week,
+    // then bubble the last node of each subsequent week forward
+    plan[toIdx].nodeIds.unshift(nodeId)
+    for (let i = toIdx; i < plan.length - 1; i++) {
+      if (plan[i].nodeIds.length > 1) {
+        const overflow = plan[i].nodeIds.pop()
+        plan[i + 1].nodeIds.unshift(overflow)
+      }
+    }
+  }
+
+  return { ...workspace, weeklyPlan: plan }
+}
