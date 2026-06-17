@@ -1,0 +1,2380 @@
+/* ── Base animation ────────────────────────────────────── */
+.journey {
+  animation: fadeInUp 0.5s ease;
+}
+
+.journey-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* ── Shared hero used in all phases ─────────────────────── */
+.jrn-hero {
+  margin-bottom: 28px;
+}
+
+.journey-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.journey-subtitle {
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: 1.65;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--neon-cyan);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SELECT PHASE
+═══════════════════════════════════════════════════════════ */
+.select-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.select-card {
+  text-align: left;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-card);
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.select-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--pc, var(--neon-cyan)) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.select-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--pc, var(--neon-cyan));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--pc, var(--neon-cyan)) 20%, transparent);
+}
+
+.select-card:hover::before {
+  opacity: 0.05;
+}
+
+.sc-icon {
+  font-size: 2.2rem;
+  display: block;
+}
+
+.sc-body {
+  display: grid;
+  gap: 6px;
+}
+
+.sc-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.sc-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.sc-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.sc-cat {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sc-weeks {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONFIGURE PHASE
+═══════════════════════════════════════════════════════════ */
+.cfg-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.cfg-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.04);
+}
+
+.cfg-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cfg-weeks-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--neon-cyan);
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 650;
+}
+
+.freq-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.freq-btn {
+  flex: 1;
+  padding: 9px 10px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-fast);
+}
+
+.freq-btn:hover {
+  border-color: var(--neon-cyan);
+}
+
+.freq-active {
+  border-color: var(--neon-cyan) !important;
+  background: rgba(0, 240, 255, 0.1) !important;
+  color: var(--neon-cyan);
+}
+
+.cfg-summary {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cfg-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.cfg-summary-row strong {
+  color: var(--text-primary);
+}
+
+.cfg-start-btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(176, 38, 255, 0.15));
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.cfg-start-btn:hover {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(176, 38, 255, 0.22));
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+}
+
+/* Preview list */
+.cfg-preview {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.preview-list {
+  display: grid;
+  gap: 10px;
+}
+
+.preview-week {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pw-num {
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.pw-dates {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pw-tag {
+  font-size: 0.78rem;
+  padding: 3px 9px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pw-empty {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WORKSPACE PHASE — Hero
+═══════════════════════════════════════════════════════════ */
+.journey-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.journey-hero-left {
+  flex: 1;
+}
+
+.ws-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ws-brand-icon {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+.ws-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.meta-sep {
+  color: var(--text-muted);
+}
+
+.ws-meta-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.freq-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--neon-cyan);
+}
+
+.journey-kpis {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.journey-kpi {
+  min-width: 120px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.03);
+}
+
+.kpi-label {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 650;
+  margin-bottom: 5px;
+}
+
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 850;
+}
+
+.kpi-total {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Overall progress bar ─────────────────────────────── */
+.ws-pbar-wrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.ws-pbar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* ── Missed deadline banner ───────────────────────────── */
+.missed-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  background: rgba(255, 110, 39, 0.1);
+  border: 1px solid rgba(255, 110, 39, 0.3);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.missed-banner:hover {
+  background: rgba(255, 110, 39, 0.15);
+  box-shadow: 0 0 20px rgba(255, 110, 39, 0.12);
+}
+
+.missed-banner-cta {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--neon-orange);
+}
+
+/* ── Reassign panel ───────────────────────────────────── */
+.reassign-panel {
+  background: rgba(255, 110, 39, 0.06);
+  border: 1px solid rgba(255, 110, 39, 0.25);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.rp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.rp-header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.rp-close {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.rp-close:hover {
+  color: var(--text-primary);
+}
+
+.rp-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.rp-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.rp-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.rp-node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.rp-node-name {
+  font-weight: 750;
+  font-size: 0.9rem;
+}
+
+.rp-node-from {
+  font-size: 0.78rem;
+  color: var(--neon-orange);
+}
+
+.rp-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rp-select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: border-color var(--transition-fast);
+}
+
+.rp-select:focus {
+  border-color: var(--neon-cyan);
+}
+
+.rp-mode-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.rp-mode-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.rp-mode-btn:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.rp-mode-active {
+  border-color: var(--neon-cyan) !important;
+  background: rgba(0, 240, 255, 0.12) !important;
+}
+
+.rp-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WORKSPACE PHASE — Cards grid
+═══════════════════════════════════════════════════════════ */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.journey-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.03);
+}
+
+.journey-card-wide {
+  grid-column: 1 / -1;
+}
+
+.journey-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.journey-card-header h3 {
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.card-sub {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.journey-muted {
+  color: var(--text-muted);
+  font-size: 0.83rem;
+}
+
+.checkin-tick {
+  color: var(--neon-cyan);
+}
+
+/* ── This Week ─────────────────────────────────────────── */
+.week-nodes {
+  display: grid;
+  gap: 8px;
+}
+
+.wn-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all var(--transition-fast);
+}
+
+.wn-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wn-done {
+  opacity: 0.7;
+  border-color: rgba(57, 255, 20, 0.2) !important;
+  background: rgba(57, 255, 20, 0.04) !important;
+}
+
+.wn-check {
+  font-size: 0.95rem;
+  width: 20px;
+  text-align: center;
+  color: var(--neon-green);
+}
+
+.wn-label {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.wn-go {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+}
+
+.wn-go:hover {
+  color: var(--neon-cyan);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.week-pbar-wrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.week-pbar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.week-pbar-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+  display: block;
+}
+
+/* ── Check-in ──────────────────────────────────────────── */
+.checkin-form {
+  display: grid;
+  gap: 10px;
+}
+
+.checkin-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 650;
+}
+
+.checkin-input,
+.checkin-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  padding: 11px 13px;
+  outline: none;
+  transition: all var(--transition-normal);
+  font-family: 'Inter', sans-serif;
+}
+
+.checkin-textarea {
+  resize: vertical;
+}
+
+.checkin-input:focus,
+.checkin-textarea:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.1);
+}
+
+.checkin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* Shared button base */
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 750;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  border-color: var(--border-glow);
+  background: rgba(0, 240, 255, 0.06);
+}
+
+.btn-primary {
+  border-color: rgba(0, 240, 255, 0.25);
+  background: rgba(0, 240, 255, 0.08);
+}
+
+.btn-primary:hover {
+  background: rgba(0, 240, 255, 0.14);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.btn-danger {
+  border-color: rgba(255, 110, 39, 0.35);
+  background: rgba(255, 110, 39, 0.1);
+}
+
+.btn-danger:hover {
+  background: rgba(255, 110, 39, 0.18);
+}
+
+.btn-saved {
+  background: rgba(57, 255, 20, 0.12) !important;
+  border-color: rgba(57, 255, 20, 0.3) !important;
+  color: var(--neon-green) !important;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Timeline ──────────────────────────────────────────── */
+.timeline-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+.tl-week {
+  flex-shrink: 0;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.tl-week:hover {
+  transform: translateY(-2px);
+}
+
+.tl-current {
+  border-color: var(--neon-cyan) !important;
+  background: rgba(0, 240, 255, 0.06) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.wk-done {
+  border-color: rgba(57, 255, 20, 0.2) !important;
+  background: rgba(57, 255, 20, 0.04) !important;
+}
+
+.wk-failed {
+  border-color: rgba(255, 110, 39, 0.3) !important;
+  background: rgba(255, 110, 39, 0.05) !important;
+}
+
+.wk-upcoming {
+  opacity: 0.55;
+}
+
+.tl-emoji {
+  font-size: 1.3rem;
+}
+
+.tl-wk {
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.tl-dates {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.tl-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.tl-missed {
+  font-size: 0.65rem;
+  color: var(--neon-orange);
+  font-weight: 700;
+}
+
+/* ── Pinned nodes ──────────────────────────────────────── */
+.journey-empty {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.journey-empty-title {
+  font-weight: 850;
+  margin-bottom: 6px;
+}
+
+.journey-empty-text {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.pinned-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pinned-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pinned-main {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pinned-icon {
+  font-size: 1.2rem;
+}
+
+.pinned-text {
+  display: grid;
+  gap: 2px;
+}
+
+.pinned-node {
+  font-weight: 850;
+}
+
+.pinned-meta {
+  color: var(--text-secondary);
+  font-size: 0.83rem;
+}
+
+.pin-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pin-toggle:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.ws-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 980px) {
+  .journey-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .journey-kpis {
+    justify-content: flex-start;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cfg-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cfg-preview {
+    max-height: none;
+  }
+
+  .plan-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .cfg-settings-bar {
+    flex-wrap: wrap;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONFIGURE SETTINGS BAR
+═══════════════════════════════════════════════════════════ */
+.cfg-settings-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.cfg-inline-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cfg-date-input {
+  max-width: 200px;
+}
+
+.cfg-summary-inline {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding-left: 8px;
+  border-left: 2px solid var(--border-subtle);
+}
+
+.cfg-start-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.08);
+  white-space: nowrap;
+}
+
+.cfg-start-btn:hover:not(:disabled) {
+  background: rgba(0, 240, 255, 0.16);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.cfg-start-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PLAN EDITOR — 2-column DnD layout
+═══════════════════════════════════════════════════════════ */
+.plan-editor {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 18px;
+  min-height: 500px;
+}
+
+/* ── Library ── */
+.pe-library {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 16px;
+  max-height: 680px;
+}
+
+.pe-library-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.pe-library-header h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.pe-load-all {
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: rgba(0, 240, 255, 0.07);
+}
+
+.pe-load-all:hover:not(:disabled) {
+  background: rgba(0, 240, 255, 0.14);
+}
+
+.pe-load-all:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pe-library-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 4px;
+}
+
+/* Library card */
+.pe-lib-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: grab;
+  user-select: none;
+  transition: all var(--transition-fast);
+  touch-action: none;
+}
+
+.pe-lib-card:hover:not(.pe-lib-used) {
+  border-color: var(--pc, var(--neon-cyan));
+  background: color-mix(in srgb, var(--pc, var(--neon-cyan)) 8%, transparent);
+  transform: translateX(2px);
+}
+
+.pe-lib-card:active {
+  cursor: grabbing;
+}
+
+.pe-lib-dragging {
+  opacity: 0.4;
+  border-style: dashed !important;
+}
+
+.pe-lib-used {
+  opacity: 0.4;
+  cursor: default !important;
+  border-color: rgba(57, 255, 20, 0.2) !important;
+  background: rgba(57, 255, 20, 0.03) !important;
+}
+
+.pe-lib-grip {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.pe-lib-label {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.pe-lib-check {
+  font-size: 0.75rem;
+  color: var(--neon-green);
+}
+
+/* Custom add */
+.pe-lib-divider {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 6px 0;
+  letter-spacing: 1px;
+}
+
+.pe-custom-row {
+  display: flex;
+  gap: 6px;
+}
+
+.pe-custom-input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.pe-custom-input:focus {
+  border-color: var(--neon-cyan);
+}
+
+.pe-custom-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* ── Plan ── */
+.pe-plan,
+.pe-kanban {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pe-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pe-plan-header h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.pe-plan-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.pe-plan-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pe-completion {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(176, 38, 255, 0.1);
+  border: 1px solid rgba(176, 38, 255, 0.25);
+  color: var(--neon-purple);
+}
+
+.pe-clear-btn {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.pe-clear-btn:hover {
+  color: var(--neon-orange);
+  border-color: rgba(255, 110, 39, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PLAN EDITOR — Kanban kỳ học (period zones + check-in dates)
+═══════════════════════════════════════════════════════════ */
+.pe-periods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.pe-period-zone {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid color-mix(in srgb, var(--pc, var(--neon-cyan)) 55%, transparent);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 14px;
+  transition: all var(--transition-fast);
+}
+
+.pe-period-over {
+  border-color: var(--pc, var(--neon-cyan)) !important;
+  background: color-mix(in srgb, var(--pc, var(--neon-cyan)) 7%, transparent) !important;
+  box-shadow: inset 0 0 24px color-mix(in srgb, var(--pc, var(--neon-cyan)) 14%, transparent);
+}
+
+.pe-period-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pe-period-num {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* The check-in date pill for each kỳ — the main ask */
+.pe-period-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+  padding: 3px 11px 3px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--pc, var(--neon-cyan)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pc, var(--neon-cyan)) 32%, transparent);
+  color: var(--pc, var(--neon-cyan));
+  white-space: nowrap;
+}
+
+.pe-period-date::before {
+  content: '🗓';
+  font-size: 0.72rem;
+}
+
+.pe-period-delete {
+  margin-left: auto;
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.pe-period-delete:hover {
+  color: var(--neon-orange);
+  border-color: rgba(255, 110, 39, 0.3);
+}
+
+.pe-period-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pe-period-empty {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1.5px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 18px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.pe-period-empty-over {
+  border-color: var(--neon-cyan) !important;
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.pe-add-period-btn {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.pe-add-period-btn:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+/* Drop zone */
+.pe-drop-zone {
+  flex: 1;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px;
+  min-height: 420px;
+  transition: all var(--transition-fast);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.pe-drop-active {
+  border-color: var(--neon-cyan) !important;
+  background: rgba(0, 240, 255, 0.04) !important;
+  box-shadow: inset 0 0 30px rgba(0, 240, 255, 0.05);
+}
+
+/* Empty state */
+.pe-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  gap: 14px;
+  text-align: center;
+}
+
+.pe-empty-icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.pe-empty-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.pe-empty-over .pe-empty-icon {
+  opacity: 1;
+  animation: pulse-glow 1s infinite;
+}
+
+/* Nodes list */
+.pe-nodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Plan node */
+.pe-plan-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  transition: all var(--transition-fast);
+  touch-action: none;
+}
+
+.pe-plan-node:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pe-plan-dragging {
+  opacity: 0.35;
+  border-style: dashed !important;
+}
+
+.pe-node-grip {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: grab;
+  padding: 0 2px;
+  line-height: 1;
+  touch-action: none;
+}
+
+.pe-node-grip:active {
+  cursor: grabbing;
+}
+
+.pe-node-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pe-node-index {
+  font-size: 0.72rem;
+  font-weight: 800;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.pe-node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pe-node-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pe-node-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pe-node-delete {
+  font-size: 0.85rem;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.pe-node-delete:hover {
+  color: var(--neon-orange);
+  border-color: rgba(255, 110, 39, 0.3);
+}
+
+/* Drag overlay ghost */
+.pe-drag-ghost {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  cursor: grabbing;
+}
+
+.lib-ghost {
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  color: var(--neon-cyan);
+}
+
+.plan-ghost {
+  background: var(--bg-card-hover);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+/* ── Timeline updated (node label) ── */
+.tl-node-label {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+  font-weight: 600;
+}
+
+/* ── Edit plan overlay (workspace) ── */
+.edit-plan-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInUp 0.25s ease;
+}
+
+.edit-plan-panel {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 80px rgba(0, 240, 255, 0.08);
+}
+
+/* existing overrides for new cfg phase */
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.cfg-preview-header {
+  margin-bottom: 14px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   NODE EDITOR
+═══════════════════════════════════════════════════════════ */
+.node-editor {
+  display: grid;
+  gap: 12px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.ne-week {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 14px;
+}
+
+.ne-week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ne-week-num {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.ne-week-dates {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ne-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ne-empty {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ne-node-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ne-node-label {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ne-move-select {
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.ne-move-select:focus {
+  border-color: var(--neon-cyan);
+}
+
+/* Configure preview header */
+.cfg-preview-header {
+  margin-bottom: 14px;
+}
+
+.cfg-preview-header .form-hint {
+  margin-top: 4px;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Edit plan panel (workspace) */
+.edit-plan-panel {
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   THIS WEEK — mark complete toggle
+═══════════════════════════════════════════════════════════ */
+.week-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon-sm {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.btn-icon-sm:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.wn-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.wn-toggle:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--neon-cyan);
+}
+
+.wn-toggle-done {
+  border-color: var(--neon-green) !important;
+  background: rgba(57, 255, 20, 0.12) !important;
+  color: var(--neon-green) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHECK-IN STATUS PICKER
+═══════════════════════════════════════════════════════════ */
+.ci-status-picker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.ci-status-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.ci-status-btn:hover {
+  opacity: 0.9;
+}
+
+/* Outline variants */
+.ci-ahead-outline {
+  border-color: rgba(0, 240, 255, 0.25);
+}
+
+.ci-ontrack-outline {
+  border-color: rgba(57, 255, 20, 0.25);
+}
+
+.ci-behind-outline {
+  border-color: rgba(255, 110, 39, 0.25);
+}
+
+/* Active (selected) state */
+.ci-ahead.ci-status-active {
+  background: rgba(0, 240, 255, 0.15) !important;
+  border-color: var(--neon-cyan) !important;
+  color: var(--neon-cyan);
+}
+
+.ci-ontrack.ci-status-active {
+  background: rgba(57, 255, 20, 0.12) !important;
+  border-color: var(--neon-green) !important;
+  color: var(--neon-green);
+}
+
+.ci-behind.ci-status-active {
+  background: rgba(255, 110, 39, 0.14) !important;
+  border-color: var(--neon-orange) !important;
+  color: var(--neon-orange);
+}
+
+.ci-save-btn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOCKED CHECK-IN CARD
+═══════════════════════════════════════════════════════════ */
+.ci-locked-card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.ci-locked-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TASK A — Check-in dot on timeline cards
+═══════════════════════════════════════════════════════════ */
+.tl-checkin-dot {
+  font-size: 0.7rem;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.tl-checkin-dot.ci-ahead {
+  color: var(--neon-cyan);
+}
+
+.tl-checkin-dot.ci-ontrack {
+  color: var(--neon-green);
+}
+
+.tl-checkin-dot.ci-behind {
+  color: var(--neon-orange);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TASK B — Clickable timeline cards + inline week editor
+═══════════════════════════════════════════════════════════ */
+.tl-week {
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.tl-week:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.tl-week.tl-editing {
+  border-color: var(--neon-cyan) !important;
+  background: rgba(0, 240, 255, 0.08) !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+}
+
+.tl-edit-panel {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.05);
+  animation: fadeInUp 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tl-edit-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.tl-edit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-edit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tl-edit-tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.tl-edit-tag button:hover {
+  color: var(--neon-orange);
+}
+
+.tl-edit-tag button:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.tl-edit-select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  max-width: 320px;
+}
+
+.tl-edit-select:focus {
+  border-color: var(--neon-cyan);
+}
+
+.ci-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid;
+}
+
+.ci-ahead.ci-status-badge {
+  border-color: rgba(0, 240, 255, 0.4);
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--neon-cyan);
+}
+
+.ci-ontrack.ci-status-badge {
+  border-color: rgba(57, 255, 20, 0.4);
+  background: rgba(57, 255, 20, 0.08);
+  color: var(--neon-green);
+}
+
+.ci-behind.ci-status-badge {
+  border-color: rgba(255, 110, 39, 0.4);
+  background: rgba(255, 110, 39, 0.1);
+  color: var(--neon-orange);
+}
+
+.ci-locked-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ci-locked-body {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ci-locked-minutes {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.ci-locked-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.ci-delete-btn {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.ci-delete-btn:hover {
+  color: var(--neon-orange);
+  border-color: rgba(255, 110, 39, 0.3);
+}
+
+/* Previous status reminder */
+.ci-prev-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  margin-bottom: 12px;
+  border: 1px solid;
+}
+
+.ci-prev-status.ci-ahead {
+  border-color: rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.07);
+  color: var(--neon-cyan);
+}
+
+.ci-prev-status.ci-ontrack {
+  border-color: rgba(57, 255, 20, 0.2);
+  background: rgba(57, 255, 20, 0.05);
+  color: var(--neon-green);
+}
+
+.ci-prev-status.ci-behind {
+  border-color: rgba(255, 110, 39, 0.2);
+  background: rgba(255, 110, 39, 0.07);
+  color: var(--neon-orange);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHECK-IN WAIT BANNER (not time yet)
+═══════════════════════════════════════════════════════════ */
+.ci-wait-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ci-wait-icon {
+  font-size: 2rem;
+}
+
+.ci-wait-title {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.ci-wait-date {
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.ci-wait-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TASK 2 — CLEAN NODE CARDS (no grip icon, hover-reveal delete)
+═══════════════════════════════════════════════════════════ */
+
+/* Library card — full card is drag handle, no grip icon */
+.pe-lib-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: grab;
+  user-select: none;
+  transition: all var(--transition-fast);
+  touch-action: none;
+}
+
+.pe-lib-card:hover:not(.pe-lib-used) {
+  border-color: var(--pc, var(--neon-cyan));
+  background: color-mix(in srgb, var(--pc, var(--neon-cyan)) 8%, transparent);
+  transform: translateX(3px);
+}
+
+.pe-lib-card:active {
+  cursor: grabbing;
+}
+
+.pe-lib-dragging {
+  opacity: 0.35;
+  border-style: dashed !important;
+}
+
+.pe-lib-used {
+  opacity: 0.38;
+  cursor: default !important;
+}
+
+/* Remove old grip span — hide if still present */
+.pe-lib-grip {
+  display: none;
+}
+
+/* Plan node — full card is sortable handle, label + date, hover delete */
+.pe-plan-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pe-plan-node:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.pe-plan-node:active {
+  cursor: grabbing;
+}
+
+.pe-plan-dragging {
+  opacity: 0.35;
+  border-style: dashed !important;
+}
+
+/* Remove old grip button — hide if still present */
+.pe-node-grip {
+  display: none;
+}
+
+/* Node body — just label + date */
+.pe-node-body {
+  display: none;
+}
+
+/* replaced by direct spans */
+
+.pe-plan-node .pe-node-label {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pe-plan-node .pe-node-date {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Hover-reveal delete button */
+.pe-node-delete-hover {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: none;
+  /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1;
+  border: 1px solid rgba(255, 110, 39, 0.4);
+  background: rgba(255, 110, 39, 0.12);
+  color: var(--neon-orange);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+.pe-plan-node:hover .pe-node-delete-hover {
+  display: flex;
+}
+
+.pe-node-delete-hover:hover {
+  background: rgba(255, 110, 39, 0.3);
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Make room for delete button so label doesn't overlap */
+.pe-plan-node:hover .pe-node-label {
+  padding-right: 32px;
+}
+
+/* Hide old separate delete button if present */
+.pe-node-delete {
+  display: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TASK 4C — Nhịp học KPI card
+═══════════════════════════════════════════════════════════ */
+.kpi-rhythm {
+  flex-direction: column;
+  gap: 2px;
+  min-width: 100px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.kpi-rhythm-val {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.kpi-rhythm-text {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.kpi-rhythm.ci-ahead {
+  border-color: rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.04);
+}
+
+.kpi-rhythm.ci-ontrack {
+  border-color: rgba(57, 255, 20, 0.2);
+  background: rgba(57, 255, 20, 0.03);
+}
+
+.kpi-rhythm.ci-behind {
+  border-color: rgba(255, 110, 39, 0.2);
+  background: rgba(255, 110, 39, 0.04);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TASK 5 — Demo controls
+═══════════════════════════════════════════════════════════ */
+.demo-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.demo-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.demo-btn {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.demo-btn:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+  color: var(--neon-cyan);
+}
+
+.demo-date-bar {
+  font-size: 0.82rem;
+  color: var(--neon-orange);
+  background: rgba(255, 110, 39, 0.08);
+  border: 1px solid rgba(255, 110, 39, 0.2);
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TASK B — Check-in view banner (browsing past date)
+═══════════════════════════════════════════════════════════ */
+.ci-view-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  background: rgba(0, 240, 255, 0.07);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--neon-cyan);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TASK C — Custom add-node dropdown (dark-themed)
+═══════════════════════════════════════════════════════════ */
+.tl-add-dropdown-wrap {
+  position: relative;
+}
+
+.tl-add-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 650;
+  border: 1px dashed rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.05);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  text-align: left;
+  cursor: pointer;
+}
+
+.tl-add-trigger:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.10);
+  color: var(--neon-cyan);
+}
+
+.tl-add-menu {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary, #12122a);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 12px;
+  padding: 8px;
+  z-index: 100;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.55);
+  animation: fadeInUp 0.15s ease;
+}
+
+.tl-add-search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  outline: none;
+  font-size: 0.82rem;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.tl-add-search:focus {
+  border-color: var(--neon-cyan);
+}
+
+.tl-add-options {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tl-add-option {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  transition: background var(--transition-fast);
+  cursor: pointer;
+}
+
+.tl-add-option:hover {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--neon-cyan);
+}
+
+.tl-add-empty {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 8px 10px;
+  text-align: center;
+}
